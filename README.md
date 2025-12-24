@@ -18,7 +18,7 @@ A modern, high-performance personal portfolio website built with the **MERN Stac
 ## 🚀 Live Demo
 👉 https://personal-portfolio-lake-nu-22.vercel.app/
 
-🔗 GitHub Repository:
+## 🔗 GitHub Repository:
 👉 https://github.com/iam-sarthakdev/Personal-Portfolio
 
 ## 🛠️ Tech Stack
