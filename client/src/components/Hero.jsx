@@ -4,7 +4,6 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 // Re-using typed.js since it's already installed, allowing for minimal friction.
 import Typed from 'typed.js';
 import { FaLinkedinIn, FaGithub, FaCode } from 'react-icons/fa';
-import profileImg from '../assets/profile.png';
 
 const Hero = () => {
     const el = useRef(null);
@@ -111,7 +110,7 @@ const Hero = () => {
                     </motion.a>
 
                     <motion.a
-                        href="https://drive.google.com/file/d/1nqV2YC-CDs7G0rs1A4ON9jI_PaGQGe4U/view?usp=sharing" target="_blank"
+                        href="https://drive.google.com/file/d/1z31SMHG0f5M9llQGaINhm5d_rfoG-w_W/view?usp=sharing" target="_blank"
                         whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.1)' }}
                         whileTap={{ scale: 0.95 }}
                         style={{
@@ -202,26 +201,199 @@ const Hero = () => {
                 </motion.div>
             </motion.div>
 
-            {/* Visual Element / 3D Abstract */}
+            {/* 3D Geometric Shapes Visualization */}
             <motion.div
-                style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 1, y: y2 }}
+                style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 1, y: y2, position: 'relative' }}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1 }}
                 className="hero-image-container"
             >
+                {/* Main Container with 3D Shapes */}
                 <div style={{
-                    width: '400px', height: '400px',
-                    background: 'linear-gradient(45deg, var(--primary-color), var(--secondary-color))',
-                    borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    boxShadow: '0 0 80px rgba(0, 243, 255, 0.3)',
-                    position: 'relative', overflow: 'hidden'
+                    width: '450px', height: '450px',
+                    position: 'relative',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
                 }}>
-                    {/* Replaced placeholder with Image */}
-                    <img
-                        src={profileImg}
-                        alt="Profile"
-                        style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%', zIndex: 2 }}
+
+                    {/* Floating Gradient Orb 1 */}
+                    <motion.div
+                        animate={{
+                            y: [0, -30, 0],
+                            rotate: [0, 180, 360],
+                            scale: [1, 1.1, 1]
+                        }}
+                        transition={{
+                            duration: 8,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                        }}
+                        style={{
+                            position: 'absolute',
+                            width: '200px',
+                            height: '200px',
+                            borderRadius: '50%',
+                            background: 'linear-gradient(135deg, rgba(0, 243, 255, 0.3), rgba(188, 19, 254, 0.3))',
+                            filter: 'blur(40px)',
+                            top: '10%',
+                            left: '10%'
+                        }}
+                    />
+
+                    {/* Floating Gradient Orb 2 */}
+                    <motion.div
+                        animate={{
+                            y: [0, 40, 0],
+                            rotate: [360, 180, 0],
+                            scale: [1, 0.9, 1]
+                        }}
+                        transition={{
+                            duration: 10,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                        }}
+                        style={{
+                            position: 'absolute',
+                            width: '180px',
+                            height: '180px',
+                            borderRadius: '50%',
+                            background: 'linear-gradient(225deg, rgba(188, 19, 254, 0.4), rgba(0, 243, 255, 0.2))',
+                            filter: 'blur(35px)',
+                            bottom: '15%',
+                            right: '15%'
+                        }}
+                    />
+
+                    {/* 3D Rotating Cube */}
+                    <motion.div
+                        animate={{
+                            rotateX: [0, 360],
+                            rotateY: [0, 360],
+                            rotateZ: [0, 180]
+                        }}
+                        transition={{
+                            duration: 20,
+                            repeat: Infinity,
+                            ease: "linear"
+                        }}
+                        style={{
+                            position: 'absolute',
+                            width: '120px',
+                            height: '120px',
+                            border: '2px solid rgba(0, 243, 255, 0.5)',
+                            background: 'linear-gradient(135deg, rgba(0, 243, 255, 0.1), rgba(188, 19, 254, 0.1))',
+                            backdropFilter: 'blur(10px)',
+                            transformStyle: 'preserve-3d',
+                            boxShadow: '0 0 40px rgba(0, 243, 255, 0.3)',
+                            top: '20%',
+                            right: '20%'
+                        }}
+                    />
+
+                    {/* Central Geometric Shape */}
+                    <motion.div
+                        animate={{
+                            rotate: [0, 360],
+                            scale: [1, 1.05, 1]
+                        }}
+                        transition={{
+                            duration: 15,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                        }}
+                        style={{
+                            width: '250px',
+                            height: '250px',
+                            borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%',
+                            background: 'linear-gradient(45deg, var(--primary-color), var(--secondary-color))',
+                            boxShadow: '0 0 100px rgba(0, 243, 255, 0.4), inset 0 0 60px rgba(188, 19, 254, 0.3)',
+                            position: 'relative',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                        }}
+                    >
+                        {/* Inner Rotating Ring */}
+                        <motion.div
+                            animate={{
+                                rotate: [360, 0]
+                            }}
+                            transition={{
+                                duration: 12,
+                                repeat: Infinity,
+                                ease: "linear"
+                            }}
+                            style={{
+                                width: '180px',
+                                height: '180px',
+                                borderRadius: '50%',
+                                border: '3px solid rgba(255, 255, 255, 0.3)',
+                                borderTopColor: 'rgba(0, 243, 255, 0.8)',
+                                borderRightColor: 'transparent'
+                            }}
+                        />
+
+                        {/* Code Icon in Center */}
+                        <FaCode style={{
+                            position: 'absolute',
+                            fontSize: '4rem',
+                            color: '#fff',
+                            filter: 'drop-shadow(0 0 20px rgba(0, 243, 255, 0.8))'
+                        }} />
+                    </motion.div>
+
+                    {/* Floating Particles */}
+                    {[...Array(6)].map((_, i) => (
+                        <motion.div
+                            key={i}
+                            animate={{
+                                y: [0, -100, 0],
+                                x: [0, Math.sin(i) * 50, 0],
+                                opacity: [0.3, 0.8, 0.3]
+                            }}
+                            transition={{
+                                duration: 5 + i,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                                delay: i * 0.5
+                            }}
+                            style={{
+                                position: 'absolute',
+                                width: '8px',
+                                height: '8px',
+                                borderRadius: '50%',
+                                background: i % 2 === 0 ? 'var(--primary-color)' : 'var(--secondary-color)',
+                                boxShadow: `0 0 10px ${i % 2 === 0 ? 'var(--primary-color)' : 'var(--secondary-color)'}`,
+                                top: `${20 + i * 10}%`,
+                                left: `${10 + i * 15}%`
+                            }}
+                        />
+                    ))}
+
+                    {/* Hexagon Shape */}
+                    <motion.div
+                        animate={{
+                            rotate: [0, -360],
+                            y: [0, -20, 0]
+                        }}
+                        transition={{
+                            duration: 18,
+                            repeat: Infinity,
+                            ease: "linear"
+                        }}
+                        style={{
+                            position: 'absolute',
+                            width: '100px',
+                            height: '100px',
+                            clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
+                            background: 'linear-gradient(135deg, rgba(188, 19, 254, 0.3), transparent)',
+                            border: '2px solid rgba(188, 19, 254, 0.6)',
+                            bottom: '25%',
+                            left: '15%',
+                            backdropFilter: 'blur(5px)'
+                        }}
                     />
                 </div>
             </motion.div>

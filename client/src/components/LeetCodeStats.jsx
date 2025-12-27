@@ -7,35 +7,92 @@ const LeetCodeStats = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [streakStats, setStreakStats] = useState({ totalActive: 0, maxStreak: 0 });
+    const [lastUpdated, setLastUpdated] = useState(null);
+    const [retryCount, setRetryCount] = useState(0);
 
     const username = "Sarthak_1712";
+    const CACHE_KEY = `leetcode_stats_${username}`;
+    const CACHE_DURATION = 30 * 60 * 1000; // 30 minutes
 
+    // Load from cache first
     useEffect(() => {
-        const fetchData = async () => {
+        const cachedData = localStorage.getItem(CACHE_KEY);
+        if (cachedData) {
             try {
-                const statsRes = await fetch(`https://alfa-leetcode-api.onrender.com/${username}/solved`);
-                const statsData = await statsRes.json();
-                setStats(statsData);
+                const { stats: cachedStats, calendar: cachedCalendar, timestamp } = JSON.parse(cachedData);
+                const age = Date.now() - timestamp;
 
-                const calRes = await fetch(`https://alfa-leetcode-api.onrender.com/${username}/calendar`);
-                const calData = await calRes.json();
-
-                if (calData.submissionCalendar) {
-                    const parsedCal = JSON.parse(calData.submissionCalendar);
-                    setCalendar(parsedCal);
-                    calculateStreakStats(parsedCal);
+                if (age < CACHE_DURATION) {
+                    setStats(cachedStats);
+                    setCalendar(cachedCalendar);
+                    calculateStreakStats(cachedCalendar);
+                    setLastUpdated(new Date(timestamp));
+                    setLoading(false);
+                    return;
                 }
-
-                setLoading(false);
-            } catch (err) {
-                console.error(err);
-                setError("Unable to load LeetCode data");
-                setLoading(false);
+            } catch (e) {
+                console.error('Cache parse error:', e);
             }
-        };
-
+        }
         fetchData();
     }, []);
+
+    const fetchData = async (isManualRefresh = false) => {
+        if (isManualRefresh) {
+            setLoading(true);
+            setError(null);
+        }
+
+        try {
+            // Fetch both endpoints in parallel
+            const [statsRes, calRes] = await Promise.all([
+                fetch(`https://alfa-leetcode-api.onrender.com/${username}/solved`),
+                fetch(`https://alfa-leetcode-api.onrender.com/${username}/calendar`)
+            ]);
+
+            if (!statsRes.ok || !calRes.ok) {
+                throw new Error('Failed to fetch LeetCode data');
+            }
+
+            const statsData = await statsRes.json();
+            const calData = await calRes.json();
+
+            setStats(statsData);
+
+            if (calData.submissionCalendar) {
+                const parsedCal = JSON.parse(calData.submissionCalendar);
+                setCalendar(parsedCal);
+                calculateStreakStats(parsedCal);
+
+                // Cache the data
+                const cacheData = {
+                    stats: statsData,
+                    calendar: parsedCal,
+                    timestamp: Date.now()
+                };
+                localStorage.setItem(CACHE_KEY, JSON.stringify(cacheData));
+                setLastUpdated(new Date());
+            }
+
+            setLoading(false);
+            setError(null);
+            setRetryCount(0);
+        } catch (err) {
+            console.error('Fetch error:', err);
+
+            // Retry logic with exponential backoff
+            if (retryCount < 3) {
+                setTimeout(() => {
+                    setRetryCount(prev => prev + 1);
+                    fetchData(isManualRefresh);
+                }, Math.pow(2, retryCount) * 1000);
+                setError(`Retrying... (Attempt ${retryCount + 1}/3)`);
+            } else {
+                setError("Unable to load LeetCode data. Please try refreshing.");
+                setLoading(false);
+            }
+        }
+    };
 
     const calculateStreakStats = (cal) => {
         const timestamps = Object.keys(cal).map(Number).sort((a, b) => a - b);
@@ -135,81 +192,152 @@ const LeetCodeStats = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     style={{
-                        padding: '2rem',
+                        padding: '2.5rem',
                         borderRadius: '20px',
                         background: '#161616',  // LeetCode Dark BG
                         border: '1px solid #333'
                     }}
                 >
                     {loading ? (
-                        <div style={{ textAlign: 'center', color: 'var(--text-muted)' }}>Loading...</div>
+                        <div style={{ textAlign: 'center', padding: '3rem' }}>
+                            <motion.div
+                                animate={{ rotate: 360 }}
+                                transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                                style={{
+                                    width: '40px',
+                                    height: '40px',
+                                    border: '4px solid rgba(0, 243, 255, 0.2)',
+                                    borderTopColor: 'var(--primary-color)',
+                                    borderRadius: '50%',
+                                    margin: '0 auto 1rem'
+                                }}
+                            />
+                            <div style={{ color: 'var(--text-muted)' }}>{error || 'Loading LeetCode stats...'}</div>
+                        </div>
+                    ) : error && !stats ? (
+                        <div style={{ textAlign: 'center', padding: '3rem' }}>
+                            <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>⚠️</div>
+                            <div style={{ color: '#ff375f', marginBottom: '1rem', fontSize: '1.1rem' }}>{error}</div>
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                onClick={() => fetchData(true)}
+                                style={{
+                                    padding: '0.8rem 2rem',
+                                    background: 'linear-gradient(90deg, var(--primary-color), var(--secondary-color))',
+                                    color: '#fff',
+                                    border: 'none',
+                                    borderRadius: '30px',
+                                    cursor: 'pointer',
+                                    fontWeight: 600,
+                                    fontSize: '0.9rem'
+                                }}
+                            >
+                                Retry
+                            </motion.button>
+                        </div>
                     ) : (
                         <>
-                            {/* Stats Header */}
+                            {/* Header with refresh button */}
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
+                                <div>
+                                    {lastUpdated && (
+                                        <div style={{ fontSize: '0.85rem', color: '#666' }}>
+                                            Last updated: {lastUpdated.toLocaleTimeString()}
+                                        </div>
+                                    )}
+                                </div>
+                                <motion.button
+                                    whileHover={{ scale: 1.1, rotate: 180 }}
+                                    whileTap={{ scale: 0.9 }}
+                                    onClick={() => fetchData(true)}
+                                    style={{
+                                        background: 'rgba(0, 243, 255, 0.1)',
+                                        border: '1px solid rgba(0, 243, 255, 0.3)',
+                                        color: 'var(--primary-color)',
+                                        width: '40px',
+                                        height: '40px',
+                                        borderRadius: '50%',
+                                        cursor: 'pointer',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        fontSize: '1.2rem'
+                                    }}
+                                    title="Refresh stats"
+                                >
+                                    ↻
+                                </motion.button>
+                            </div>
+
+                            {/* Stats Header with animated counters */}
                             <div style={{
-                                display: 'flex', justifyContent: 'center', gap: '4rem', marginBottom: '2.5rem', flexWrap: 'wrap'
+                                display: 'flex', justifyContent: 'center', gap: '4rem', marginBottom: '3rem', flexWrap: 'wrap'
                             }}>
-                                <StatItem label="Total Solved" value={stats?.solvedProblem} />
-                                <StatItem label="Easy" value={stats?.easySolved} color="#00b8a3" />
-                                <StatItem label="Medium" value={stats?.mediumSolved} color="#ffc01e" />
-                                <StatItem label="Hard" value={stats?.hardSolved} color="#ff375f" />
+                                <AnimatedStatItem label="Total Solved" value={stats?.solvedProblem} />
+                                <AnimatedStatItem label="Easy" value={stats?.easySolved} color="#00b8a3" />
+                                <AnimatedStatItem label="Medium" value={stats?.mediumSolved} color="#ffc01e" />
+                                <AnimatedStatItem label="Hard" value={stats?.hardSolved} color="#ff375f" />
                             </div>
 
                             {/* Heatmap Section */}
                             <div style={{ padding: '0 0.5rem' }}>
                                 <div style={{
                                     display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                                    marginBottom: '1rem', color: '#999', fontSize: '0.9rem'
+                                    marginBottom: '1rem', color: '#999', fontSize: '0.9rem', flexWrap: 'wrap', gap: '1rem'
                                 }}>
                                     <span>{streakStats.totalActive} submissions in the past one year</span>
                                     <div style={{ display: 'flex', gap: '1.5rem' }}>
                                         <span>Total active days: <b style={{ color: '#fff' }}>{streakStats.totalActive}</b></span>
-                                        <span>Max streak: <b style={{ color: '#fff' }}>{streakStats.maxStreak}</b></span>
+                                        <span>Max streak: <b style={{ color: 'var(--primary-color)' }}>{streakStats.maxStreak}</b></span>
                                     </div>
                                 </div>
 
-                                <div style={{ width: '100%', overflowX: 'auto' }}>
+                                <div style={{ width: '100%', overflowX: 'auto', paddingBottom: '1rem' }}>
                                     {/* Month Labels */}
-                                    <div style={{ display: 'flex', position: 'relative', height: '20px', marginBottom: '5px' }}>
+                                    <div style={{ display: 'flex', position: 'relative', height: '20px', marginBottom: '8px' }}>
                                         {monthLabels.map((m, i) => (
                                             <span key={i} style={{
                                                 position: 'absolute',
-                                                left: `${m.index * 14}px`, // 11px box + 3px gap = 14px pitch
+                                                left: `${m.index * 15}px`,
                                                 fontSize: '0.75rem',
-                                                color: '#666'
+                                                color: '#888',
+                                                fontWeight: 600
                                             }}>
                                                 {m.name}
                                             </span>
                                         ))}
                                     </div>
 
-                                    {/* The Grid */}
-                                    <div style={{ display: 'flex', gap: '3px' }}>
+                                    {/* The Grid - Enhanced visibility */}
+                                    <div style={{ display: 'flex', gap: '4px' }}>
                                         {weeks.map((week, wIndex) => (
-                                            <div key={wIndex} style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                                            <div key={wIndex} style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                                                 {week.map((date, dIndex) => {
-                                                    // Empty placeholder for future dates or padding
-                                                    if (!date) return <div key={dIndex} style={{ width: '11px', height: '11px' }} />; // Invisible
+                                                    if (!date) return <div key={dIndex} style={{ width: '12px', height: '12px' }} />;
 
                                                     const iso = date.toISOString().split('T')[0];
                                                     const count = calendarMap[iso] || 0;
 
-                                                    // LeetCode Colors
-                                                    let bgColor = '#2d2d2d'; // Empty (Dark Grey)
-                                                    if (count > 0) bgColor = '#004a1f'; // lvl 1
-                                                    if (count > 2) bgColor = '#008332'; // lvl 2
-                                                    if (count > 5) bgColor = '#00ad41'; // lvl 3
-                                                    if (count > 9) bgColor = '#00d64f'; // lvl 4 (Brightest)
+                                                    // Enhanced LeetCode Colors with better contrast
+                                                    let bgColor = '#1a1a1a'; // Empty (Very Dark)
+                                                    if (count > 0) bgColor = '#0e4429'; // lvl 1
+                                                    if (count > 2) bgColor = '#006d32'; // lvl 2
+                                                    if (count > 5) bgColor = '#26a641'; // lvl 3
+                                                    if (count > 9) bgColor = '#39d353'; // lvl 4 (Brightest)
 
                                                     return (
-                                                        <div
+                                                        <motion.div
                                                             key={dIndex}
-                                                            title={`${count} submissions on ${iso}`}
+                                                            whileHover={{ scale: 1.3, zIndex: 10 }}
+                                                            title={`${count} submission${count !== 1 ? 's' : ''} on ${iso}`}
                                                             style={{
-                                                                width: '11px',
-                                                                height: '11px',
-                                                                borderRadius: '2px',
-                                                                backgroundColor: bgColor
+                                                                width: '12px',
+                                                                height: '12px',
+                                                                borderRadius: '3px',
+                                                                backgroundColor: bgColor,
+                                                                cursor: 'pointer',
+                                                                border: count > 0 ? '1px solid rgba(255, 255, 255, 0.1)' : 'none'
                                                             }}
                                                         />
                                                     );
@@ -249,11 +377,51 @@ const LeetCodeStats = () => {
     );
 };
 
-const StatItem = ({ label, value, color = "#fff" }) => (
-    <div style={{ textAlign: 'center' }}>
-        <div style={{ fontSize: '1.8rem', fontWeight: 700, color: color }}>{value}</div>
-        <div style={{ fontSize: '0.85rem', color: '#888', marginTop: '6px', letterSpacing: '0.5px' }}>{label.toUpperCase()}</div>
-    </div>
-);
+// Animated Counter Component
+const AnimatedStatItem = ({ label, value, color = "#fff" }) => {
+    const [count, setCount] = React.useState(0);
+    const [hasAnimated, setHasAnimated] = React.useState(false);
+
+    React.useEffect(() => {
+        if (value && !hasAnimated) {
+            let start = 0;
+            const end = parseInt(value);
+            const duration = 1500; // 1.5 seconds
+            const increment = end / (duration / 16); // 60fps
+
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= end) {
+                    setCount(end);
+                    setHasAnimated(true);
+                    clearInterval(timer);
+                } else {
+                    setCount(Math.floor(start));
+                }
+            }, 16);
+
+            return () => clearInterval(timer);
+        }
+    }, [value, hasAnimated]);
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            style={{ textAlign: 'center' }}
+        >
+            <motion.div
+                style={{ fontSize: '2.5rem', fontWeight: 700, color: color }}
+            >
+                {count}
+            </motion.div>
+            <div style={{ fontSize: '0.85rem', color: '#888', marginTop: '8px', letterSpacing: '0.5px', textTransform: 'uppercase' }}>
+                {label}
+            </div>
+        </motion.div>
+    );
+};
 
 export default LeetCodeStats;

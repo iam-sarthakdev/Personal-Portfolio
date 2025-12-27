@@ -19,7 +19,7 @@ const Footer = () => {
                     Made with <FaHeart style={{ color: 'var(--primary-color)' }} /> and React by Sarthak Kanoi
                 </p>
                 <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>
-                    Copyright © 2025. All Rights Reserved.
+                    Copyright © 2026. All Rights Reserved.
                 </p>
             </motion.div>
 
