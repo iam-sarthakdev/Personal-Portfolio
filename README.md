@@ -3,15 +3,15 @@
 A modern, high-performance personal portfolio website built with the **MERN Stack** (MongoDB, Express, React, Node.js). This project showcases my skills, projects, and professional background with a focus on advanced animations and a smooth user experience.
 
 -> Portfolio Preview : 
-<img width="1920" height="1080" alt="w9" src="https://github.com/user-attachments/assets/0312014e-a015-4a62-abf8-9850033fb4a2" />
-<img width="1887" height="1052" alt="w8" src="https://github.com/user-attachments/assets/7d238b14-e60b-4812-9cbe-6673b7ae22b1" />
-<img width="1920" height="1080" alt="w7" src="https://github.com/user-attachments/assets/860bce4f-14cb-4f4a-a2b8-74e53ba2bb98" />
-<img width="1920" height="1080" alt="w6" src="https://github.com/user-attachments/assets/35512472-9d4b-4ac2-99cd-38f0f4ac6553" />
-<img width="1920" height="1080" alt="w5" src="https://github.com/user-attachments/assets/20e8a039-04ed-44a0-bd2d-4460ea74c732" />
-<img width="1920" height="1080" alt="w4" src="https://github.com/user-attachments/assets/387c20a3-e629-4b3c-b7ec-22b818ef3073" />
-<img width="1920" height="1080" alt="w3" src="https://github.com/user-attachments/assets/3c4e773f-fe4d-4c60-8edf-4282cd5b71d2" />
-<img width="1920" height="1080" alt="w2" src="https://github.com/user-attachments/assets/011b09c9-9ed4-4eac-93c6-2100ee79f9b5" />
-<img width="1920" height="1080" alt="w1" src="https://github.com/user-attachments/assets/b17af9ff-2aca-4e58-ad57-2498f654f307" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f548439f-e67d-4afb-9d2a-da4a374b47c9" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/43f0219e-0243-4204-8bfc-8647e2947d7e" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/58d01ff1-7b4a-4392-9a07-0ce602297c44" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/25d9e3fb-1a3d-4d9f-a7f0-8897ad0d62b7" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9753566c-9c4b-4aa9-8449-cd13e0ccddcb" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/85d3f3bc-9cdb-4f04-bfe9-e6751dcc1fd7" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/06651e12-e762-4cdf-af5e-37a8f12031e3" />
+<img width="1919" height="1074" alt="image" src="https://github.com/user-attachments/assets/90c92cad-cd2c-4c81-ad4f-57e29ba0c578" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/03bd71a5-1106-44f7-8a59-59d4d137499e" />
 
 
 
