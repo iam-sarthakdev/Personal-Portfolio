@@ -1,11 +1,28 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 
 const ParticleBackground = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        // Check if mobile device for performance optimization
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768 || 'ontouchstart' in window);
+        };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     const particlesInit = useCallback(async engine => {
         await loadSlim(engine);
     }, []);
+
+    // Disable particles on mobile for better performance
+    if (isMobile) {
+        return null;
+    }
 
     return (
         <Particles
@@ -18,11 +35,11 @@ const ParticleBackground = () => {
                         value: "transparent",
                     },
                 },
-                fpsLimit: 120,
+                fpsLimit: 30, // Reduced from 120 for much better performance
                 interactivity: {
                     events: {
                         onClick: {
-                            enable: true,
+                            enable: false, // Disabled for performance
                             mode: "push",
                         },
                         onHover: {
@@ -33,11 +50,11 @@ const ParticleBackground = () => {
                     },
                     modes: {
                         push: {
-                            quantity: 4,
+                            quantity: 2,
                         },
                         grab: {
-                            distance: 200,
-                            duration: 0.4
+                            distance: 150, // Reduced distance
+                            duration: 0.3
                         },
                     },
                 },
@@ -47,9 +64,9 @@ const ParticleBackground = () => {
                     },
                     links: {
                         color: "#bc13fe",
-                        distance: 150,
+                        distance: 120, // Reduced from 150
                         enable: true,
-                        opacity: 0.3,
+                        opacity: 0.2, // Reduced opacity
                         width: 1,
                     },
                     move: {
@@ -59,18 +76,18 @@ const ParticleBackground = () => {
                             default: "bounce",
                         },
                         random: false,
-                        speed: 1,
+                        speed: 0.5, // Reduced from 1
                         straight: false,
                     },
                     number: {
                         density: {
                             enable: true,
-                            area: 800,
+                            area: 1200, // Increased area = fewer particles
                         },
-                        value: 20,
+                        value: 12, // Reduced from 20
                     },
                     opacity: {
-                        value: 0.3,
+                        value: 0.25,
                     },
                     shape: {
                         type: "circle",
@@ -87,7 +104,8 @@ const ParticleBackground = () => {
                 left: 0,
                 width: '100%',
                 height: '100%',
-                zIndex: -1
+                zIndex: -1,
+                willChange: 'auto' // Prevent GPU memory issues
             }}
         />
     );

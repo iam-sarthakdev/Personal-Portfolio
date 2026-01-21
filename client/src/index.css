@@ -31,7 +31,12 @@
   text-decoration: none;
   border: none;
   outline: none;
+}
+
+html {
   scroll-behavior: smooth;
+  /* Better scroll performance */
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -40,6 +45,8 @@ body {
   font-family: var(--font-body);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  /* Performance optimizations */
+  text-rendering: optimizeLegibility;
 }
 
 /* Typography Overrides */
@@ -74,6 +81,8 @@ h6 {
 /* Utility Utilities */
 .section-padding {
   padding: 8rem 9% 4rem;
+  /* Isolate sections for better performance */
+  contain: layout style;
 }
 
 .gradient-text {
@@ -90,6 +99,9 @@ h6 {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--glass-border);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  /* GPU acceleration */
+  transform: translateZ(0);
+  will-change: transform, opacity;
 }
 
 /* Button Reset & Styles */
@@ -109,4 +121,36 @@ button {
 ::selection {
   background: var(--primary-color);
   color: #000;
+}
+
+/* Animation Performance Hints */
+[class*="motion"] {
+  will-change: auto;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 4rem 5% 2rem;
+  }
+  
+  .glass-card {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
 }

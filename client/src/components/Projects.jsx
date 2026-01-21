@@ -5,13 +5,24 @@ import { FaExternalLinkAlt, FaGithub, FaCode } from 'react-icons/fa';
 const Projects = () => {
     const projects = [
         {
+            title: "FAANG-Forge",
+            description: "Full-stack interview preparation platform enabling structured problem tracking, spaced repetition, and pattern-based learning. Features aggregation-based analytics with 30-40% reduced computation complexity and real-time difficulty insights.",
+            fullDescription: "FAANG-Forge revolutionizes DSA revision with structured problem tracking, spaced repetition algorithms, and pattern-based learning that improves revision consistency by 40-50%. Built with JWT authentication and deployed via Vercel + Render for seamless performance.",
+            tools: ["React", "Node.js", "Express", "MongoDB", "JWT", "Tailwind", "Recharts"],
+            liveLink: "https://github.com/iam-sarthakdev/FAANG-Forge",
+            github: "https://github.com/iam-sarthakdev/FAANG-Forge",
+            image: null,
+            featured: true,
+            gradient: "linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(0, 243, 255, 0.1))"
+        },
+        {
             title: "MockMate AI",
             description: "AI-powered interview preparation platform with real-time voice interaction using VAPI. Features adaptive questioning across behavioral, technical, and system design domains with intelligent feedback and analytics.",
             fullDescription: "MockMate AI revolutionizes interview preparation by providing realistic AI-driven mock interviews. The platform uses advanced voice AI to conduct natural conversations, adapting difficulty based on your responses and providing instant, actionable feedback to improve your performance.",
             tools: ["Next.js 14", "TypeScript", "VAPI AI", "MongoDB", "NextAuth.js", "Framer Motion"],
             liveLink: "https://mockmateai-eight.vercel.app/landingPage",
             github: "https://github.com/iam-sarthakdev/MockMate-AI",
-            image: "https://raw.githubusercontent.com/iam-sarthakdev/MockMate-AI/main/public/landing-page-screenshot.png", // Add actual screenshot
+            image: "https://raw.githubusercontent.com/iam-sarthakdev/MockMate-AI/main/public/landing-page-screenshot.png",
             featured: true,
             gradient: "linear-gradient(135deg, rgba(0, 243, 255, 0.1), rgba(138, 43, 226, 0.1))"
         },
@@ -22,7 +33,7 @@ const Projects = () => {
             tools: ["Next.js 16", "Socket.IO", "Monaco Editor", "Piston API", "Tailwind CSS v4"],
             liveLink: "https://devsync-production-00b7.up.railway.app/",
             github: "https://github.com/iam-sarthakdev/DevSync",
-            image: "https://raw.githubusercontent.com/iam-sarthakdev/DevSync/main/public/preview.png", // Add actual screenshot
+            image: "https://raw.githubusercontent.com/iam-sarthakdev/DevSync/main/public/preview.png",
             featured: true,
             gradient: "linear-gradient(135deg, rgba(188, 19, 254, 0.1), rgba(0, 243, 255, 0.1))"
         }

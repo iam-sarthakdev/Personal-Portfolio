@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaPaperPlane, FaLinkedinIn, FaGithub, FaCheckCircle } from 'react-icons/fa';
+import { FaPaperPlane, FaLinkedinIn, FaGithub, FaCheckCircle, FaExclamationTriangle } from 'react-icons/fa';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -11,6 +11,7 @@ const Contact = () => {
         message: ''
     });
     const [status, setStatus] = useState('idle'); // idle, sending, success, error
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,19 +20,68 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus('sending');
+        setErrorMessage('');
 
         try {
-            const response = await axios.post('/api/contact', formData);
+            // Add timeout for the request
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 15000); // 15s timeout
+
+            const response = await axios.post('/api/contact', formData, {
+                signal: controller.signal,
+                timeout: 15000
+            });
+
+            clearTimeout(timeout);
+
             if (response.data.success) {
                 setStatus('success');
                 setFormData({ name: '', email: '', subject: '', message: '' });
                 setTimeout(() => setStatus('idle'), 5000);
             } else {
+                setErrorMessage(response.data.message || 'Something went wrong.');
                 setStatus('error');
             }
         } catch (error) {
-            console.error(error);
+            console.error('Contact form error:', error);
+
+            // Provide more specific error messages
+            if (error.code === 'ECONNABORTED' || error.name === 'AbortError') {
+                setErrorMessage('Request timed out. Please try again.');
+            } else if (error.response?.status === 500) {
+                setErrorMessage('Server error. Please try again later.');
+            } else if (error.response?.status === 400) {
+                setErrorMessage(error.response?.data?.message || 'Please fill all required fields.');
+            } else if (!navigator.onLine) {
+                setErrorMessage('No internet connection. Please check your network.');
+            } else {
+                setErrorMessage('Unable to send message. Please try email instead.');
+            }
             setStatus('error');
+        }
+    };
+
+    const getButtonContent = () => {
+        switch (status) {
+            case 'sending':
+                return (
+                    <>
+                        <motion.span
+                            animate={{ rotate: 360 }}
+                            transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                            style={{ display: 'inline-block' }}
+                        >
+                            ⏳
+                        </motion.span>
+                        {' '}Sending...
+                    </>
+                );
+            case 'success':
+                return <><FaCheckCircle /> Message Sent!</>;
+            case 'error':
+                return <><FaExclamationTriangle /> Try Again</>;
+            default:
+                return <><FaPaperPlane /> Send Message</>;
         }
     };
 
@@ -130,27 +180,50 @@ const Contact = () => {
                         ></textarea>
                     </div>
 
+                    {/* Error Message Display */}
+                    <AnimatePresence>
+                        {status === 'error' && errorMessage && (
+                            <motion.div
+                                initial={{ opacity: 0, y: -10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -10 }}
+                                style={{
+                                    padding: '0.8rem 1rem',
+                                    background: 'rgba(255, 55, 95, 0.1)',
+                                    border: '1px solid rgba(255, 55, 95, 0.3)',
+                                    borderRadius: '8px',
+                                    color: '#ff375f',
+                                    fontSize: '0.9rem',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '0.5rem'
+                                }}
+                            >
+                                <FaExclamationTriangle />
+                                {errorMessage}
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+
                     <motion.button
                         type="submit"
                         disabled={status === 'sending' || status === 'success'}
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
+                        whileHover={{ scale: status === 'success' ? 1 : 1.02 }}
+                        whileTap={{ scale: status === 'success' ? 1 : 0.98 }}
                         style={{
                             padding: '1rem', borderRadius: '8px', border: 'none',
-                            background: status === 'success' ? '#00e676' : 'linear-gradient(90deg, var(--primary-color), var(--secondary-color))',
-                            color: '#fff', fontWeight: 600, fontSize: '1rem', cursor: status === 'success' ? 'default' : 'pointer',
-                            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem'
+                            background: status === 'success'
+                                ? 'linear-gradient(90deg, #00e676, #00c853)'
+                                : status === 'error'
+                                    ? 'linear-gradient(90deg, #ff6b6b, #ee5a5a)'
+                                    : 'linear-gradient(90deg, var(--primary-color), var(--secondary-color))',
+                            color: '#fff', fontWeight: 600, fontSize: '1rem',
+                            cursor: status === 'success' || status === 'sending' ? 'default' : 'pointer',
+                            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem',
+                            transition: 'all 0.3s ease'
                         }}
                     >
-                        {status === 'sending' ? (
-                            'Sending...'
-                        ) : status === 'success' ? (
-                            <>Message Sent <FaCheckCircle /></>
-                        ) : status === 'error' ? (
-                            'Failed - Try Again'
-                        ) : (
-                            <>Send Message <FaPaperPlane /></>
-                        )}
+                        {getButtonContent()}
                     </motion.button>
                 </motion.form>
             </div>

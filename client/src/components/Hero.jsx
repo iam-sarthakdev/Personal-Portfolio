@@ -110,7 +110,7 @@ const Hero = () => {
                     </motion.a>
 
                     <motion.a
-                        href="https://drive.google.com/file/d/1kM0K2AK1zVd53vgoJpf-z4lrnhZdO_dU/view?usp=sharing" target="_blank"
+                        href="https://drive.google.com/file/d/1vTFlRU1KY7QS_W4Pcp0EYoF6rOq5Eufz/view?usp=sharing" target="_blank"
                         whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.1)' }}
                         whileTap={{ scale: 0.95 }}
                         style={{
