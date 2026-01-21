@@ -1,27 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Cyberpunk / Deep Space Palette */
-  --bg-color: #050505;
-  --second-bg-color: #0a0a0a;
-  --card-bg: rgba(20, 20, 25, 0.6);
+  /* Premium Dark Theme */
+  --bg-color: #030303;
+  --second-bg-color: #080808;
+  --card-bg: rgba(15, 15, 20, 0.7);
 
-  --text-color: #e0e0e0;
-  --text-muted: #a0a0a0;
+  --text-color: #e8e8e8;
+  --text-muted: #9a9a9a;
 
   --primary-color: #00f3ff;
-  /* Neon Cyan */
   --secondary-color: #bc13fe;
-  /* Electric Purple */
   --accent-color: #ffffff;
+  --success-color: #22c55e;
+  --warning-color: #ffc01e;
+  --danger-color: #ff375f;
 
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-highlight: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --glass-highlight: rgba(255, 255, 255, 0.03);
 
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
 
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -35,7 +37,6 @@
 
 html {
   scroll-behavior: smooth;
-  /* Better scroll performance */
   scroll-padding-top: 80px;
 }
 
@@ -45,11 +46,11 @@ body {
   font-family: var(--font-body);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  /* Performance optimizations */
   text-rendering: optimizeLegibility;
+  line-height: 1.6;
 }
 
-/* Typography Overrides */
+/* Typography */
 h1,
 h2,
 h3,
@@ -58,11 +59,13 @@ h5,
 h6 {
   font-family: var(--font-heading);
   color: #fff;
+  font-weight: 700;
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -78,11 +81,11 @@ h6 {
   background: #555;
 }
 
-/* Utility Utilities */
+/* Utility Classes */
 .section-padding {
-  padding: 8rem 9% 4rem;
-  /* Isolate sections for better performance */
+  padding: 6rem 8% 4rem;
   contain: layout style;
+  position: relative;
 }
 
 .gradient-text {
@@ -95,41 +98,47 @@ h6 {
 
 .glass-card {
   background: var(--card-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--glass-border);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  /* GPU acceleration */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   transform: translateZ(0);
-  will-change: transform, opacity;
+  transition: var(--transition);
 }
 
-/* Button Reset & Styles */
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+}
+
+/* Button Styles */
 button {
   cursor: pointer;
   font-family: var(--font-body);
+  transition: var(--transition);
 }
 
-/* Global Container for React Root */
+/* Root Container */
 #root {
   width: 100%;
   min-height: 100vh;
   position: relative;
 }
 
-/* Selection Color */
+/* Selection */
 ::selection {
   background: var(--primary-color);
   color: #000;
 }
 
-/* Animation Performance Hints */
+/* Animation Performance */
 [class*="motion"] {
   will-change: auto;
 }
 
-/* Reduce motion for users who prefer it */
+/* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -137,20 +146,116 @@ button {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  
+
   html {
     scroll-behavior: auto;
   }
 }
 
-/* Mobile optimizations */
+/* Mobile Optimizations */
+@media (max-width: 1024px) {
+  .section-padding {
+    padding: 4rem 5% 3rem;
+  }
+}
+
 @media (max-width: 768px) {
   .section-padding {
-    padding: 4rem 5% 2rem;
+    padding: 3rem 4% 2rem;
   }
-  
+
   .glass-card {
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
+
+  /* Stack project cards on mobile */
+  #projects .glass-card {
+    grid-template-columns: 1fr !important;
+  }
+
+  #projects .glass-card>div:first-child {
+    order: 0 !important;
+    min-height: 250px !important;
+  }
+
+  #projects .glass-card>div:last-child {
+    order: 1 !important;
+  }
+
+  /* LeetCode grid */
+  #leetcode>div>div:nth-child(2) {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Link Styles */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+/* Input Styles */
+input,
+textarea {
+  font-family: var(--font-body);
+  transition: var(--transition);
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 3px rgba(0, 243, 255, 0.1);
+}
+
+/* Smooth Image Loading */
+img {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+img[loading="lazy"] {
+  opacity: 0;
+}
+
+img.loaded {
+  opacity: 1;
+}
+
+/* Glow Effects */
+.glow-primary {
+  box-shadow: 0 0 40px rgba(0, 243, 255, 0.15);
+}
+
+.glow-secondary {
+  box-shadow: 0 0 40px rgba(188, 19, 254, 0.15);
+}
+
+/* Text Gradient Animation */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient {
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--primary-color));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 3s ease-in-out infinite;
 }
