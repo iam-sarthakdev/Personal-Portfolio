@@ -1,14 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaDiceD20 } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState('home');
 
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 50);
+
+            // Update active section based on scroll position
+            const sections = ['home', 'about', 'education', 'projects', 'leetcode', 'contact'];
+            const current = sections.find(section => {
+                const el = document.getElementById(section);
+                if (el) {
+                    const rect = el.getBoundingClientRect();
+                    return rect.top <= 150 && rect.bottom >= 150;
+                }
+                return false;
+            });
+            if (current) setActiveSection(current);
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
@@ -19,74 +32,139 @@ const Navbar = () => {
         { name: 'About', href: '#about' },
         { name: 'Education', href: '#education' },
         { name: 'Projects', href: '#projects' },
+        { name: 'LeetCode', href: '#leetcode' },
         { name: 'Contact', href: '#contact' },
     ];
 
     return (
-        <motion.nav
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.5 }}
-            style={{
-                position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 1000,
-                background: scrolled ? 'rgba(5, 5, 5, 0.8)' : 'transparent',
-                backdropFilter: scrolled ? 'blur(10px)' : 'none',
-                borderBottom: scrolled ? '1px solid rgba(255,255,255,0.05)' : 'none',
-                padding: '1.5rem 9%', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                transition: 'all 0.3s ease'
-            }}
-        >
-            <motion.div
-                onClick={() => window.location.reload()}
-                whileHover={{ scale: 1.1, rotate: 180 }}
-                whileTap={{ scale: 0.9 }}
-                transition={{ duration: 0.3 }}
+        <>
+            <motion.nav
+                initial={{ y: -100 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
                 style={{
-                    cursor: 'pointer',
-                    fontSize: '2rem',
-                    color: 'var(--primary-color)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    padding: '10px',
-                    background: 'rgba(255, 255, 255, 0.05)',
-                    borderRadius: '50%',
-                    border: '1px solid var(--glass-border)',
-                    boxShadow: '0 0 15px rgba(0, 243, 255, 0.3)',
-                    backdropFilter: 'blur(5px)'
+                    position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 1000,
+                    background: scrolled ? 'rgba(3, 3, 3, 0.85)' : 'transparent',
+                    backdropFilter: scrolled ? 'blur(20px)' : 'none',
+                    borderBottom: scrolled ? '1px solid rgba(255,255,255,0.05)' : 'none',
+                    padding: scrolled ? '1rem 6%' : '1.5rem 6%',
+                    display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                    transition: 'all 0.3s ease'
                 }}
             >
-                <FaDiceD20 />
-            </motion.div>
+                {/* Logo */}
+                <motion.a
+                    href="#home"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    style={{
+                        display: 'flex', alignItems: 'center', gap: '10px',
+                        fontSize: '1.3rem', fontWeight: 700, color: '#fff'
+                    }}
+                >
+                    <div style={{
+                        width: '40px', height: '40px',
+                        background: 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))',
+                        borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        fontSize: '1.2rem', fontWeight: 800, color: '#000'
+                    }}>
+                        SK
+                    </div>
+                </motion.a>
 
-            {/* Desktop Menu */}
-            <ul className="nav-links" style={{ display: 'flex', gap: '2.5rem', listStyle: 'none' }}>
-                {navLinks.map((link) => (
-                    <motion.li key={link.name}>
-                        <a
-                            href={link.href}
-                            style={{ color: '#fff', fontSize: '1.1rem', fontWeight: 500, transition: '0.3s' }}
-                            onMouseOver={(e) => e.target.style.color = 'var(--primary-color)'}
-                            onMouseOut={(e) => e.target.style.color = '#fff'}
-                        >
-                            {link.name}
-                        </a>
-                    </motion.li>
-                ))}
-            </ul>
+                {/* Desktop Menu */}
+                <ul style={{
+                    display: 'flex', gap: '0.5rem', listStyle: 'none', alignItems: 'center',
+                    background: scrolled ? 'rgba(255,255,255,0.03)' : 'rgba(255,255,255,0.05)',
+                    padding: '6px', borderRadius: '14px', border: '1px solid rgba(255,255,255,0.08)'
+                }}>
+                    {navLinks.map((link) => {
+                        const isActive = activeSection === link.href.slice(1);
+                        return (
+                            <motion.li key={link.name}>
+                                <motion.a
+                                    href={link.href}
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    style={{
+                                        display: 'block',
+                                        padding: '10px 18px',
+                                        borderRadius: '10px',
+                                        color: isActive ? '#000' : '#a0a0a0',
+                                        background: isActive ? 'var(--primary-color)' : 'transparent',
+                                        fontSize: '0.9rem',
+                                        fontWeight: isActive ? 600 : 500,
+                                        transition: 'all 0.3s ease'
+                                    }}
+                                    onMouseOver={(e) => { if (!isActive) e.target.style.color = '#fff'; }}
+                                    onMouseOut={(e) => { if (!isActive) e.target.style.color = '#a0a0a0'; }}
+                                >
+                                    {link.name}
+                                </motion.a>
+                            </motion.li>
+                        );
+                    })}
+                </ul>
 
-            {/* Mobile Menu Icon (Hidden on Desktop for now via CSS, but normally needs media queries in JS or CSS modules) */}
-            {/* Note: Ideally this component should handle responsiveness directly or rely on CSS classes defined in index.css.
-                Given the previous index.css setup, let's stick to the class names for media query handling if possible,
-                but for a "Super Cool" result, inline styles in JS can be tricky for media queries.
-                
-                I will leave the 'nav-links' class name so the index.css media query (max-width: 768px) can hide it 
-                and show the hamburger if configured. 
-                
-                However, since I replaced index.css, I need to ensure those media queries are reasonably standard.
-                I'll assume the user is verifying on Desktop mostly, but adding a basic responsive menu logic here is safer.
-            */}
-        </motion.nav>
+                {/* Mobile Menu Button */}
+                <motion.button
+                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="mobile-menu-btn"
+                    style={{
+                        display: 'none', // Will be shown via CSS media query
+                        background: 'rgba(255,255,255,0.05)',
+                        border: '1px solid rgba(255,255,255,0.1)',
+                        borderRadius: '10px', padding: '12px',
+                        color: '#fff', fontSize: '1.2rem', cursor: 'pointer'
+                    }}
+                >
+                    {mobileMenuOpen ? <FaTimes /> : <FaBars />}
+                </motion.button>
+            </motion.nav>
+
+            {/* Mobile Menu Overlay */}
+            <AnimatePresence>
+                {mobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        style={{
+                            position: 'fixed', top: '80px', left: 0, right: 0,
+                            background: 'rgba(3, 3, 3, 0.98)', backdropFilter: 'blur(20px)',
+                            padding: '2rem', zIndex: 999, borderBottom: '1px solid rgba(255,255,255,0.1)'
+                        }}
+                    >
+                        {navLinks.map((link, i) => (
+                            <motion.a
+                                key={link.name}
+                                href={link.href}
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: i * 0.1 }}
+                                onClick={() => setMobileMenuOpen(false)}
+                                style={{
+                                    display: 'block', padding: '1rem 0',
+                                    color: '#fff', fontSize: '1.1rem', fontWeight: 500,
+                                    borderBottom: '1px solid rgba(255,255,255,0.05)'
+                                }}
+                            >
+                                {link.name}
+                            </motion.a>
+                        ))}
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
+            <style>{`
+                @media (max-width: 768px) {
+                    nav ul { display: none !important; }
+                    .mobile-menu-btn { display: flex !important; }
+                }
+            `}</style>
+        </>
     );
 };
 
