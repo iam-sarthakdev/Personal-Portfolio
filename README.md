@@ -33,6 +33,26 @@
   <img src="docs/screenshots/certifications.png" alt="Certifications" width="100%">
 </p>
 
+<p align="center">
+  <img src="docs/screenshots/projects-faang.png" alt="Projects - FAANG-Forge" width="100%">
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/projects-devsync.png" alt="Projects - DevSync" width="100%">
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/projects-mockmate.png" alt="Projects - MockMate AI" width="100%">
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/leetcode.png" alt="LeetCode Stats Dashboard" width="100%">
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/contact-footer.png" alt="Contact Form & Footer" width="100%">
+</p>
+
 ---
 
 ## 📌 Table of Contents
