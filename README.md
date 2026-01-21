@@ -1,59 +1,240 @@
-# ⚡ Personal Portfolio
+<div align="center">
 
-A modern, high-performance personal portfolio website built with the **MERN Stack** (MongoDB, Express, React, Node.js). This project showcases my skills, projects, and professional background with a focus on advanced animations and a smooth user experience.
+# ⚡ Sarthak Kanoi - Personal Portfolio
 
--> Portfolio Preview : 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f548439f-e67d-4afb-9d2a-da4a374b47c9" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/43f0219e-0243-4204-8bfc-8647e2947d7e" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/58d01ff1-7b4a-4392-9a07-0ce602297c44" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/25d9e3fb-1a3d-4d9f-a7f0-8897ad0d62b7" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9753566c-9c4b-4aa9-8449-cd13e0ccddcb" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/85d3f3bc-9cdb-4f04-bfe9-e6751dcc1fd7" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/06651e12-e762-4cdf-af5e-37a8f12031e3" />
-<img width="1919" height="1074" alt="image" src="https://github.com/user-attachments/assets/90c92cad-cd2c-4c81-ad4f-57e29ba0c578" />
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/03bd71a5-1106-44f7-8a59-59d4d137499e" />
+### A Premium, Modern Portfolio Showcasing Full-Stack Development & DSA Expertise
 
+[![Live Demo](https://img.shields.io/badge/🚀_LIVE_DEMO-00f3ff?style=for-the-badge&logoColor=black)](https://personal-portfolio-lake-nu-22.vercel.app/)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/iam-sarthakdev/Personal-Portfolio)
 
+---
 
-## 🚀 Live Demo
-👉 https://personal-portfolio-lake-nu-22.vercel.app/
+</div>
 
-## 🔗 GitHub Repository:
-👉 https://github.com/iam-sarthakdev/Personal-Portfolio
+## 🌟 Portfolio Live Preview
+
+<p align="center">
+  <img src="docs/screenshots/hero.png" alt="Hero Section" width="100%">
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/tech-about.png" alt="Tech Stack & About" width="100%">
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/skills.png" alt="Skills & Achievements" width="100%">
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/education.png" alt="Education Timeline" width="100%">
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/certifications.png" alt="Certifications" width="100%">
+</p>
+
+---
+
+## 📌 Table of Contents
+
+- [About This Portfolio](#-about-this-portfolio)
+- [Key Features](#-key-features)
+- [Featured Projects](#-featured-projects)
+- [Tech Stack](#%EF%B8%8F-tech-stack)
+- [Portfolio Sections](#-portfolio-sections-deep-dive)
+- [Installation](#-installation--run-locally)
+- [Deployment](#-deployment)
+- [Contact](#-contact)
+
+---
+
+## 🎯 About This Portfolio
+
+This is a **premium, high-performance personal portfolio** built with the MERN Stack, featuring advanced animations, real-time data integration, and a clean, modern UI design. The portfolio showcases my journey as a Full-Stack Developer with expertise in Data Structures & Algorithms.
+
+### Why This Portfolio Stands Out:
+- **🎨 Premium UI/UX**: Glassmorphism design, smooth animations, and micro-interactions
+- **⚡ Performance-First**: Optimized build with lazy loading and efficient rendering
+- **📊 Real-Time Data**: Live LeetCode stats, GitHub activity, and dynamic content
+- **📱 Fully Responsive**: Seamless experience across all devices
+- **🔒 Secure Backend**: MongoDB integration for contact form with validation
+
+---
+
+## ✨ Key Features
+
+| Feature | Description |
+|---------|-------------|
+| **🌈 Morphing Blob Animation** | Dynamic 3D-style blob with orbiting rings in hero section |
+| **📍 Active Section Tracking** | Navbar highlights current scroll position |
+| **💬 Functional Contact Form** | MongoDB-backed form with validation and feedback |
+| **📈 Live LeetCode Stats** | Real-time problem count, difficulty breakdown, heatmap |
+| **🎯 Topic Distribution Chart** | Visual breakdown of solved problems by DSA topic |
+| **🕐 Vertical Timeline** | Animated education journey with alternating cards |
+| **🏆 Achievement Cards** | Highlighted accomplishments with colored icons |
+| **🔧 Tech Stack Marquee** | Auto-scrolling technology showcase |
+| **📜 Certifications Grid** | Professional certifications with credential links |
+| **🖼️ Project Showcases** | Detailed project cards with screenshots |
+
+---
+
+## 🚀 Featured Projects
+
+### 1️⃣ FAANG-Forge - Interview Preparation Platform
+
+> **Master Your Coding Interviews with Spaced Repetition**
+
+<table>
+<tr>
+<td width="60%">
+
+**🔗 Links:**
+| | |
+|---|---|
+| 🌐 **Live Demo** | [algo-flow-khaki.vercel.app](https://algo-flow-khaki.vercel.app/) |
+| 💻 **GitHub** | [iam-sarthakdev/FAANG-Forge](https://github.com/iam-sarthakdev/FAANG-Forge) |
+
+**💡 Key Features:**
+- Spaced Repetition Algorithm (Day 1→3→7→14→30→60→90)
+- 2,892+ problems from 20+ FAANG companies
+- 14+ DSA pattern auto-tagging
+- NeetCode 150, Striver A2Z, Love Babbar 450 sheets
+- Real-time analytics dashboard
+
+</td>
+<td width="40%">
+
+**🛠️ Tech Stack:**
+- React, Node.js, Express
+- MongoDB, JWT Auth
+- Tailwind CSS, Recharts
+
+</td>
+</tr>
+</table>
+
+---
+
+### 2️⃣ DevSync - Real-Time Collaborative Code Editor
+
+> **Collaboration, Synchronized. The Future of Pair Programming.**
+
+<table>
+<tr>
+<td width="60%">
+
+**🔗 Links:**
+| | |
+|---|---|
+| 🌐 **Live Demo** | [devsync-production-00b7.up.railway.app](https://devsync-production-00b7.up.railway.app/) |
+| 💻 **GitHub** | [iam-sarthakdev/DevSync](https://github.com/iam-sarthakdev/DevSync) |
+
+**💡 Key Features:**
+- Real-time code collaboration with live cursors
+- Monaco Editor (VS Code's engine)
+- Code execution for 40+ languages
+- Interactive whiteboard for sketching
+- Room-based private sessions
+
+</td>
+<td width="40%">
+
+**🛠️ Tech Stack:**
+- Next.js, TypeScript
+- Socket.IO, Monaco Editor
+- Piston API, Tailwind CSS
+
+</td>
+</tr>
+</table>
+
+---
+
+### 3️⃣ MockMate AI - AI-Powered Interview Simulator
+
+> **Master Your Interviews with Real-Time Voice AI**
+
+<table>
+<tr>
+<td width="60%">
+
+**🔗 Links:**
+| | |
+|---|---|
+| 🌐 **Live Demo** | [mockmateai-eight.vercel.app](https://mockmateai-eight.vercel.app/landingPage) |
+| 💻 **GitHub** | [iam-sarthakdev/MockMate-AI](https://github.com/iam-sarthakdev/MockMate-AI) |
+
+**💡 Key Features:**
+- VAPI Voice AI with sub-second latency
+- Behavioral, Technical, System Design modes
+- STAR method questioning
+- Live audio visualization
+- Confidence & score metrics
+
+</td>
+<td width="40%">
+
+**🛠️ Tech Stack:**
+- Next.js 14, TypeScript
+- VAPI AI, MongoDB
+- NextAuth.js, Framer Motion
+
+</td>
+</tr>
+</table>
+
+---
 
 ## 🛠️ Tech Stack
 
 ### **Frontend**
--   **React 19** - UI Library
--   **Vite** - Build Tool
--   **Framer Motion** - Advanced Animations
--   **tsparticles** - Particle Effects
--   **React Tilt** - 3D Tilt Effects
--   **Typed.js** - Typing Animations
--   **Lenis** - Smooth Scrolling
--   **React Icons** - Iconography
--   **Axios** - HTTP Requests
+| Technology | Purpose |
+|------------|---------|
+| React 19 | UI Library with Hooks |
+| Vite | Lightning-fast Build Tool |
+| Framer Motion | Advanced Animations |
+| tsparticles | Interactive Particle Effects |
+| Typed.js | Dynamic Typing Animation |
+| Lenis | Smooth Scroll Experience |
 
 ### **Backend**
--   **Node.js** - Runtime Environment
--   **Express.js** - Web Framework
--   **MongoDB & Mongoose** - Database & ODM
--   **Dotenv** - Environment Config
--   **CORS** - Cross-Origin Resource Sharing
+| Technology | Purpose |
+|------------|---------|
+| Node.js | JavaScript Runtime |
+| Express.js | Web Framework |
+| MongoDB + Mongoose | Database & ODM |
+| Vercel Serverless | API Functions |
 
 ### **Deployment**
--   **Vercel** - Frontend & Serverless Backend Hosting
+| Platform | Use |
+|----------|-----|
+| Vercel | Frontend + Serverless Backend |
+| MongoDB Atlas | Cloud Database |
 
 ---
 
-## ✨ Features
+## 📖 Portfolio Sections Deep-Dive
 
--   **Dynamic Animations:** Smooth entry animations and hover effects using Framer Motion.
--   **Interactive Particles:** Background particle effects for visual depth.
--   **Contact Form:** Functional contact form integrated with MongoDB.
--   **Responsive Design:** Fully optimized for all device sizes.
--   **Smooth Scrolling:** Enhanced scrolling experience with Lenis.
--   **GitHub Stats:** Real-time GitHub activity calendar.
+### 🏠 Hero Section
+The hero section features a **morphing blob animation** with orbiting rings, an availability badge, terminal-style typing animation, and prominent CTA buttons. Social links include LinkedIn, GitHub, and LeetCode.
+
+### 👤 About Section
+Showcases background, a scrolling tech marquee, "What I Do" cards (Full-Stack, DSA, System Design, UI/UX), achievements (500+ problems, SIH 2025, Walmart Global Tech), and a categorized skills grid.
+
+### 🎓 Education Section
+Features a **vertical timeline** with gradient colors (cyan → purple → green), alternating cards for each education entry, colored timeline dots, and highlight tags for subjects/skills.
+
+### 💼 Projects Section
+Each project has its own card with local screenshots, detailed descriptions from GitHub READMEs, expandable "Read More" sections, key features with icons, and tech stack badges.
+
+### 📊 LeetCode Stats Section
+Displays real-time stats via API, animated counters for total solved/streak/hard problems, difficulty breakdown with progress bars, topic distribution chart (10 DSA categories), and a GitHub-style contribution heatmap.
+
+### 📜 Certifications Section
+Grid of professional certifications including Walmart Global Tech, Wells Fargo, AWS Cloud Training, and Deloitte Data Analytics, each with a "View Credential" link.
+
+### 📬 Contact Section
+Two-column layout with contact info (email, LinkedIn, GitHub, location) and a functional form with labeled inputs, focus animations, status messages, and loading states.
 
 ---
 
@@ -73,13 +254,12 @@ npm run dev
 ```
 
 ### 3. Backend Setup
-Return to the root directory:
 ```bash
 cd ..
 npm install
 ```
 
-Create a `.env` file in the root directory:
+Create a `.env` file:
 ```env
 MONGO_URI=your_mongodb_connection_string
 PORT=3000
@@ -94,23 +274,35 @@ node server.js
 
 ## 🚀 Deployment
 
-This project is configured for seamless deployment on **Vercel**.
+This project is configured for **Vercel** deployment:
 
-1.  Push your code to GitHub.
-2.  Import the project in Vercel.
-3.  Set the **Framework Preset** to **"Other"**.
-4.  Add your `MONGO_URI` in the Environment Variables.
-5.  Deploy!
+1. Push code to GitHub
+2. Import project in Vercel
+3. Set Framework Preset to "Other"
+4. Add `MONGO_URI` in Environment Variables
+5. Deploy!
 
 ---
 
 ## 📬 Contact
 
-Feel free to reach out to me!
+<div align="center">
 
--   **LinkedIn:** [Sarthak Kanoi](https://www.linkedin.com/in/sarthak-kanoi-66380630b/)
--   **GitHub:** [iam-sarthakdev](https://github.com/iam-sarthakdev)
+| Platform | Link |
+|----------|------|
+| 📧 **Email** | sarthak1712005@gmail.com |
+| 💼 **LinkedIn** | [Sarthak Kanoi](https://www.linkedin.com/in/sarthak-kanoi-b49475362/) |
+| 🐙 **GitHub** | [iam-sarthakdev](https://github.com/iam-sarthakdev) |
+| 💻 **LeetCode** | [Sarthak_1712](https://leetcode.com/u/Sarthak_1712/) |
 
-⭐ If you like this project
+</div>
 
-Consider giving the repo a ⭐ — it helps a lot!
+---
+
+<div align="center">
+
+### ⭐ If you like this project, give it a star!
+
+Made with ❤️ by **Sarthak Kanoi**
+
+</div>
