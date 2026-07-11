@@ -13,10 +13,11 @@ const Hero = () => {
     React.useEffect(() => {
         const typed = new Typed(el.current, {
             strings: [
-                'Full Stack Developer',
-                'Problem Solver',
                 'DSA Enthusiast',
-                'Tech Builder'
+                'Full Stack Developer',
+                'Candidate Master @CF',
+                'Knight @LeetCode',
+                'Backend Engineer'
             ],
             typeSpeed: 60,
             backSpeed: 40,
@@ -42,17 +43,17 @@ const Hero = () => {
     };
 
     const socialLinks = [
-        { icon: FaLinkedinIn, href: "https://www.linkedin.com/in/sarthak-kanoi-b49475362/", name: "LinkedIn", color: "#0077b5" },
+        { icon: FaLinkedinIn, href: "https://www.linkedin.com/in/sarthak-kanoi/", name: "LinkedIn", color: "#0077b5" },
         { icon: FaGithub, href: "https://github.com/iam-sarthakdev", name: "GitHub", color: "#fff" },
         {
             icon: () => (
                 <svg viewBox="0 0 24 24" fill="currentColor" style={{ width: '22px', height: '22px' }}>
-                    <path d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.863l4.332-4.364c.467-.467 1.112-.662 1.824-.662s1.357.195 1.823.662l2.697 2.606c.514.515 1.365.515 1.879 0 .514-.514.514-1.365 0-1.879l-2.697-2.606c-1.474-1.474-3.578-2.286-5.83-2.286-2.253 0-4.357.812-5.83 2.286L3.439 10.596c-1.474 1.474-2.286 3.578-2.286 5.83 0 2.253.812 4.357 2.286 5.83l4.332 4.363c1.474 1.474 3.578 2.286 5.83 2.286 2.253 0 4.357-.812 5.83-2.286l2.697-2.607c.514-.515.514-1.364 0-1.879-.514-.514-1.365-.514-1.879 0z" />
+                    <path d="M4.5 7.5C5.328 7.5 6 8.172 6 9v10.5c0 .828-.672 1.5-1.5 1.5h-3C.672 21 0 20.328 0 19.5V9c0-.828.672-1.5 1.5-1.5h3zm9-4.5c.828 0 1.5.672 1.5 1.5v15c0 .828-.672 1.5-1.5 1.5h-3c-.828 0-1.5-.672-1.5-1.5v-15c0-.828.672-1.5 1.5-1.5h3zm9 7.5c.828 0 1.5.672 1.5 1.5v7.5c0 .828-.672 1.5-1.5 1.5h-3c-.828 0-1.5-.672-1.5-1.5V12c0-.828.672-1.5 1.5-1.5h3z" />
                 </svg>
             ),
-            href: "https://leetcode.com/u/Sarthak_1712/",
-            name: "LeetCode",
-            color: "#ffc01e"
+            href: "https://codeforces.com/profile/Sarthak1712",
+            name: "Codeforces",
+            color: "#1890ff"
         },
     ];
 
@@ -168,9 +169,8 @@ const Hero = () => {
                                 lineHeight: 1.7
                             }}
                         >
-                            Engineering student crafting <strong style={{ color: '#fff' }}>scalable web applications</strong> and
-                            solving <strong style={{ color: '#fff' }}>500+ DSA problems</strong>. Passionate about clean code,
-                            modern design, and building products people love.
+                            Software Engineer crafting <strong style={{ color: '#fff' }}>scalable web applications</strong> and
+                            solving <strong style={{ color: '#fff' }}>1000+ DSA problems</strong>. <strong style={{ color: '#fff' }}>Candidate Master</strong> on Codeforces (Peak: 1935) | <strong style={{ color: '#fff' }}>Knight</strong> on LeetCode (Top 6%). Specializing in High-Performance Backend Systems & Java.
                         </motion.p>
 
                         {/* CTA Buttons */}
@@ -190,7 +190,7 @@ const Hero = () => {
                             </motion.a>
 
                             <motion.a
-                                href="https://drive.google.com/file/d/1vTFlRU1KY7QS_W4Pcp0EYoF6rOq5Eufz/view?usp=sharing"
+                                href="https://drive.google.com/file/d/1AQNvzJUiQruPxeZVJdOz5kNjgqteAM6I/view?usp=drive_link"
                                 target="_blank"
                                 whileHover={{ scale: 1.05, background: 'rgba(255,255,255,0.1)' }}
                                 whileTap={{ scale: 0.95 }}

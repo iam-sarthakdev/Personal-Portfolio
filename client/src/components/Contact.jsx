@@ -49,8 +49,8 @@ const Contact = () => {
     };
 
     const contactInfo = [
-        { icon: FaEnvelope, label: "Email", value: "sarthak1712005@gmail.com", href: "mailto:sarthak1712005@gmail.com" },
-        { icon: FaLinkedinIn, label: "LinkedIn", value: "Connect with me", href: "https://www.linkedin.com/in/sarthak-kanoi-b49475362/" },
+        { icon: FaEnvelope, label: "Email", value: "work.sarthak17@gmail.com", href: "mailto:work.sarthak17@gmail.com" },
+        { icon: FaLinkedinIn, label: "LinkedIn", value: "Connect with me", href: "https://www.linkedin.com/in/sarthak-kanoi/" },
         { icon: FaGithub, label: "GitHub", value: "@iam-sarthakdev", href: "https://github.com/iam-sarthakdev" },
         { icon: FaMapMarkerAlt, label: "Location", value: "Delhi NCR, India", href: null }
     ];

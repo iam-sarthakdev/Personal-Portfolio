@@ -4,9 +4,9 @@ import { FaTrophy, FaCode, FaLaptopCode, FaMedal, FaRocket, FaBrain, FaServer, F
 
 const About = () => {
     const achievements = [
-        { icon: FaCode, title: "500+ Problems", description: "LeetCode & GFG", color: "#00f3ff" },
-        { icon: FaTrophy, title: "SIH 2025", description: "College Level Qualifier", color: "#ffc01e" },
-        { icon: FaLaptopCode, title: "Walmart Global Tech", description: "Advanced Software Sim", color: "#bc13fe" },
+        { icon: FaCode, title: "1000+ Problems", description: "LeetCode & Codeforces", color: "#00f3ff" },
+        { icon: FaTrophy, title: "SIH 2025", description: "Smart India Hackathon", color: "#ffc01e" },
+        { icon: FaLaptopCode, title: "Walmart Global Tech", description: "Engineering Simulation", color: "#bc13fe" },
         { icon: FaMedal, title: "3+ Full-Stack Apps", description: "Production Deployed", color: "#22c55e" }
     ];
 
@@ -18,11 +18,11 @@ const About = () => {
     ];
 
     const skillCategories = [
-        { title: "Languages", skills: ["Java", "JavaScript", "TypeScript", "Python"], color: "#00f3ff" },
+        { title: "Languages", skills: ["Java", "C", "C++", "JavaScript", "TypeScript", "Python"], color: "#00f3ff" },
         { title: "Frontend", skills: ["React.js", "Next.js", "Tailwind", "Framer Motion"], color: "#bc13fe" },
         { title: "Backend", skills: ["Node.js", "Express", "REST APIs", "WebSockets"], color: "#22c55e" },
-        { title: "Databases", skills: ["MongoDB", "MySQL", "Redis"], color: "#ffc01e" },
-        { title: "DevOps", skills: ["Git", "Vercel", "Railway", "Docker"], color: "#ff6b6b" },
+        { title: "Databases", skills: ["MongoDB", "MySQL", "Firebase"], color: "#ffc01e" },
+        { title: "DevOps", skills: ["Git", "GitHub", "Vercel", "Docker", "AWS"], color: "#ff6b6b" },
         { title: "Core CS", skills: ["DSA", "OOP", "DBMS", "OS", "LLD"], color: "#a855f7" }
     ];
 
@@ -53,10 +53,10 @@ const About = () => {
                     color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: 1.8
                 }}
             >
-                I'm a Computer Science student at <strong style={{ color: '#fff' }}>RKGIT</strong> with strong foundations
-                in Data Structures, Algorithms, and Full-Stack Development. I build scalable, user-focused applications
-                using modern technologies and have solved <span style={{ color: 'var(--primary-color)', fontWeight: 600 }}>500+ problems</span> on
-                LeetCode and GeeksforGeeks.
+                I'm a <strong style={{ color: '#fff' }}>Software Engineer</strong> and Computer Science student at <strong style={{ color: '#fff' }}>RKGIT</strong>,
+                specializing in High-Performance Backend Systems & Java. Ranked <span style={{ color: 'var(--primary-color)', fontWeight: 600 }}>Candidate Master</span> on
+                Codeforces (Peak Rating: 1935) and <span style={{ color: 'var(--primary-color)', fontWeight: 600 }}>Knight on LeetCode</span> (Top 6% Globally).
+                Passionate about building scalable backend systems and solving algorithmic problems with <span style={{ color: 'var(--primary-color)', fontWeight: 600 }}>1000+ problems solved</span>.
             </motion.p>
 
             {/* What I Do */}

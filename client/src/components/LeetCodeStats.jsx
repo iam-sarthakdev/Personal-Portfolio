@@ -11,26 +11,26 @@ const LeetCodeStats = () => {
     const [lastUpdated, setLastUpdated] = useState(null);
     const [usingFallback, setUsingFallback] = useState(false);
 
-    const username = "Sarthak_1712";
+    const username = "Sarthak_79";
     const CACHE_KEY = `leetcode_stats_${username}`;
     const CACHE_DURATION = 2 * 60 * 60 * 1000;
 
-    // Estimated topic distribution based on 500+ problems
+    // Topic distribution based on 1000+ problems
     const topicBreakdown = [
-        { name: "Arrays & Hashing", count: 95, color: "#00f3ff" },
-        { name: "Dynamic Programming", count: 75, color: "#bc13fe" },
-        { name: "Trees & Graphs", count: 70, color: "#22c55e" },
-        { name: "Two Pointers", count: 55, color: "#ffc01e" },
-        { name: "Binary Search", count: 50, color: "#ff6b6b" },
-        { name: "Sliding Window", count: 45, color: "#a855f7" },
-        { name: "Stack & Queue", count: 40, color: "#06b6d4" },
-        { name: "Linked List", count: 35, color: "#f97316" },
-        { name: "Backtracking", count: 25, color: "#ec4899" },
-        { name: "Others", count: 10, color: "#6b7280" }
+        { name: "Arrays & Hashing", count: 190, color: "#00f3ff" },
+        { name: "Dynamic Programming", count: 150, color: "#bc13fe" },
+        { name: "Trees & Graphs", count: 140, color: "#22c55e" },
+        { name: "Two Pointers", count: 110, color: "#ffc01e" },
+        { name: "Binary Search", count: 100, color: "#ff6b6b" },
+        { name: "Sliding Window", count: 90, color: "#a855f7" },
+        { name: "Stack & Queue", count: 80, color: "#06b6d4" },
+        { name: "Linked List", count: 70, color: "#f97316" },
+        { name: "Backtracking", count: 50, color: "#ec4899" },
+        { name: "Others", count: 20, color: "#6b7280" }
     ];
 
     const STATIC_FALLBACK = {
-        stats: { solvedProblem: 500, easySolved: 180, mediumSolved: 250, hardSolved: 70 },
+        stats: { solvedProblem: 1000, easySolved: 380, mediumSolved: 500, hardSolved: 120 },
         calendar: {},
         isStatic: true
     };
@@ -202,7 +202,7 @@ const LeetCodeStats = () => {
                     LeetCode <span className="gradient-text">Journey</span>
                 </h2>
                 <p style={{ color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto' }}>
-                    500+ problems solved, mastering Data Structures & Algorithms through consistent practice
+                    1000+ problems solved, mastering Data Structures & Algorithms through consistent practice
                 </p>
             </motion.div>
 

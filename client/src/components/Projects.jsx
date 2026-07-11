@@ -13,23 +13,22 @@ const Projects = () => {
     const projects = [
         {
             title: "FAANG-Forge",
-            tagline: "Master Your Coding Interviews",
-            description: "An intelligent DSA interview preparation platform with spaced repetition, pattern recognition, and company-specific practice for 20+ top-tier companies.",
-            fullDescription: `FAANG Forge transforms how developers prepare for technical interviews through scientifically-proven learning techniques:
+            tagline: "Interview Preparation Platform",
+            description: "An algorithmic interview prep platform focused on a pattern-driven, terminal-based approach to DSA practice using AI, GraphQL, and pipeline architecture.",
+            fullDescription: `FAANG-Forge transforms how developers prepare for technical interviews through scientifically-proven learning techniques:
 
-• **Spaced Repetition Algorithm** - Based on the Ebbinghaus Forgetting Curve, scheduling optimal review times (Day 1 → 3 → 7 → 14 → 30 → 60 → 90)
-• **Pattern Recognition** - Automatic tagging of 14+ DSA patterns (Two Pointers, Sliding Window, DP, etc.)
+• **Algorithmic Dynamic Retrieval** - Implemented a pattern-driven spaced repetition algorithm to calculate dynamic problem-word workflows for AI-explained solutions
+• **ETL Pipeline Architecture** - Integrated a robust pipeline utilizing GraphQL API to parse and structure 2,700+ company-tagged problems
+• **Spaced Repetition** - Based on the Ebbinghaus Forgetting Curve, scheduling optimal review times (Day 1 → 3 → 7 → 14 → 30 → 60 → 90)
 • **Company Database** - 2,892+ problems from Google, Amazon, Meta, Apple, Microsoft & 15+ more companies
-• **Curated Sheets** - NeetCode 150, Striver A2Z (455+ problems), Love Babbar 450, and custom lists
-• **CS Fundamentals** - Complete coverage of OS, DBMS, Networks for interview prep
-• **System Design** - HLD/LLD modules with real-world case studies`,
+• **CS Fundamentals** - Complete coverage of OS, DBMS, Networks for interview prep`,
             keyFeatures: [
                 { icon: FaBrain, text: "Spaced Repetition" },
                 { icon: FaChartLine, text: "Smart Analytics" },
                 { icon: FaCogs, text: "14+ DSA Patterns" },
-                { icon: FaRocket, text: "2,892+ Problems" }
+                { icon: FaRocket, text: "2,700+ Problems" }
             ],
-            tools: ["React", "Node.js", "Express", "MongoDB", "JWT", "Tailwind", "Recharts"],
+            tools: ["React", "Node.js", "GraphQL", "MongoDB", "JWT Auth"],
             liveLink: "https://algo-flow-khaki.vercel.app/",
             github: "https://github.com/iam-sarthakdev/FAANG-Forge",
             image: faangForgeImg,
@@ -39,24 +38,22 @@ const Projects = () => {
         },
         {
             title: "DevSync",
-            tagline: "Collaboration, Synchronized.",
-            description: "Real-time collaborative code editor with Monaco Editor integration, live cursor tracking, and instant code execution for 40+ programming languages.",
+            tagline: "Real-Time Collaborative IDE",
+            description: "A multi-room collaborative IDE built with event-driven Socket-based state sync for real-time code sharing, live communication, and isolated code execution.",
             fullDescription: `DevSync brings the power of VS Code to the browser with seamless real-time collaboration:
 
+• **State Concurrency** - Architected a multi-room code editor with event-driven state synchronization using Sockets for concurrent workflows
+• **Sandbox Execution** - Integrated isolated Judge0 API instances to sandbox and securely compile runtime environments across 40+ languages
 • **Real-time Collaboration** - Multiple developers editing simultaneously with live cursor positions
 • **Monaco Editor** - The same editor that powers VS Code, with full syntax highlighting
-• **Instant Execution** - Run code directly in the browser (JavaScript, Python, Java, C++, and 36+ more)
-• **Interactive Whiteboard** - Visual collaboration space for sketching ideas and system designs
-• **Room-based System** - Create private rooms with unique sharable links
-• **File Management** - Organize projects with folders, multiple files, and auto-save
-• **Theme Customization** - VS Dark, VS Light, High Contrast, and more`,
+• **Room-based System** - Create private rooms with unique sharable links`,
             keyFeatures: [
                 { icon: FaUsers, text: "Live Cursors" },
                 { icon: FaCode, text: "Monaco Editor" },
                 { icon: FaRocket, text: "40+ Languages" },
-                { icon: FaCogs, text: "Whiteboard" }
+                { icon: FaCogs, text: "Judge0 Sandbox" }
             ],
-            tools: ["Next.js", "TypeScript", "Socket.IO", "Monaco Editor", "Piston API", "Tailwind"],
+            tools: ["React", "Socket.IO", "Monaco Editor", "Express", "Code Execution", "Judge0"],
             liveLink: "https://devsync-production-00b7.up.railway.app/",
             github: "https://github.com/iam-sarthakdev/DevSync",
             image: devSyncImg,
@@ -66,23 +63,22 @@ const Projects = () => {
         },
         {
             title: "MockMate AI",
-            tagline: "Master Your Interviews with AI",
-            description: "AI-powered interview simulation with real-time voice interaction, adaptive questioning, and comprehensive feedback across behavioral, technical, and system design domains.",
+            tagline: "AI Voice Interview Coach",
+            description: "An AI-powered voice interview coach with ultra-low latency bi-directional audio streaming. Features secure OAuth/session persistence and user mobility tracking via MediaPipe.",
             fullDescription: `MockMate AI provides a voice-first interview experience powered by cutting-edge AI:
 
-• **VAPI Voice AI** - Sub-second latency for natural, conversational interviews
+• **Low-Latency Sync** - Developed a real-time, bi-directional audio streaming architecture using raw WebCodecs for seamless vocal data exchange
+• **Multi-Verification** - Implemented secure OAuth/session persistence and fixed motion tracking via MediaPipe
 • **Multiple Modes** - Behavioral (STAR method), Technical (DSA, tech stacks), System Design (architecture)
 • **Adaptive Difficulty** - Junior/Mid/Senior levels with dynamic question selection
-• **Live Audio Visualization** - Real-time frequency analysis during conversation
-• **Structured Feedback** - Detailed scoring with confidence/score metrics
-• **Premium UI/UX** - 60fps animations, glassmorphism, 3D tilt effects`,
+• **Structured Feedback** - Detailed scoring with confidence/score metrics`,
             keyFeatures: [
                 { icon: FaMicrophone, text: "Voice AI" },
                 { icon: FaBrain, text: "STAR Method" },
                 { icon: FaChartLine, text: "Live Feedback" },
                 { icon: FaRocket, text: "3 Interview Modes" }
             ],
-            tools: ["Next.js 14", "TypeScript", "VAPI AI", "MongoDB", "NextAuth.js", "Framer Motion"],
+            tools: ["Next.js", "WebSockets", "Kubernetes", "LLM API", "TranscriptionAPI"],
             liveLink: "https://mockmateai-eight.vercel.app/landingPage",
             github: "https://github.com/iam-sarthakdev/MockMate-AI",
             image: mockMateImg,
