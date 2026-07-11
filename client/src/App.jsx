@@ -15,6 +15,7 @@ import './index.css';
 import TechMarquee from './components/TechMarquee';
 import Services from './components/Services';
 import LeetCodeStats from './components/LeetCodeStats';
+import CodeforcesStats from './components/CodeforcesStats';
 
 function App() {
 
@@ -54,6 +55,7 @@ function App() {
       <Certifications />
       <Projects />
       <LeetCodeStats />
+      <CodeforcesStats />
       <Contact />
       <Footer />
     </div>

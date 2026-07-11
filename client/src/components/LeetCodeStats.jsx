@@ -30,7 +30,7 @@ const LeetCodeStats = () => {
     ];
 
     const STATIC_FALLBACK = {
-        stats: { solvedProblem: 1000, easySolved: 380, mediumSolved: 500, hardSolved: 120 },
+        stats: { solvedProblem: 1500, easySolved: 480, mediumSolved: 800, hardSolved: 220 },
         calendar: {},
         isStatic: true
     };
@@ -202,11 +202,40 @@ const LeetCodeStats = () => {
                     LeetCode <span className="gradient-text">Journey</span>
                 </h2>
                 <p style={{ color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto' }}>
-                    1000+ problems solved, mastering Data Structures & Algorithms through consistent practice
+                    1500+ problems solved, mastering Data Structures & Algorithms through consistent practice
                 </p>
             </motion.div>
 
             <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+                {/* Community Stats */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                        gap: '1.5rem',
+                        marginBottom: '3rem'
+                    }}
+                >
+                    <div className="glass-card" style={{ padding: '1.5rem', borderRadius: '16px', textAlign: 'center', border: '1px solid rgba(188, 19, 254, 0.2)' }}>
+                        <div style={{ fontSize: '0.85rem', color: '#888', marginBottom: '0.5rem' }}>Views</div>
+                        <div style={{ fontSize: '2rem', fontWeight: 700, color: '#fff' }}>50k+</div>
+                    </div>
+                    <div className="glass-card" style={{ padding: '1.5rem', borderRadius: '16px', textAlign: 'center', border: '1px solid rgba(0, 243, 255, 0.2)' }}>
+                        <div style={{ fontSize: '0.85rem', color: '#888', marginBottom: '0.5rem' }}>Solutions</div>
+                        <div style={{ fontSize: '2rem', fontWeight: 700, color: '#fff' }}>600+</div>
+                    </div>
+                    <div className="glass-card" style={{ padding: '1.5rem', borderRadius: '16px', textAlign: 'center', border: '1px solid rgba(34, 197, 94, 0.2)' }}>
+                        <div style={{ fontSize: '0.85rem', color: '#888', marginBottom: '0.5rem' }}>Discuss</div>
+                        <div style={{ fontSize: '2rem', fontWeight: 700, color: '#fff' }}>25+</div>
+                    </div>
+                    <div className="glass-card" style={{ padding: '1.5rem', borderRadius: '16px', textAlign: 'center', border: '1px solid rgba(255, 192, 30, 0.2)' }}>
+                        <div style={{ fontSize: '0.85rem', color: '#888', marginBottom: '0.5rem' }}>Reputation</div>
+                        <div style={{ fontSize: '2rem', fontWeight: 700, color: '#fff' }}>1.5k+</div>
+                    </div>
+                </motion.div>
                 {loading ? (
                     <div style={{ textAlign: 'center', padding: '4rem' }}>
                         <motion.div

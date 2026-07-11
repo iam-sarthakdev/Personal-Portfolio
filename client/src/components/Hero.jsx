@@ -13,11 +13,9 @@ const Hero = () => {
     React.useEffect(() => {
         const typed = new Typed(el.current, {
             strings: [
-                'DSA Enthusiast',
-                'Full Stack Developer',
+                'Software Engineer',
                 'Candidate Master @CF',
-                'Knight @LeetCode',
-                'Backend Engineer'
+                'Knight @LeetCode'
             ],
             typeSpeed: 60,
             backSpeed: 40,
@@ -169,8 +167,7 @@ const Hero = () => {
                                 lineHeight: 1.7
                             }}
                         >
-                            Software Engineer crafting <strong style={{ color: '#fff' }}>scalable web applications</strong> and
-                            solving <strong style={{ color: '#fff' }}>1000+ DSA problems</strong>. <strong style={{ color: '#fff' }}>Candidate Master</strong> on Codeforces (Peak: 1935) | <strong style={{ color: '#fff' }}>Knight</strong> on LeetCode (Top 6%). Specializing in High-Performance Backend Systems & Java.
+                            Software Engineer | Candidate Master @Codeforces | Knight @LeetCode | 1500+ DSA
                         </motion.p>
 
                         {/* CTA Buttons */}

@@ -4,10 +4,10 @@ import { FaTrophy, FaCode, FaLaptopCode, FaMedal, FaRocket, FaBrain, FaServer, F
 
 const About = () => {
     const achievements = [
-        { icon: FaCode, title: "1000+ Problems", description: "LeetCode & Codeforces", color: "#00f3ff" },
-        { icon: FaTrophy, title: "SIH 2025", description: "Smart India Hackathon", color: "#ffc01e" },
-        { icon: FaLaptopCode, title: "Walmart Global Tech", description: "Engineering Simulation", color: "#bc13fe" },
-        { icon: FaMedal, title: "3+ Full-Stack Apps", description: "Production Deployed", color: "#22c55e" }
+        { icon: FaCode, title: "1500+ Problems", description: "LeetCode & Codeforces", color: "#00f3ff" },
+        { icon: FaTrophy, title: "Candidate Master", description: "Codeforces (Peak: 1935)", color: "#bc13fe" },
+        { icon: FaMedal, title: "Knight", description: "LeetCode (Top 6%)", color: "#ffc01e" },
+        { icon: FaRocket, title: "3+ Full-Stack Apps", description: "Production Deployed", color: "#22c55e" }
     ];
 
     const whatIDo = [
@@ -56,7 +56,7 @@ const About = () => {
                 I'm a <strong style={{ color: '#fff' }}>Software Engineer</strong> and Computer Science student at <strong style={{ color: '#fff' }}>RKGIT</strong>,
                 specializing in High-Performance Backend Systems & Java. Ranked <span style={{ color: 'var(--primary-color)', fontWeight: 600 }}>Candidate Master</span> on
                 Codeforces (Peak Rating: 1935) and <span style={{ color: 'var(--primary-color)', fontWeight: 600 }}>Knight on LeetCode</span> (Top 6% Globally).
-                Passionate about building scalable backend systems and solving algorithmic problems with <span style={{ color: 'var(--primary-color)', fontWeight: 600 }}>1000+ problems solved</span>.
+                Passionate about building scalable backend systems and solving algorithmic problems with <span style={{ color: 'var(--primary-color)', fontWeight: 600 }}>1500+ problems solved</span>.
             </motion.p>
 
             {/* What I Do */}
