@@ -4,10 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sarthak Kanoi | Full Stack Developer</title>
+    <title>Sarthak Kanoi | Software Engineer</title>
+    <meta name="description" content="Sarthak Kanoi - Software Engineer | Candidate Master @Codeforces (Peak: 1925) | Knight @LeetCode (Top 6%) | Specializing in High-Performance Backend Systems & Java">
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <!-- Placeholder for icons, relying on CDN or similar -->
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap"
         rel="stylesheet">
@@ -27,6 +26,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#leetcode">LeetCode</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -39,84 +39,161 @@
 
     <section id="home" class="hero hidden">
         <div class="hero-content">
-            <h3 class="greeting">Hello, I'm</h3>
-            <h1 class="name">Sarthak Kanoi</h1>
-            <h2 class="role">And I'm a <span class="multiple-text"></span></h2>
-            <p class="tagline">Building scalable, user-focused applications with modern technologies.</p>
+            <div class="status-badge">
+                <span class="status-dot"></span> Available for opportunities
+            </div>
+            <h1 class="hero-heading">Hey, I'm<br><span class="name">Sarthak</span></h1>
+            <h2 class="role">&gt; <span class="multiple-text"></span><span class="cursor-blink">_</span></h2>
+            <p class="tagline">Engineering student crafting <strong>scalable web applications</strong> and solving
+                <strong>500+ DSA problems</strong>. Passionate about clean code, modern design, and building products
+                people love.
+            </p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn primary pulse-btn">Hire Me</a>
-                <a href="Sarthak_Resume.pdf" class="btn secondary" id="resume-btn" download>Download Resume</a>
+                <a href="#contact" class="btn primary pulse-btn">Let's Connect</a>
+                <a href="https://drive.google.com/file/d/1AQNvzJUiQruPxeZVJdOz5kNjgqteAM6I/view?usp=drive_link"
+                    class="btn secondary" id="resume-btn" target="_blank">
+                    <i class="fas fa-download"></i> Resume
+                </a>
             </div>
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/sarthak-kanoi-b49475362/" target="_blank"
+                <a href="https://www.linkedin.com/in/sarthak-kanoi/" target="_blank"
                     data-tooltip="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://github.com/iam-sarthakdev" target="_blank" data-tooltip="GitHub"><i
                         class="fab fa-github"></i></a>
-                <a href="https://leetcode.com/u/Sarthak_1712/" target="_blank" data-tooltip="LeetCode"
-                    class="leetcode-icon">
+                <a href="https://codeforces.com/profile/Sarthak1712" target="_blank" data-tooltip="Codeforces"
+                    class="codeforces-icon">
                     <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                        style="width: 20px; height: 20px;">
+                        style="width: 18px; height: 18px;">
                         <path
-                            d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.863l4.332-4.364c.467-.467 1.112-.662 1.824-.662s1.357.195 1.823.662l2.697 2.606c.514.515 1.365.515 1.879 0 .514-.514.514-1.365 0-1.879l-2.697-2.606c-1.474-1.474-3.578-2.286-5.83-2.286-2.253 0-4.357.812-5.83 2.286L3.439 10.596c-1.474 1.474-2.286 3.578-2.286 5.83 0 2.253.812 4.357 2.286 5.83l4.332 4.363c1.474 1.474 3.578 2.286 5.83 2.286 2.253 0 4.357-.812 5.83-2.286l2.697-2.607c.514-.515.514-1.364 0-1.879-.514-.514-1.365-.514-1.879 0z">
-                        </path>
+                            d="M4.5 7.5C5.328 7.5 6 8.172 6 9v10.5c0 .828-.672 1.5-1.5 1.5h-3C.672 21 0 20.328 0 19.5V9c0-.828.672-1.5 1.5-1.5h3zm9-4.5c.828 0 1.5.672 1.5 1.5v15c0 .828-.672 1.5-1.5 1.5h-3c-.828 0-1.5-.672-1.5-1.5v-15c0-.828.672-1.5 1.5-1.5h3zm9 7.5c.828 0 1.5.672 1.5 1.5v7.5c0 .828-.672 1.5-1.5 1.5h-3c-.828 0-1.5-.672-1.5-1.5V12c0-.828.672-1.5 1.5-1.5h3z" />
                     </svg>
                 </a>
             </div>
-            <div class="resume-wrapper"></div>
         </div>
         <div class="hero-image">
             <div class="img-box">
-                <!-- Placeholder for user image if they want to add one later -->
                 <i class="fa-solid fa-code"></i>
             </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>SCROLL</span>
+            <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
     <section id="about" class="about hidden">
-        <h2 class="section-title">About Me</h2>
+        <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
         <div class="about-container">
             <div class="about-text">
                 <p>
-                    I am a Computer Science and Engineering student at <strong>Raj Kumar Goel Institute of Technology
-                        (RKGIT), Ghaziabad</strong>,
-                    with strong foundations in Data Structures and Algorithms and hands-on experience in full-stack web
-                    development.
-                    I enjoy building scalable, user-focused applications using modern technologies.
+                    I am a <strong>Software Engineer</strong> and Computer Science student at <strong>Raj Kumar Goel
+                        Institute of Technology (RKGIT), Ghaziabad</strong>, specializing in
+                    <strong>High-Performance Backend Systems & Java</strong>. Currently pursuing B.Tech in Advanced Data
+                    Structures & Core Software Engineering.
                 </p>
                 <p>
-                    I have solved <span class="highlight">500+ problems on LeetCode</span>, which has strengthened my
-                    problem-solving skills
-                    and ability to write efficient, maintainable code. I am a continuous learner and am actively seeking
-                    opportunities
-                    to contribute to real-world projects and grow as an engineer.
+                    Ranked <span class="highlight">Candidate Master</span> on Codeforces (Peak Rating: 1925) and
+                    <span class="highlight">Knight on LeetCode</span> (Top 6% Globally). I'm passionate about building
+                    scalable backend systems and solving algorithmic problems.
                 </p>
 
+                <!-- What I Do Cards -->
+                <div class="what-i-do">
+                    <h3 class="subsection-title">What I <span class="gradient-text">Do</span></h3>
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <i class="fas fa-laptop-code"></i>
+                            <h4>Full-Stack Development</h4>
+                            <p>Building responsive, interactive, and scalable web apps using React, Node.js, MongoDB,
+                                and modern frameworks.</p>
+                        </div>
+                        <div class="service-card">
+                            <i class="fas fa-brain"></i>
+                            <h4>DSA & Problem Solving</h4>
+                            <p>Solving competitive programming problems with optimized data structures and algorithms.
+                            </p>
+                        </div>
+                        <div class="service-card">
+                            <i class="fas fa-sitemap"></i>
+                            <h4>System Design</h4>
+                            <p>Designing distributed system architectures with real-time communication and scalability.
+                            </p>
+                        </div>
+                        <div class="service-card">
+                            <i class="fas fa-paint-brush"></i>
+                            <h4>Modern UI/UX</h4>
+                            <p>Crafting premium, animated interfaces with glassmorphism, dark themes, and dynamic
+                                interactions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievements -->
+                <div class="achievements-section">
+                    <h3 class="subsection-title">Achievements & <span class="gradient-text">Recognition</span></h3>
+                    <div class="achievements-grid">
+                        <div class="achievement-card">
+                            <i class="fas fa-code"></i>
+                            <h4>500+ Problems</h4>
+                            <p>LeetCode & Codeforces</p>
+                        </div>
+                        <div class="achievement-card">
+                            <i class="fas fa-trophy"></i>
+                            <h4>SIH 2025</h4>
+                            <p>Smart India Hackathon</p>
+                        </div>
+                        <div class="achievement-card">
+                            <i class="fas fa-building"></i>
+                            <h4>Walmart Global</h4>
+                            <p>Engineering Simulation</p>
+                        </div>
+                        <div class="achievement-card">
+                            <i class="fas fa-rocket"></i>
+                            <h4>3+ Full-Stack Apps</h4>
+                            <p>Production Deployed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Skills -->
                 <div class="skills-section">
-                    <h3>Skills</h3>
+                    <h3 class="subsection-title">Technical <span class="gradient-text">Skills</span></h3>
                     <div class="skills-grid">
                         <div class="skill-category">
                             <h4>Languages</h4>
-                            <p>Java, JavaScript (ES6+), TypeScript, Python</p>
+                            <div class="skill-tags">
+                                <span>Java</span><span>JavaScript</span><span>TypeScript</span><span>Python</span><span>C++</span>
+                            </div>
                         </div>
                         <div class="skill-category">
                             <h4>Frontend</h4>
-                            <p>React.js, Next.js, Tailwind CSS, HTML, CSS</p>
+                            <div class="skill-tags">
+                                <span>React.js</span><span>Next.js</span><span>Tailwind CSS</span><span>HTML5</span><span>CSS3</span>
+                            </div>
                         </div>
                         <div class="skill-category">
                             <h4>Backend</h4>
-                            <p>Node.js, Express.js, REST APIs, Auth</p>
+                            <div class="skill-tags">
+                                <span>Node.js</span><span>Express.js</span><span>REST APIs</span><span>WebSockets</span>
+                            </div>
                         </div>
                         <div class="skill-category">
                             <h4>Databases</h4>
-                            <p>MongoDB, MySQL</p>
+                            <div class="skill-tags">
+                                <span>MongoDB</span><span>MySQL</span><span>Firebase</span>
+                            </div>
                         </div>
                         <div class="skill-category">
-                            <h4>DevOps & Tools</h4>
-                            <p>Git, GitHub, Docker (Basics), Postman</p>
+                            <h4>DevOps</h4>
+                            <div class="skill-tags">
+                                <span>Git</span><span>Docker</span><span>AWS</span><span>Vercel</span><span>Postman</span>
+                            </div>
                         </div>
                         <div class="skill-category">
-                            <h4>Core Concepts</h4>
-                            <p>DSA, OOP, DBMS, OS, LLD</p>
+                            <h4>Core CS</h4>
+                            <div class="skill-tags">
+                                <span>DSA</span><span>OOP</span><span>DBMS</span><span>OS</span><span>LLD</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -125,145 +202,321 @@
     </section>
 
     <section id="education" class="education hidden">
-        <h2 class="section-title">Education</h2>
+        <h2 class="section-title">My <span class="gradient-text">Education</span></h2>
+        <p class="section-subtitle">A academic journey that shaped my technical foundation.</p>
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <h3>B.Tech in Computer Science and Engineering</h3>
-                    <span class="institution">Raj Kumar Goel Institute of Technology (RKGIT), Ghaziabad</span>
-                    <span class="date">2023 – 2027</span>
-                    <p class="gpa">CGPA: 8.50</p>
+                    <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>B.Tech in Computer Science & Engineering</h3>
+                    <span class="institution">Raj Kumar Goel Institute of Technology (RKGIT)</span>
+                    <div class="edu-meta">
+                        <span class="date">2023 – 2027</span>
+                        <span class="gpa-badge">CGPA: 8.50</span>
+                    </div>
+                    <div class="edu-tags">
+                        <span>Data Structures & Algorithms</span><span>System Design</span>
+                    </div>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <h3>Senior Secondary Education (Class XII)</h3>
+                    <div class="edu-icon"><i class="fas fa-school"></i></div>
+                    <h3>Senior Secondary (Class XII)</h3>
                     <span class="institution">RPM Academy</span>
-                    <span class="date">2021 – 2022</span>
-                    <p class="gpa">Percentage: 87%</p>
+                    <div class="edu-meta">
+                        <span class="date">2021 – 2022</span>
+                        <span class="gpa-badge">87%</span>
+                    </div>
+                    <div class="edu-tags">
+                        <span>Physics, Chemistry & Mathematics</span><span>Computer Science</span>
+                    </div>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-content">
+                    <div class="edu-icon"><i class="fas fa-book"></i></div>
                     <h3>Secondary Education (Class X)</h3>
                     <span class="institution">RPM Academy</span>
-                    <span class="date">2019 – 2020</span>
-                    <p class="gpa">Percentage: 89%</p>
+                    <div class="edu-meta">
+                        <span class="date">2019 – 2020</span>
+                        <span class="gpa-badge">89%</span>
+                    </div>
+                    <div class="edu-tags">
+                        <span>Science & Mathematics</span><span>Computer Applications</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="certifications" class="certifications hidden">
-        <h2 class="section-title">Certifications</h2>
+        <h2 class="section-title"><span class="gradient-text">Cert</span>ifications</h2>
         <div class="cert-grid">
             <div class="cert-card">
                 <h3>Walmart Global Tech</h3>
                 <h4>Advanced Software Engineering Job Simulation</h4>
                 <p>Worked on advanced data structures, software architecture, and relational DB design tasks.</p>
+                <a href="#" class="cert-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Credential</a>
             </div>
             <div class="cert-card">
                 <h3>Wells Fargo</h3>
                 <h4>Software Engineering Job Simulation</h4>
                 <p>Built and implemented data models and software solutions aligned with real-world engineering
                     workflows.</p>
+                <a href="#" class="cert-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Credential</a>
             </div>
             <div class="cert-card">
                 <h3>AWS Cloud Training</h3>
                 <h4>DevOps on AWS & AWS CLI Basics</h4>
                 <p>Gained hands-on experience with cloud workflows and DevOps fundamentals.</p>
+                <a href="#" class="cert-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Credential</a>
             </div>
             <div class="cert-card">
                 <h3>Deloitte</h3>
                 <h4>Data Analytics Job Simulation</h4>
                 <p>Performed data analytics & forensic investigation tasks using industry-standard techniques.</p>
+                <a href="#" class="cert-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Credential</a>
             </div>
         </div>
     </section>
 
     <section id="projects" class="projects hidden">
-        <h2 class="section-title">My Projects</h2>
+        <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+        <p class="section-subtitle">Full-stack applications built with modern technologies, focused on solving real
+            problems and clean architecture.</p>
         <div class="projects-grid">
-            <!-- Placeholders for projects -->
-            <div class="project-card">
-                <div class="project-img placeholder-img"></div>
+            <!-- FAANG-Forge -->
+            <div class="project-card featured">
+                <div class="project-header">
+                    <span class="project-badge">FEATURED PROJECT</span>
+                    <div class="project-links">
+                        <a href="https://faang-forge-eight.vercel.app/" target="_blank" class="project-link-icon"
+                            data-tooltip="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/iam-sarthakdev/FAANG-Forge" target="_blank"
+                            class="project-link-icon" data-tooltip="Source Code"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
                 <div class="project-info">
-                    <h3>Portfolio Website</h3>
-                    <p>A personal portfolio website featuring a dark theme, responsive design, and interactive
-                        animations.</p>
+                    <h3>FAANG-Forge</h3>
+                    <p class="project-subtitle">Master Your Coding Interviews</p>
+                    <p class="project-desc">An algorithmic interview prep platform focused on a pattern-driven, terminal-based
+                        approach to DSA practice. Features a spaced repetition algorithm for dynamic problem-word
+                        workflows and an ETL pipeline utilizing GraphQL API to parse 2,700+ company-tagged problems.</p>
                     <div class="project-tools">
-                        <span>HTML</span><span>CSS</span><span>JS</span>
+                        <span>React</span><span>Node.js</span><span>GraphQL</span><span>MongoDB</span><span>JWT Auth</span>
                     </div>
                 </div>
             </div>
-            <div class="project-card">
-                <div class="project-img placeholder-img"></div>
+            <!-- MockMate AI -->
+            <div class="project-card featured">
+                <div class="project-header">
+                    <span class="project-badge">FEATURED PROJECT</span>
+                    <div class="project-links">
+                        <a href="https://mockmate-ai.vercel.app/" target="_blank" class="project-link-icon"
+                            data-tooltip="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/iam-sarthakdev/MockMate-AI" target="_blank"
+                            class="project-link-icon" data-tooltip="Source Code"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
                 <div class="project-info">
-                    <h3>Tic Tac Toe</h3>
-                    <p>Interactive game with modern UI.</p>
+                    <h3>MockMate AI</h3>
+                    <p class="project-subtitle">AI Voice Interview Coach</p>
+                    <p class="project-desc">An AI-powered voice interview coach with ultra-low latency bi-directional
+                        audio streaming using raw WebCodecs. Features secure OAuth/session persistence and user
+                        mobility tracking via MediaPipe for real-time interview practice.</p>
                     <div class="project-tools">
-                        <span>HTML</span><span>CSS</span><span>JS</span>
+                        <span>Next.js</span><span>WebSockets</span><span>Kubernetes</span><span>LLM API</span>
                     </div>
                 </div>
             </div>
-            <div class="project-card">
-                <div class="project-img placeholder-img"></div>
-                <div class="project-info">
-                    <h3>Project Placeholder</h3>
-                    <p>More amazing projects coming soon.</p>
-                    <div class="project-tools">
-                        <span>React</span><span>Node</span>
+            <!-- DevSync -->
+            <div class="project-card featured">
+                <div class="project-header">
+                    <span class="project-badge">FEATURED PROJECT</span>
+                    <div class="project-links">
+                        <a href="https://devsync-ide.vercel.app/" target="_blank" class="project-link-icon"
+                            data-tooltip="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/iam-sarthakdev/DevSync" target="_blank"
+                            class="project-link-icon" data-tooltip="Source Code"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
+                <div class="project-info">
+                    <h3>DevSync</h3>
+                    <p class="project-subtitle">Real-Time Collaborative IDE</p>
+                    <p class="project-desc">A multi-room collaborative IDE built with event-driven Socket-based state
+                        sync for real-time code sharing. Integrated isolated Judge0 API instances to sandbox and
+                        securely compile runtime environments across 40+ languages.</p>
+                    <div class="project-tools">
+                        <span>React</span><span>Socket.io</span><span>Monaco</span><span>Express</span><span>Judge0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="leetcode" class="leetcode-section hidden">
+        <h2 class="section-title">LeetCode & <span class="gradient-text">Competitive Programming</span></h2>
+        <div class="cp-stats-container">
+            <!-- LeetCode Stats -->
+            <div class="cp-card leetcode-card">
+                <div class="cp-card-header">
+                    <h3><i class="fas fa-code"></i> LeetCode Stats</h3>
+                    <span class="cp-badge knight">Knight</span>
+                </div>
+                <div class="cp-stats-grid">
+                    <div class="cp-stat">
+                        <span class="cp-stat-number" data-count="874">0</span>
+                        <span class="cp-stat-label">Rating</span>
+                    </div>
+                    <div class="cp-stat">
+                        <span class="cp-stat-number" data-count="500">0</span>
+                        <span class="cp-stat-label">Problems Solved</span>
+                    </div>
+                    <div class="cp-stat">
+                        <span class="cp-stat-number">Top 6%</span>
+                        <span class="cp-stat-label">Global Rank</span>
+                    </div>
+                </div>
+                <div class="difficulty-bars">
+                    <div class="diff-bar">
+                        <span class="diff-label easy">Easy</span>
+                        <div class="diff-progress"><div class="diff-fill" style="width: 85%; background: #00b8a3;"></div></div>
+                        <span class="diff-count">276</span>
+                    </div>
+                    <div class="diff-bar">
+                        <span class="diff-label medium">Medium</span>
+                        <div class="diff-progress"><div class="diff-fill" style="width: 60%; background: #ffc01e;"></div></div>
+                        <span class="diff-count">404</span>
+                    </div>
+                    <div class="diff-bar">
+                        <span class="diff-label hard">Hard</span>
+                        <div class="diff-progress"><div class="diff-fill" style="width: 15%; background: #ef4743;"></div></div>
+                        <span class="diff-count">27</span>
+                    </div>
+                </div>
+                <div class="lc-badges">
+                    <span class="lc-badge-item">Daily Rated</span>
+                    <span class="lc-badge-item">Top Rated 14%</span>
+                    <span class="lc-badge-item">1600+ Community</span>
+                    <span class="lc-badge-item">540+ Reputation</span>
+                </div>
+                <a href="https://leetcode.com/u/Sarthak_79/" target="_blank" class="btn primary cp-btn">
+                    <i class="fas fa-external-link-alt"></i> View LeetCode Profile
+                </a>
+            </div>
+            <!-- Codeforces Stats -->
+            <div class="cp-card codeforces-card">
+                <div class="cp-card-header">
+                    <h3><i class="fas fa-trophy"></i> Codeforces Stats</h3>
+                    <span class="cp-badge candidate-master">Candidate Master</span>
+                </div>
+                <div class="cp-stats-grid">
+                    <div class="cp-stat">
+                        <span class="cp-stat-number" data-count="1925">0</span>
+                        <span class="cp-stat-label">Peak Rating</span>
+                    </div>
+                    <div class="cp-stat">
+                        <span class="cp-stat-number">CM</span>
+                        <span class="cp-stat-label">Max Rank</span>
+                    </div>
+                    <div class="cp-stat">
+                        <span class="cp-stat-number" data-count="4513">0</span>
+                        <span class="cp-stat-label">Contributions</span>
+                    </div>
+                </div>
+                <div class="cf-milestones">
+                    <div class="cf-milestone">
+                        <i class="fas fa-fire"></i>
+                        <span>132 Day Longest Streak</span>
+                    </div>
+                    <div class="cf-milestone">
+                        <i class="fas fa-star"></i>
+                        <span>10 GitHub Stars</span>
+                    </div>
+                    <div class="cf-milestone">
+                        <i class="fas fa-code-branch"></i>
+                        <span>4,100+ Commits (2026)</span>
+                    </div>
+                </div>
+                <a href="https://codeforces.com/profile/Sarthak1712" target="_blank" class="btn primary cp-btn">
+                    <i class="fas fa-external-link-alt"></i> View Codeforces Profile
+                </a>
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact hidden">
-        <h2 class="section-title">Let's Connect</h2>
+        <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+        <p class="section-subtitle">Have a project in mind or just want to say hi? I'm always happy to hear from you!</p>
         <div class="contact-container">
             <div class="contact-info">
-                <h3>Contact Me</h3>
-                <p>I'm currently looking for new opportunities. My inbox is always open!</p>
+                <h3>Get In Touch</h3>
+                <p>I'm currently looking for new opportunities. Whether you have a question or just want to say hi,
+                    I'll try my best to get back to you!</p>
                 <div class="contact-links">
-                    <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i> Email Me</a>
-                    <a href="https://www.linkedin.com/in/sarthak-kanoi-b49475362/" target="_blank"><i
-                            class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="https://github.com/iam-sarthakdev" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                    <a href="https://leetcode.com/u/Sarthak_1712/" target="_blank" class="leetcode-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                            style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
-                            <path
-                                d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.863l4.332-4.364c.467-.467 1.112-.662 1.824-.662s1.357.195 1.823.662l2.697 2.606c.514.515 1.365.515 1.879 0 .514-.514.514-1.365 0-1.879l-2.697-2.606c-1.474-1.474-3.578-2.286-5.83-2.286-2.253 0-4.357.812-5.83 2.286L3.439 10.596c-1.474 1.474-2.286 3.578-2.286 5.83 0 2.253.812 4.357 2.286 5.83l4.332 4.363c1.474 1.474 3.578 2.286 5.83 2.286 2.253 0 4.357-.812 5.83-2.286l2.697-2.607c.514-.515.514-1.364 0-1.879-.514-.514-1.365-.514-1.879 0z">
-                            </path>
-                        </svg> LeetCode
+                    <a href="mailto:work.sarthak17@gmail.com"><i class="fas fa-envelope"></i>
+                        work.sarthak17@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/sarthak-kanoi/" target="_blank"><i
+                            class="fab fa-linkedin"></i> Connect with me</a>
+                    <a href="https://github.com/iam-sarthakdev" target="_blank"><i class="fab fa-github"></i>
+                        iam-sarthakdev</a>
+                    <a href="https://codeforces.com/profile/Sarthak1712" target="_blank">
+                        <i class="fas fa-chart-bar"></i> Codeforces Profile
                     </a>
+                    <a href="#" class="location-link"><i class="fas fa-map-marker-alt"></i> Delhi NCR, India</a>
                 </div>
             </div>
             <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <input type="text" placeholder="Subject" required>
-                <textarea placeholder="Message" rows="5" required></textarea>
-                <button type="submit" class="btn primary">Send Message</button>
+                <div class="form-row">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="your@example.com" required>
+                </div>
+                <input type="text" placeholder="What's this about?" required>
+                <textarea placeholder="Write down your project..." rows="5" required></textarea>
+                <button type="submit" class="btn primary"><i class="fas fa-paper-plane"></i> Send Message</button>
             </form>
         </div>
     </section>
 
     <footer>
-        <p>Copyright &copy; 2025 Sarthak Kanoi. All Rights Reserved.</p>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo footer-logo">SK<span>.</span></a>
+                <p>Building digital experiences with modern technologies and creative solutions.</p>
+            </div>
+            <div class="footer-links-section">
+                <h4>Quick Links</h4>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-social">
+                <h4>Connect</h4>
+                <div class="footer-social-icons">
+                    <a href="https://www.linkedin.com/in/sarthak-kanoi/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/iam-sarthakdev" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://leetcode.com/u/Sarthak_79/" target="_blank"><i class="fas fa-code"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Made with <span class="heart">&hearts;</span> by Sarthak &copy; July 2025</p>
+            <a href="#home" class="scroll-top"><i class="fas fa-arrow-up"></i> Scroll Up</a>
+        </div>
     </footer>
 
     <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
     <script>
-        VanillaTilt.init(document.querySelectorAll(".skill-category, .cert-card, .project-card"), {
-            max: 25,
+        VanillaTilt.init(document.querySelectorAll(".skill-category, .cert-card, .project-card, .service-card, .achievement-card, .cp-card"), {
+            max: 15,
             speed: 400,
             glare: true,
-            "max-glare": 0.5,
+            "max-glare": 0.3,
         });
     </script>
+
 </body>
 
 </html>
