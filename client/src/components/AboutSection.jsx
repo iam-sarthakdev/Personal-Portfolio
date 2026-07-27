@@ -36,7 +36,7 @@ const achievementsData = [
   {
     icon: FaTrophy,
     title: "Candidate Master",
-    subtitle: "Codeforces (Peak: 1935)"
+    subtitle: "Codeforces (Peak: 1956)"
   },
   {
     icon: FaMedal,
@@ -51,7 +51,7 @@ const achievementsData = [
 ];
 
 const AboutSection = () => {
-  const bioText = "I'm a Software Engineer and Computer Science student at RKGIT, specializing in High-Performance Backend Systems & Java. Ranked Candidate Master on Codeforces (Peak Rating: 1935) and Knight on LeetCode (Top 6% Globally). Passionate about building scalable backend systems and solving algorithmic problems with 1500+ problems solved.";
+  const bioText = "I'm a Software Engineer and Computer Science student at RKGIT, specializing in High-Performance Backend Systems & Java. Ranked Candidate Master on Codeforces (Peak Rating: 1956) and Knight on LeetCode (Top 6% Globally). Passionate about building scalable backend systems and solving algorithmic problems with 1500+ problems solved.";
 
   return (
     <section id="about" className="relative min-h-screen w-full flex flex-col items-center justify-center text-center px-5 sm:px-8 md:px-10 py-20 bg-[#0C0C0C] overflow-hidden">
