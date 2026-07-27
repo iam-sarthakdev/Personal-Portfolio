@@ -2,7 +2,7 @@
 
 # ⚡ Sarthak Kanoi - Personal Portfolio
 
-### A Premium, Modern Portfolio Showcasing Full-Stack Development & DSA Expertise
+### A Premium, Modern Portfolio Showcasing Full-Stack Development & Competitive Programming Expertise
 
 [![Live Demo](https://img.shields.io/badge/🚀_LIVE_DEMO-00f3ff?style=for-the-badge&logoColor=black)](https://personal-portfolio-lake-nu-22.vercel.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/iam-sarthakdev/Personal-Portfolio)
@@ -14,31 +14,7 @@
 ## 🌟 Portfolio Live Preview
 
 <p align="center">
-  <img src="docs/screenshots/hero.png" alt="Hero Section" width="100%">
-</p>
-
-<p align="center">
-  <img src="docs/screenshots/tech-about.png" alt="Tech Stack & About" width="100%">
-</p>
-
-<p align="center">
-  <img src="docs/screenshots/skills.png" alt="Skills & Achievements" width="100%">
-</p>
-
-<p align="center">
-  <img src="docs/screenshots/education.png" alt="Education Timeline" width="100%">
-</p>
-
-<p align="center">
-  <img src="docs/screenshots/certifications.png" alt="Certifications" width="100%">
-</p>
-
-<p align="center">
   <img src="docs/screenshots/projects-faang.png" alt="Projects - FAANG-Forge" width="100%">
-</p>
-
-<p align="center">
-  <img src="docs/screenshots/projects-devsync.png" alt="Projects - DevSync" width="100%">
 </p>
 
 <p align="center">
@@ -46,11 +22,15 @@
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/leetcode.png" alt="LeetCode Stats Dashboard" width="100%">
+  <img src="docs/screenshots/projects-devsync.png" alt="Projects - DevSync" width="100%">
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/contact-footer.png" alt="Contact Form & Footer" width="100%">
+  <img src="docs/screenshots/cp-stats.png" alt="Competitive Programming Stats" width="100%">
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/education.png" alt="Education Timeline" width="100%">
 </p>
 
 ---
@@ -70,14 +50,14 @@
 
 ## 🎯 About This Portfolio
 
-This is a **premium, high-performance personal portfolio** built with the MERN Stack, featuring advanced animations, real-time data integration, and a clean, modern UI design. The portfolio showcases my journey as a Full-Stack Developer with expertise in Data Structures & Algorithms.
+This is a **premium, high-performance personal portfolio** built with React, Vite, Framer Motion, and Tailwind CSS, featuring 3D interactive elements, real-time metrics, and a dark luxury design. The portfolio showcases my journey as a Software Engineer specializing in High-Performance Backend Systems & Competitive Programming (**Candidate Master @Codeforces 1956**, **Knight @LeetCode 1864**).
 
 ### Why This Portfolio Stands Out:
-- **🎨 Premium UI/UX**: Glassmorphism design, smooth animations, and micro-interactions
-- **⚡ Performance-First**: Optimized build with lazy loading and efficient rendering
-- **📊 Real-Time Data**: Live LeetCode stats, GitHub activity, and dynamic content
-- **📱 Fully Responsive**: Seamless experience across all devices
-- **🔒 Secure Backend**: MongoDB integration for contact form with validation
+- **🎨 Premium Dark Luxury UI/UX**: Custom Kanit typography, sleek dark mode (`#0C0C0C`), smooth scroll cards, and interactive 3D avatar
+- **⚡ Performance-First**: Ultra-fast Vite build pipeline with responsive viewport containment
+- **📊 Real-Time Metrics**: Live LeetCode & Codeforces rating metrics (1500+ problems solved)
+- **📱 Fully Responsive**: Custom layout scaling across mobile, tablet, and widescreen displays
+- **🔒 Production Ready**: Deployed cleanly on Vercel
 
 ---
 
@@ -85,24 +65,26 @@ This is a **premium, high-performance personal portfolio** built with the MERN S
 
 | Feature | Description |
 |---------|-------------|
-| **🌈 Morphing Blob Animation** | Dynamic 3D-style blob with orbiting rings in hero section |
-| **📍 Active Section Tracking** | Navbar highlights current scroll position |
-| **💬 Functional Contact Form** | MongoDB-backed form with validation and feedback |
-| **📈 Live LeetCode Stats** | Real-time problem count, difficulty breakdown, heatmap |
-| **🎯 Topic Distribution Chart** | Visual breakdown of solved problems by DSA topic |
-| **🕐 Vertical Timeline** | Animated education journey with alternating cards |
-| **🏆 Achievement Cards** | Highlighted accomplishments with colored icons |
+| **🎭 Interactive 3D Boy Portrait** | Centered 3D character with magnetic mouse tracking |
+| **📍 Responsive Header** | Brand heading auto-scaled (`text-[8.5vw]...`) with zero overflow |
+| **🏆 Competitive Stats Cards** | LeetCode Knight (1864) and Codeforces Candidate Master (1956) cards |
+| **🕐 Vertical Education Timeline** | Academic journey from B.Tech CSE at RKGIT to high school |
+| **🏆 Achievements & Recognition** | 1500+ problems, top 6% global rank, full-stack app achievements |
 | **🔧 Tech Stack Marquee** | Auto-scrolling technology showcase |
 | **📜 Certifications Grid** | Professional certifications with credential links |
-| **🖼️ Project Showcases** | Detailed project cards with screenshots |
+| **🖼️ Sticky Project Cards** | Scroll-driven 3D stack cards for FAANG-Forge, MockMate AI, & DevSync |
 
 ---
 
 ## 🚀 Featured Projects
 
-### 1️⃣ FAANG-Forge - Interview Preparation Platform
+### 1️⃣ FAANG-Forge - Full-Stack DSA Platform
 
-> **Master Your Coding Interviews with Spaced Repetition**
+> **Master DSA The Smart Way with Spaced Repetition**
+
+<p align="center">
+  <img src="docs/screenshots/projects-faang.png" alt="FAANG-Forge Showcase" width="100%">
+</p>
 
 <table>
 <tr>
@@ -115,19 +97,18 @@ This is a **premium, high-performance personal portfolio** built with the MERN S
 | 💻 **GitHub** | [iam-sarthakdev/FAANG-Forge](https://github.com/iam-sarthakdev/FAANG-Forge) |
 
 **💡 Key Features:**
-- Spaced Repetition Algorithm (Day 1→3→7→14→30→60→90)
-- 2,892+ problems from 20+ FAANG companies
-- 14+ DSA pattern auto-tagging
-- NeetCode 150, Striver A2Z, Love Babbar 450 sheets
-- Real-time analytics dashboard
+- Algorithmic problem tracker featuring built-in Java code editor
+- Solution vaults & practice mode
+- Codeforces API sync
+- 2,800+ categorized DSA problems
 
 </td>
 <td width="40%">
 
 **🛠️ Tech Stack:**
 - React, Node.js, Express
-- MongoDB, JWT Auth
-- Tailwind CSS, Recharts
+- MongoDB, Monaco Editor
+- Tailwind CSS, Framer Motion
 
 </td>
 </tr>
@@ -135,44 +116,13 @@ This is a **premium, high-performance personal portfolio** built with the MERN S
 
 ---
 
-### 2️⃣ DevSync - Real-Time Collaborative Code Editor
+### 2️⃣ MockMate AI - AI Interview Defense Platform
 
-> **Collaboration, Synchronized. The Future of Pair Programming.**
+> **Master Your Interviews with AI Voice Assistance**
 
-<table>
-<tr>
-<td width="60%">
-
-**🔗 Links:**
-| | |
-|---|---|
-| 🌐 **Live Demo** | [devsync-production-00b7.up.railway.app](https://devsync-production-00b7.up.railway.app/) |
-| 💻 **GitHub** | [iam-sarthakdev/DevSync](https://github.com/iam-sarthakdev/DevSync) |
-
-**💡 Key Features:**
-- Real-time code collaboration with live cursors
-- Monaco Editor (VS Code's engine)
-- Code execution for 40+ languages
-- Interactive whiteboard for sketching
-- Room-based private sessions
-
-</td>
-<td width="40%">
-
-**🛠️ Tech Stack:**
-- Next.js, TypeScript
-- Socket.IO, Monaco Editor
-- Piston API, Tailwind CSS
-
-</td>
-</tr>
-</table>
-
----
-
-### 3️⃣ MockMate AI - AI-Powered Interview Simulator
-
-> **Master Your Interviews with Real-Time Voice AI**
+<p align="center">
+  <img src="docs/screenshots/projects-mockmate.png" alt="MockMate AI Showcase" width="100%">
+</p>
 
 <table>
 <tr>
@@ -185,23 +135,77 @@ This is a **premium, high-performance personal portfolio** built with the MERN S
 | 💻 **GitHub** | [iam-sarthakdev/MockMate-AI](https://github.com/iam-sarthakdev/MockMate-AI) |
 
 **💡 Key Features:**
-- VAPI Voice AI with sub-second latency
-- Behavioral, Technical, System Design modes
-- STAR method questioning
-- Live audio visualization
-- Confidence & score metrics
+- Real-time speech evaluation & AI feedback
+- Technical & System Design interview modes
+- Detailed confidence & score metrics
 
 </td>
 <td width="40%">
 
 **🛠️ Tech Stack:**
 - Next.js 14, TypeScript
-- VAPI AI, MongoDB
-- NextAuth.js, Framer Motion
+- OpenAI API, Web Audio API
+- Tailwind CSS, Framer Motion
 
 </td>
 </tr>
 </table>
+
+---
+
+### 3️⃣ DevSync - Real-Time Collaboration Platform
+
+> **Collaboration, Synchronized. Real-Time Pair Programming.**
+
+<p align="center">
+  <img src="docs/screenshots/projects-devsync.png" alt="DevSync Showcase" width="100%">
+</p>
+
+<table>
+<tr>
+<td width="60%">
+
+**🔗 Links:**
+| | |
+|---|---|
+| 🌐 **Live Demo** | [devsync-production-00b7.up.railway.app](https://devsync-production-00b7.up.railway.app/) |
+| 💻 **GitHub** | [iam-sarthakdev/DevSync](https://github.com/iam-sarthakdev/DevSync) |
+
+**💡 Key Features:**
+- Real-time WebSockets synchronization
+- WebRTC video calling
+- Live AST syntax analysis & room-based pair coding
+
+</td>
+<td width="40%">
+
+**🛠️ Tech Stack:**
+- React, Express
+- WebSockets, WebRTC
+- Docker, Tailwind CSS
+
+</td>
+</tr>
+</table>
+
+---
+
+## 📊 Competitive Programming Stats
+
+<p align="center">
+  <img src="docs/screenshots/cp-stats.png" alt="LeetCode and Codeforces Stats" width="100%">
+</p>
+
+- **LeetCode**: Knight Badge (1,864 Rating) | 1,000+ Problems Solved | Top 6% Globally
+- **Codeforces**: Candidate Master (1,956 Peak Rating) | 500+ Problems Solved
+
+---
+
+## 🎓 Education Timeline
+
+<p align="center">
+  <img src="docs/screenshots/education.png" alt="Education Timeline" width="100%">
+</p>
 
 ---
 
@@ -212,49 +216,15 @@ This is a **premium, high-performance personal portfolio** built with the MERN S
 |------------|---------|
 | React 19 | UI Library with Hooks |
 | Vite | Lightning-fast Build Tool |
-| Framer Motion | Advanced Animations |
-| tsparticles | Interactive Particle Effects |
-| Typed.js | Dynamic Typing Animation |
-| Lenis | Smooth Scroll Experience |
+| Framer Motion | Scroll Animations & 3D Stacking |
+| Tailwind CSS | Utility-first Styling |
+| Lucide / React Icons | UI Icons |
 
-### **Backend**
+### **Backend & Deployment**
 | Technology | Purpose |
 |------------|---------|
-| Node.js | JavaScript Runtime |
-| Express.js | Web Framework |
-| MongoDB + Mongoose | Database & ODM |
-| Vercel Serverless | API Functions |
-
-### **Deployment**
-| Platform | Use |
-|----------|-----|
-| Vercel | Frontend + Serverless Backend |
-| MongoDB Atlas | Cloud Database |
-
----
-
-## 📖 Portfolio Sections Deep-Dive
-
-### 🏠 Hero Section
-The hero section features a **morphing blob animation** with orbiting rings, an availability badge, terminal-style typing animation, and prominent CTA buttons. Social links include LinkedIn, GitHub, and LeetCode.
-
-### 👤 About Section
-Showcases background, a scrolling tech marquee, "What I Do" cards (Full-Stack, DSA, System Design, UI/UX), achievements (500+ problems, SIH 2025, Walmart Global Tech), and a categorized skills grid.
-
-### 🎓 Education Section
-Features a **vertical timeline** with gradient colors (cyan → purple → green), alternating cards for each education entry, colored timeline dots, and highlight tags for subjects/skills.
-
-### 💼 Projects Section
-Each project has its own card with local screenshots, detailed descriptions from GitHub READMEs, expandable "Read More" sections, key features with icons, and tech stack badges.
-
-### 📊 LeetCode Stats Section
-Displays real-time stats via API, animated counters for total solved/streak/hard problems, difficulty breakdown with progress bars, topic distribution chart (10 DSA categories), and a GitHub-style contribution heatmap.
-
-### 📜 Certifications Section
-Grid of professional certifications including Walmart Global Tech, Wells Fargo, AWS Cloud Training, and Deloitte Data Analytics, each with a "View Credential" link.
-
-### 📬 Contact Section
-Two-column layout with contact info (email, LinkedIn, GitHub, location) and a functional form with labeled inputs, focus animations, status messages, and loading states.
+| Node.js / Express | API Backend |
+| Vercel | Production Hosting & Automated CI/CD |
 
 ---
 
@@ -266,41 +236,12 @@ git clone https://github.com/iam-sarthakdev/Personal-Portfolio.git
 cd Personal-Portfolio
 ```
 
-### 2. Frontend Setup
+### 2. Run Client App
 ```bash
 cd client
 npm install
 npm run dev
 ```
-
-### 3. Backend Setup
-```bash
-cd ..
-npm install
-```
-
-Create a `.env` file:
-```env
-MONGO_URI=your_mongodb_connection_string
-PORT=3000
-```
-
-Start the server:
-```bash
-node server.js
-```
-
----
-
-## 🚀 Deployment
-
-This project is configured for **Vercel** deployment:
-
-1. Push code to GitHub
-2. Import project in Vercel
-3. Set Framework Preset to "Other"
-4. Add `MONGO_URI` in Environment Variables
-5. Deploy!
 
 ---
 
@@ -311,9 +252,10 @@ This project is configured for **Vercel** deployment:
 | Platform | Link |
 |----------|------|
 | 📧 **Email** | sarthak1712005@gmail.com |
-| 💼 **LinkedIn** | [Sarthak Kanoi](https://www.linkedin.com/in/sarthak-kanoi-b49475362/) |
+| 💼 **LinkedIn** | [Sarthak Kanoi](https://www.linkedin.com/in/sarthak-kanoi/) |
 | 🐙 **GitHub** | [iam-sarthakdev](https://github.com/iam-sarthakdev) |
-| 💻 **LeetCode** | [Sarthak_1712](https://leetcode.com/u/Sarthak_1712/) |
+| 💻 **LeetCode** | [Sarthak_79](https://leetcode.com/u/Sarthak_79/) |
+| 🏆 **Codeforces** | [Sarthak1712](https://codeforces.com/profile/Sarthak1712) |
 
 </div>
 
