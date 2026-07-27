@@ -1,5 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 
+const techStack = [
+  "Java", "TypeScript", "React.js", "Next.js", "Node.js", "Express.js",
+  "MongoDB", "MySQL", "Tailwind CSS", "Docker", "Git", "Postman", "Python", "AWS"
+];
+
 const gifs = [
   "https://motionsites.ai/assets/hero-space-voyage-preview-eECLH3Yc.gif",
   "https://motionsites.ai/assets/hero-codenest-preview-Cgppc2qV.gif",
@@ -12,20 +17,10 @@ const gifs = [
   "https://motionsites.ai/assets/hero-skyelite-preview-DHaZIgUv.gif",
   "https://motionsites.ai/assets/hero-aethera-preview-DknSlcTa.gif",
   "https://motionsites.ai/assets/hero-designpro-preview-D8c5_een.gif",
-  "https://motionsites.ai/assets/hero-stellar-ai-preview-D3HL6bw1.gif",
-  "https://motionsites.ai/assets/hero-xportfolio-preview-D4A8maiC.gif",
-  "https://motionsites.ai/assets/hero-orbit-web3-preview-BXt4OttD.gif",
-  "https://motionsites.ai/assets/hero-nexora-preview-cx5HmUgo.gif",
-  "https://motionsites.ai/assets/hero-evr-ventures-preview-DZxeVFEX.gif",
-  "https://motionsites.ai/assets/hero-planet-orbit-preview-DWAP8Z1P.gif",
-  "https://motionsites.ai/assets/hero-new-era-preview-CocuDUm9.gif",
-  "https://motionsites.ai/assets/hero-wealth-preview-B70idl_u.gif",
-  "https://motionsites.ai/assets/hero-luminex-preview-CxOP7ce6.gif",
-  "https://motionsites.ai/assets/hero-celestia-preview-0yO3jXO8.gif"
 ];
 
-const row1Images = [...gifs.slice(0, 11), ...gifs.slice(0, 11), ...gifs.slice(0, 11)];
-const row2Images = [...gifs.slice(11), ...gifs.slice(11), ...gifs.slice(11)];
+const row1Images = [...gifs.slice(0, 6), ...gifs.slice(0, 6), ...gifs.slice(0, 6)];
+const row2Images = [...gifs.slice(6), ...gifs.slice(6), ...gifs.slice(6)];
 
 const MarqueeSection = () => {
   const sectionRef = useRef(null);
@@ -53,10 +48,29 @@ const MarqueeSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-[#0C0C0C] pt-24 sm:pt-32 md:pt-40 pb-10 overflow-hidden"
+      className="bg-[#0C0C0C] pt-20 sm:pt-28 pb-10 overflow-hidden relative z-10"
     >
+      {/* Tech Stack Pills Marquee */}
+      <div className="mb-12">
+        <h3 className="text-center text-white/50 text-xs sm:text-sm font-semibold uppercase tracking-widest mb-6">
+          Technologies I Work With
+        </h3>
+        <div className="w-full flex overflow-hidden select-none py-2 border-y border-white/10">
+          <div className="flex shrink-0 animate-marquee gap-4 items-center whitespace-nowrap">
+            {[...techStack, ...techStack, ...techStack].map((tech, i) => (
+              <span
+                key={i}
+                className="px-5 py-2 rounded-full bg-white/5 border border-white/10 text-white/80 font-medium text-sm sm:text-base tracking-wide"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Interactive 3D Work Preview Marquee */}
       <div className="flex flex-col gap-3">
-        {/* Row 1 - Moves RIGHT on scroll */}
         <div
           className="flex gap-3 w-max"
           style={{ transform: row1Transform, willChange: 'transform' }}
@@ -65,14 +79,13 @@ const MarqueeSection = () => {
             <img
               key={`row1-${index}`}
               src={src}
-              alt={`Work Preview ${index}`}
+              alt={`Project Showcase ${index}`}
               loading="lazy"
-              className="w-[300px] h-[190px] sm:w-[360px] sm:h-[230px] md:w-[420px] md:h-[270px] flex-shrink-0 rounded-2xl object-cover"
+              className="w-[280px] h-[170px] sm:w-[340px] sm:h-[210px] md:w-[400px] md:h-[250px] flex-shrink-0 rounded-2xl object-cover border border-white/10"
             />
           ))}
         </div>
 
-        {/* Row 2 - Moves LEFT on scroll */}
         <div
           className="flex gap-3 w-max"
           style={{ transform: row2Transform, willChange: 'transform' }}
@@ -81,9 +94,9 @@ const MarqueeSection = () => {
             <img
               key={`row2-${index}`}
               src={src}
-              alt={`Work Preview ${index}`}
+              alt={`Project Showcase ${index}`}
               loading="lazy"
-              className="w-[300px] h-[190px] sm:w-[360px] sm:h-[230px] md:w-[420px] md:h-[270px] flex-shrink-0 rounded-2xl object-cover"
+              className="w-[280px] h-[170px] sm:w-[340px] sm:h-[210px] md:w-[400px] md:h-[250px] flex-shrink-0 rounded-2xl object-cover border border-white/10"
             />
           ))}
         </div>

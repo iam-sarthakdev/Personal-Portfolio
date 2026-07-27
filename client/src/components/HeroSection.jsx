@@ -2,67 +2,125 @@ import React from 'react';
 import ContactButton from './ContactButton';
 import Magnet from './Magnet';
 import FadeIn from './FadeIn';
+import { FaLinkedinIn, FaGithub, FaCode, FaDownload } from 'react-icons/fa';
 
 const HeroSection = () => {
   const navLinks = [
     { name: "About", href: "#about" },
-    { name: "Price", href: "#services" },
+    { name: "Education", href: "#education" },
+    { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
+    { name: "CP Stats", href: "#cp-stats" },
     { name: "Contact", href: "#contact" },
   ];
 
   return (
-    <section className="relative h-screen w-full flex flex-col justify-between overflow-x-clip bg-[#0C0C0C]">
+    <section id="home" className="relative min-h-screen w-full flex flex-col justify-between overflow-x-clip bg-[#0C0C0C]">
       {/* Navbar */}
       <FadeIn delay={0} y={-20} className="w-full z-20">
-        <nav className="w-full flex items-center justify-between px-6 md:px-10 pt-6 md:pt-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200"
-            >
-              {link.name}
-            </a>
-          ))}
+        <nav className="w-full flex items-center justify-between px-6 md:px-10 pt-6 md:pt-8 flex-wrap gap-4">
+          <a href="#home" className="flex items-center gap-2 text-white font-bold text-xl tracking-tight">
+            <span className="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#00f3ff] to-[#bc13fe] flex items-center justify-center text-black text-sm font-black">
+              SK
+            </span>
+            <span>SARTHAK</span>
+          </a>
+
+          <div className="flex items-center gap-4 sm:gap-8 overflow-x-auto">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-[#D7E2EA] font-medium uppercase tracking-wider text-xs sm:text-sm md:text-base hover:opacity-70 transition-opacity duration-200 whitespace-nowrap"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
         </nav>
       </FadeIn>
 
       {/* Hero Heading */}
-      <div className="w-full overflow-hidden mt-6 sm:mt-4 md:-mt-5 z-0">
+      <div className="w-full overflow-hidden mt-6 sm:mt-4 md:-mt-2 z-0 text-center">
         <FadeIn delay={0.15} y={40}>
-          <h1 className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-[14vw] sm:text-[15vw] md:text-[16vw] lg:text-[17.5vw] text-center select-none">
-            Hi, i&apos;m jack
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs sm:text-sm mb-3">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>Available for opportunities</span>
+          </div>
+
+          <h1 className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-[13vw] sm:text-[14vw] md:text-[15vw] lg:text-[16vw] select-none">
+            Hi, i&apos;m sarthak
           </h1>
         </FadeIn>
       </div>
 
-      {/* Centered Hero Portrait with Magnet */}
-      <FadeIn delay={0.6} y={30} className="absolute left-1/2 -translate-x-1/2 z-10 top-1/2 -translate-y-1/2 sm:top-auto sm:translate-y-0 sm:bottom-0 pointer-events-auto">
+      {/* Centered Hero Portrait / 3D Emblem with Magnet */}
+      <FadeIn delay={0.6} y={30} className="absolute left-1/2 -translate-x-1/2 z-10 top-[42%] -translate-y-1/2 sm:top-auto sm:translate-y-0 sm:bottom-0 pointer-events-auto">
         <Magnet
           padding={150}
           strength={3}
           activeTransition="transform 0.3s ease-out"
           inactiveTransition="transform 0.6s ease-in-out"
         >
-          <img
-            src="https://shrug-person-78902957.figma.site/_components/v2/d24c01ad3a56fc65e942a1f501eb73db42d7cf9a/Rectangle_40443.81459862.png"
-            alt="Jack Portrait"
-            className="w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px] h-auto object-contain mx-auto pointer-events-none drop-shadow-2xl"
-          />
+          <div className="relative w-[260px] sm:w-[340px] md:w-[420px] lg:w-[480px] aspect-square flex items-center justify-center">
+            {/* Glowing 3D Orb Backdrop */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#00f3ff]/20 to-[#bc13fe]/30 blur-3xl animate-pulse pointer-events-none"></div>
+
+            <img
+              src="https://shrug-person-78902957.figma.site/_components/v2/d24c01ad3a56fc65e942a1f501eb73db42d7cf9a/Rectangle_40443.81459862.png"
+              alt="Sarthak Portrait"
+              className="w-full h-auto object-contain mx-auto pointer-events-none drop-shadow-2xl opacity-90 hover:opacity-100 transition-opacity"
+            />
+          </div>
         </Magnet>
       </FadeIn>
 
       {/* Bottom Bar */}
-      <div className="w-full flex justify-between items-end pb-7 sm:pb-8 md:pb-10 px-6 md:px-10 z-20">
+      <div className="w-full flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 pb-7 sm:pb-8 md:pb-10 px-6 md:px-10 z-20">
         <FadeIn delay={0.35} y={20}>
-          <p className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug max-w-[160px] sm:max-w-[220px] md:max-w-[260px] text-[clamp(0.75rem,1.4vw,1.5rem)]">
-            a 3d creator driven by crafting striking and unforgettable projects
+          <p className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug max-w-[280px] sm:max-w-[320px] md:max-w-[380px] text-[clamp(0.8rem,1.2vw,1.3rem)]">
+            Software Engineer &bull; Candidate Master @Codeforces &bull; Knight @LeetCode &bull; 1500+ DSA
           </p>
+
+          {/* Social Icons */}
+          <div className="flex gap-3 mt-4">
+            <a
+              href="https://www.linkedin.com/in/sarthak-kanoi/"
+              target="_blank"
+              rel="noreferrer"
+              className="w-10 h-10 rounded-full border border-white/20 bg-white/5 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all"
+            >
+              <FaLinkedinIn />
+            </a>
+            <a
+              href="https://github.com/iam-sarthakdev"
+              target="_blank"
+              rel="noreferrer"
+              className="w-10 h-10 rounded-full border border-white/20 bg-white/5 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all"
+            >
+              <FaGithub />
+            </a>
+            <a
+              href="https://codeforces.com/profile/Sarthak1712"
+              target="_blank"
+              rel="noreferrer"
+              className="w-10 h-10 rounded-full border border-white/20 bg-white/5 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all"
+            >
+              <FaCode />
+            </a>
+          </div>
         </FadeIn>
 
-        <FadeIn delay={0.5} y={20}>
+        <FadeIn delay={0.5} y={20} className="flex gap-3 flex-wrap">
           <ContactButton href="#contact" />
+          <a
+            href="https://drive.google.com/file/d/1AQNvzJUiQruPxeZVJdOz5kNjgqteAM6I/view?usp=drive_link"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border-2 border-[#D7E2EA] text-[#D7E2EA] font-medium uppercase tracking-widest px-6 py-3 text-xs sm:text-sm hover:bg-[#D7E2EA]/10 transition-colors"
+          >
+            <FaDownload /> Resume
+          </a>
         </FadeIn>
       </div>
     </section>

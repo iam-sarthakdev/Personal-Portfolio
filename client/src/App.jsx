@@ -2,8 +2,12 @@ import React from 'react';
 import HeroSection from './components/HeroSection';
 import MarqueeSection from './components/MarqueeSection';
 import AboutSection from './components/AboutSection';
-import ServicesSection from './components/ServicesSection';
+import SkillsSection from './components/SkillsSection';
+import EducationSection from './components/EducationSection';
+import CompetitiveStatsSection from './components/CompetitiveStatsSection';
 import ProjectsSection from './components/ProjectsSection';
+import CertificationsSection from './components/CertificationsSection';
+import ContactSection from './components/ContactSection';
 import './index.css';
 
 function App() {
@@ -12,8 +16,12 @@ function App() {
       <HeroSection />
       <MarqueeSection />
       <AboutSection />
-      <ServicesSection />
+      <SkillsSection />
+      <EducationSection />
+      <CompetitiveStatsSection />
       <ProjectsSection />
+      <CertificationsSection />
+      <ContactSection />
     </main>
   );
 }
