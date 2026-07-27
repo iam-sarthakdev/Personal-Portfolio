@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-5 sm:px-6 md:px-10 lg:px-14 py-6 bg-transparent">
-        <!-- Logo SVG -->
+        {/* Logo SVG */}
         <a href="#home" className="hover:opacity-80 transition-opacity">
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 256 256" fill="none">
             <path
@@ -26,7 +26,7 @@ const Navbar = () => {
           </svg>
         </a>
 
-        <!-- Right Desktop Nav Links -->
+        {/* Right Desktop Nav Links */}
         <div className="hidden md:flex items-center gap-8 text-sm tracking-wide uppercase font-medium text-white">
           {navLinks.map((link) => (
             <a
@@ -39,7 +39,7 @@ const Navbar = () => {
           ))}
         </div>
 
-        <!-- Right Mobile Hamburger Button -->
+        {/* Right Mobile Hamburger Button */}
         <button
           onClick={() => setMobileMenuOpen(true)}
           className="md:hidden p-2 text-white hover:opacity-70 transition-opacity"
@@ -54,7 +54,7 @@ const Navbar = () => {
         </button>
       </nav>
 
-      <!-- Fullscreen Mobile Overlay Menu -->
+      {/* Fullscreen Mobile Overlay Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
