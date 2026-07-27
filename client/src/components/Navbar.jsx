@@ -1,171 +1,118 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar = () => {
-    const [scrolled, setScrolled] = useState(false);
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [activeSection, setActiveSection] = useState('home');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
+  const navLinks = [
+    { name: 'ABOUT', href: '#about' },
+    { name: 'PROCESS', href: '#education' },
+    { name: 'PROJECTS', href: '#projects' },
+    { name: 'CATALOG', href: '#leetcode' },
+    { name: 'D.O.T', href: '#certifications' },
+    { name: 'TALK', href: '#contact' },
+  ];
 
-            // Update active section based on scroll position
-            const sections = ['home', 'about', 'education', 'projects', 'leetcode', 'contact'];
-            const current = sections.find(section => {
-                const el = document.getElementById(section);
-                if (el) {
-                    const rect = el.getBoundingClientRect();
-                    return rect.top <= 150 && rect.bottom >= 150;
-                }
-                return false;
-            });
-            if (current) setActiveSection(current);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+  return (
+    <>
+      <nav className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-5 sm:px-6 md:px-10 lg:px-14 py-6 bg-transparent">
+        <!-- Logo SVG -->
+        <a href="#home" className="hover:opacity-80 transition-opacity">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 256 256" fill="none">
+            <path
+              d="M 160 88 L 194 34 L 216 0 L 256 0 L 256 40 L 221.5 93.5 L 200 128 L 256 128 L 256 256 L 96 256 L 96 168 L 64.246 220 L 40 256 L 0 256 L 0 216 L 34 162 L 56 128 L 0 128 L 0 0 L 160 0 Z"
+              fill="white"
+            />
+          </svg>
+        </a>
 
-    const navLinks = [
-        { name: 'Home', href: '#home' },
-        { name: 'About', href: '#about' },
-        { name: 'Education', href: '#education' },
-        { name: 'Projects', href: '#projects' },
-        { name: 'LeetCode', href: '#leetcode' },
-        { name: 'Contact', href: '#contact' },
-    ];
-
-    return (
-        <>
-            <motion.nav
-                initial={{ y: -100 }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                style={{
-                    position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 1000,
-                    background: scrolled ? 'rgba(3, 3, 3, 0.85)' : 'transparent',
-                    backdropFilter: scrolled ? 'blur(20px)' : 'none',
-                    borderBottom: scrolled ? '1px solid rgba(255,255,255,0.05)' : 'none',
-                    padding: scrolled ? '1rem 6%' : '1.5rem 6%',
-                    display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                    transition: 'all 0.3s ease'
-                }}
+        <!-- Right Desktop Nav Links -->
+        <div className="hidden md:flex items-center gap-8 text-sm tracking-wide uppercase font-medium text-white">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className="hover:opacity-70 transition-opacity"
             >
-                {/* Logo */}
+              {link.name}
+            </a>
+          ))}
+        </div>
+
+        <!-- Right Mobile Hamburger Button -->
+        <button
+          onClick={() => setMobileMenuOpen(true)}
+          className="md:hidden p-2 text-white hover:opacity-70 transition-opacity"
+          aria-label="Open Menu"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </nav>
+
+      <!-- Fullscreen Mobile Overlay Menu -->
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex flex-col justify-between"
+          >
+            {/* Header */}
+            <div className="flex items-center justify-between px-6 py-6 border-b border-white/10">
+              <a href="#home" onClick={() => setMobileMenuOpen(false)}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 256 256" fill="none">
+                  <path
+                    d="M 160 88 L 194 34 L 216 0 L 256 0 L 256 40 L 221.5 93.5 L 200 128 L 256 128 L 256 256 L 96 256 L 96 168 L 64.246 220 L 40 256 L 0 256 L 0 216 L 34 162 L 56 128 L 0 128 L 0 0 L 160 0 Z"
+                    fill="white"
+                  />
+                </svg>
+              </a>
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="p-2 text-white hover:opacity-70 transition-opacity"
+                aria-label="Close Menu"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+
+            {/* Nav Links with Staggered Entrance */}
+            <nav className="flex flex-col items-center justify-center flex-1 gap-8 text-2xl tracking-widest uppercase">
+              {navLinks.map((link, index) => (
                 <motion.a
-                    href="#home"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    style={{
-                        display: 'flex', alignItems: 'center', gap: '10px',
-                        fontSize: '1.3rem', fontWeight: 700, color: '#fff'
-                    }}
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 16 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.1 + index * 0.06,
+                    ease: [0.16, 1, 0.3, 1]
+                  }}
+                  className="text-white hover:text-red-500 transition-colors"
                 >
-                    <div style={{
-                        width: '40px', height: '40px',
-                        background: 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))',
-                        borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        fontSize: '1.2rem', fontWeight: 800, color: '#000'
-                    }}>
-                        SK
-                    </div>
+                  {link.name}
                 </motion.a>
-
-                {/* Desktop Menu */}
-                <ul style={{
-                    display: 'flex', gap: '0.5rem', listStyle: 'none', alignItems: 'center',
-                    background: scrolled ? 'rgba(255,255,255,0.03)' : 'rgba(255,255,255,0.05)',
-                    padding: '6px', borderRadius: '14px', border: '1px solid rgba(255,255,255,0.08)'
-                }}>
-                    {navLinks.map((link) => {
-                        const isActive = activeSection === link.href.slice(1);
-                        return (
-                            <motion.li key={link.name}>
-                                <motion.a
-                                    href={link.href}
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
-                                    style={{
-                                        display: 'block',
-                                        padding: '10px 18px',
-                                        borderRadius: '10px',
-                                        color: isActive ? '#000' : '#a0a0a0',
-                                        background: isActive ? 'var(--primary-color)' : 'transparent',
-                                        fontSize: '0.9rem',
-                                        fontWeight: isActive ? 600 : 500,
-                                        transition: 'all 0.3s ease'
-                                    }}
-                                    onMouseOver={(e) => { if (!isActive) e.target.style.color = '#fff'; }}
-                                    onMouseOut={(e) => { if (!isActive) e.target.style.color = '#a0a0a0'; }}
-                                >
-                                    {link.name}
-                                </motion.a>
-                            </motion.li>
-                        );
-                    })}
-                </ul>
-
-                {/* Mobile Menu Button */}
-                <motion.button
-                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="mobile-menu-btn"
-                    style={{
-                        display: 'none', // Will be shown via CSS media query
-                        background: 'rgba(255,255,255,0.05)',
-                        border: '1px solid rgba(255,255,255,0.1)',
-                        borderRadius: '10px', padding: '12px',
-                        color: '#fff', fontSize: '1.2rem', cursor: 'pointer'
-                    }}
-                >
-                    {mobileMenuOpen ? <FaTimes /> : <FaBars />}
-                </motion.button>
-            </motion.nav>
-
-            {/* Mobile Menu Overlay */}
-            <AnimatePresence>
-                {mobileMenuOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        style={{
-                            position: 'fixed', top: '80px', left: 0, right: 0,
-                            background: 'rgba(3, 3, 3, 0.98)', backdropFilter: 'blur(20px)',
-                            padding: '2rem', zIndex: 999, borderBottom: '1px solid rgba(255,255,255,0.1)'
-                        }}
-                    >
-                        {navLinks.map((link, i) => (
-                            <motion.a
-                                key={link.name}
-                                href={link.href}
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: i * 0.1 }}
-                                onClick={() => setMobileMenuOpen(false)}
-                                style={{
-                                    display: 'block', padding: '1rem 0',
-                                    color: '#fff', fontSize: '1.1rem', fontWeight: 500,
-                                    borderBottom: '1px solid rgba(255,255,255,0.05)'
-                                }}
-                            >
-                                {link.name}
-                            </motion.a>
-                        ))}
-                    </motion.div>
-                )}
-            </AnimatePresence>
-
-            <style>{`
-                @media (max-width: 768px) {
-                    nav ul { display: none !important; }
-                    .mobile-menu-btn { display: flex !important; }
-                }
-            `}</style>
-        </>
-    );
+              ))}
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
 };
 
 export default Navbar;
