@@ -1,522 +1,798 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sarthak Kanoi | Software Engineer</title>
-    <meta name="description" content="Sarthak Kanoi - Software Engineer | Candidate Master @Codeforces (Peak: 1925) | Knight @LeetCode (Top 6%) | Specializing in High-Performance Backend Systems & Java">
-    <link rel="stylesheet" href="style.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap"
+    <title>Sarthak Kanoi - Design & Engineering</title>
+    <meta name="description"
+        content="Sarthak Kanoi - Software Engineer | Candidate Master @Codeforces (Peak: 1925) | Knight @LeetCode (Top 6%) | High-Performance Backend Systems & Java">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+
+    <!-- basis33 (pixel/bitmap monospace) font -->
+    <link href="https://db.onlinewebfonts.com/c/d08bafd725a4cfc309efb5a88e0b63a5?family=basis33" rel="stylesheet">
+
+    <!-- FontAwesome & Custom CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <div class="cursor-dot" data-cursor-dot></div>
-    <div class="cursor-outline" data-cursor-outline></div>
+<body class="bg-black text-white font-sans antialiased overflow-x-hidden">
 
-    <header>
-        <nav class="navbar">
-            <a href="#" class="logo">SK<span>.</span></a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#leetcode">LeetCode</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot hidden md:block" data-cursor-dot></div>
+    <div class="cursor-outline hidden md:block" data-cursor-outline></div>
+
+    <!-- BACKGROUND VIDEO (Full-bleed) -->
+    <video autoplay muted loop playsinline
+        class="fixed inset-0 h-full w-full object-cover lg:scale-[1.2] pointer-events-none z-0">
+        <source
+            src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260725_114042_d2ed2a89-f2fa-449b-9609-da456344257b.mp4"
+            type="video/mp4">
+    </video>
+
+    <!-- MOBILE FULLSCREEN MENU OVERLAY -->
+    <div id="mobile-menu-overlay"
+        class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex flex-col transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] opacity-0 pointer-events-none">
+        <!-- Header -->
+        <div class="flex items-center justify-between px-6 py-6 border-b border-white/10">
+            <a href="#home" class="menu-close-trigger">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 256 256" fill="none">
+                    <path
+                        d="M 160 88 L 194 34 L 216 0 L 256 0 L 256 40 L 221.5 93.5 L 200 128 L 256 128 L 256 256 L 96 256 L 96 168 L 64.246 220 L 40 256 L 0 256 L 0 216 L 34 162 L 56 128 L 0 128 L 0 0 L 160 0 Z"
+                        fill="white" />
+                </svg>
+            </a>
+            <button id="close-menu-btn" class="p-2 text-white hover:opacity-70 transition-opacity" aria-label="Close Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <!-- Nav Links -->
+        <nav class="flex flex-col items-center justify-center flex-1 gap-8 text-2xl tracking-widest uppercase">
+            <a href="#about"
+                class="mobile-nav-link text-white hover:text-red-500 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] opacity-0 translate-y-4">ABOUT</a>
+            <a href="#education"
+                class="mobile-nav-link text-white hover:text-red-500 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] opacity-0 translate-y-4">PROCESS</a>
+            <a href="#projects"
+                class="mobile-nav-link text-white hover:text-red-500 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] opacity-0 translate-y-4">PROJECTS</a>
+            <a href="#leetcode"
+                class="mobile-nav-link text-white hover:text-red-500 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] opacity-0 translate-y-4">CATALOG</a>
+            <a href="#certifications"
+                class="mobile-nav-link text-white hover:text-red-500 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] opacity-0 translate-y-4">D.O.T</a>
+            <a href="#contact"
+                class="mobile-nav-link text-white hover:text-red-500 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] opacity-0 translate-y-4">TALK</a>
         </nav>
-    </header>
+    </div>
 
-    <section id="home" class="hero hidden">
-        <div class="hero-content">
-            <div class="status-badge">
-                <span class="status-dot"></span> Available for opportunities
-            </div>
-            <h1 class="hero-heading">Hey, I'm<br><span class="name">Sarthak</span></h1>
-            <h2 class="role">&gt; <span class="multiple-text"></span><span class="cursor-blink">_</span></h2>
-            <p class="tagline">Engineering student crafting <strong>scalable web applications</strong> and solving
-                <strong>500+ DSA problems</strong>. Passionate about clean code, modern design, and building products
-                people love.
-            </p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn primary pulse-btn">Let's Connect</a>
-                <a href="https://drive.google.com/file/d/1AQNvzJUiQruPxeZVJdOz5kNjgqteAM6I/view?usp=drive_link"
-                    class="btn secondary" id="resume-btn" target="_blank">
-                    <i class="fas fa-download"></i> Resume
-                </a>
-            </div>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/sarthak-kanoi/" target="_blank"
-                    data-tooltip="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/iam-sarthakdev" target="_blank" data-tooltip="GitHub"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://codeforces.com/profile/Sarthak1712" target="_blank" data-tooltip="Codeforces"
-                    class="codeforces-icon">
-                    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                        style="width: 18px; height: 18px;">
-                        <path
-                            d="M4.5 7.5C5.328 7.5 6 8.172 6 9v10.5c0 .828-.672 1.5-1.5 1.5h-3C.672 21 0 20.328 0 19.5V9c0-.828.672-1.5 1.5-1.5h3zm9-4.5c.828 0 1.5.672 1.5 1.5v15c0 .828-.672 1.5-1.5 1.5h-3c-.828 0-1.5-.672-1.5-1.5v-15c0-.828.672-1.5 1.5-1.5h3zm9 7.5c.828 0 1.5.672 1.5 1.5v7.5c0 .828-.672 1.5-1.5 1.5h-3c-.828 0-1.5-.672-1.5-1.5V12c0-.828.672-1.5 1.5-1.5h3z" />
-                    </svg>
-                </a>
+    <!-- SHOWREEL MODAL -->
+    <div id="showreel-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-300 opacity-0 pointer-events-none">
+        <div class="relative w-full max-w-4xl bg-black border border-white/20 rounded-xl overflow-hidden shadow-2xl">
+            <button id="close-showreel-btn" class="absolute top-4 right-4 z-10 text-white bg-black/50 p-2 rounded-full hover:bg-white/20 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="aspect-video w-full">
+                <video id="modal-video" controls class="w-full h-full object-cover">
+                    <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260725_114042_d2ed2a89-f2fa-449b-9609-da456344257b.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
-        <div class="hero-image">
-            <div class="img-box">
-                <i class="fa-solid fa-code"></i>
+    </div>
+
+    <!-- ══ HERO SECTION (Full-Viewport compositions) ══ -->
+    <section id="home" class="relative z-10 flex min-h-screen flex-col px-5 sm:px-6 md:px-10 lg:px-14 pb-4">
+
+        <!-- 1. NAVBAR -->
+        <nav class="flex items-center justify-between py-6">
+            <!-- Left: Logo SVG -->
+            <a href="#home" class="hover:opacity-80 transition-opacity">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 256 256" fill="none">
+                    <path
+                        d="M 160 88 L 194 34 L 216 0 L 256 0 L 256 40 L 221.5 93.5 L 200 128 L 256 128 L 256 256 L 96 256 L 96 168 L 64.246 220 L 40 256 L 0 256 L 0 216 L 34 162 L 56 128 L 0 128 L 0 0 L 160 0 Z"
+                        fill="white" />
+                </svg>
+            </a>
+
+            <!-- Right Desktop Nav -->
+            <div class="hidden md:flex items-center gap-8 text-sm tracking-wide uppercase font-medium">
+                <a href="#about" class="hover:opacity-70 transition-opacity">ABOUT</a>
+                <a href="#education" class="hover:opacity-70 transition-opacity">PROCESS</a>
+                <a href="#projects" class="hover:opacity-70 transition-opacity">PROJECTS</a>
+                <a href="#leetcode" class="hover:opacity-70 transition-opacity">CATALOG</a>
+                <a href="#certifications" class="hover:opacity-70 transition-opacity">D.O.T</a>
+                <a href="#contact" class="hover:opacity-70 transition-opacity">TALK</a>
+            </div>
+
+            <!-- Right Mobile Hamburger -->
+            <button id="open-menu-btn" class="md:hidden p-2 text-white hover:opacity-70 transition-opacity" aria-label="Open Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- 2. FOUR-COLUMN META GRID -->
+        <div class="mt-4 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+
+            <!-- COL 1 -->
+            <div>
+                <h2 class="text-lg md:text-xl tracking-wide leading-tight font-normal">
+                    Sarthak<br>
+                    <span class="font-pixel text-2xl md:text-3xl">Kanoi</span>
+                </h2>
+                <span class="text-[10px] text-white/50 mt-3 block">*</span>
+                <p class="font-pixel mt-1 text-xs text-white/60 leading-relaxed">
+                    Grilled Pixels is my<br>
+                    personal brand - I came up<br>
+                    with it in 2004 based on<br>
+                    "cooking up ideas"
+                </p>
+            </div>
+
+            <!-- COL 2 -->
+            <div class="text-right lg:text-left">
+                <h2 class="text-lg md:text-xl tracking-wide leading-tight font-normal">
+                    DESIGN &<br>
+                    <span class="font-pixel text-2xl md:text-3xl">ENGINEERING</span>
+                </h2>
+            </div>
+
+            <!-- COL 3 -->
+            <div>
+                <div class="font-pixel text-base tracking-widest text-white/50 uppercase mb-3">What I Do</div>
+                <p class="text-sm text-white/90 leading-relaxed max-w-[220px]">
+                    I create the top 1% of experiences for brands and digital products
+                </p>
+            </div>
+
+            <!-- COL 4 -->
+            <div class="text-right lg:text-left">
+                <div class="font-pixel text-base tracking-widest text-white/50 uppercase mb-3">Services</div>
+                <ul class="text-sm text-white/90 leading-relaxed space-y-0.5">
+                    <li>Branding</li>
+                    <li>Creative Direction & Strategy</li>
+                    <li>UX/UI Design</li>
+                    <li>Web Development (React/Nextjs)</li>
+                    <li>3D, WebGL / Photography</li>
+                    <li>Video & Animation</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- 3. FLEX SPACER -->
+        <div class="flex-1 min-h-[40px]"></div>
+
+        <!-- 4. BOTTOM SECTION -->
+        <div class="pb-4">
+            <!-- ROW A -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 items-end">
+
+                <!-- Left Headline -->
+                <div>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[3.75rem] xl:text-[4.25rem] tracking-wide uppercase font-normal text-white"
+                        style="line-height: 0.72;">
+                        I BRING THE<br>
+                        <span class="font-pixel font-normal text-[1.25em] inline-block leading-none align-baseline text-white">UNEXPECTED</span> TO<br>
+                        BRAND & DIGITAL<br>
+                        <span class="font-pixel font-normal text-[1.25em] inline-block leading-none align-baseline text-white">EXPERIENCES</span>
+                    </h1>
+                </div>
+
+                <!-- Right Column (Showreel + Awards) -->
+                <div class="flex flex-col gap-4 sm:gap-6 justify-end items-start lg:items-end">
+
+                    <!-- Play Showreel Button -->
+                    <button id="play-showreel-btn"
+                        class="flex items-center gap-3 border border-white/30 px-6 py-3 backdrop-blur-sm bg-white/5 hover:bg-white/10 transition-colors uppercase tracking-wider text-sm self-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white"
+                            stroke="none">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                        <span>PLAY SHOWREEL</span>
+                    </button>
+
+                    <!-- Awards Row -->
+                    <div class="flex flex-wrap items-stretch gap-2 sm:gap-3 text-sm text-white/80 self-start lg:self-end">
+                        <div class="bg-[#0B0B0B] px-3 sm:px-4 py-2 flex items-center gap-2 border border-white/10 rounded-sm">
+                            <span class="font-bold text-sm sm:text-base tracking-tight text-white">FWA</span>
+                            <span class="text-white/50 text-xs">x1</span>
+                        </div>
+                        <div class="bg-[#0B0B0B] px-3 sm:px-4 py-2 flex items-center gap-2 border border-white/10 rounded-sm">
+                            <span class="font-bold text-lg sm:text-xl text-white">W.</span>
+                            <span class="text-white/50 text-xs">x7</span>
+                        </div>
+                        <div class="bg-[#0B0B0B] px-3 sm:px-4 py-2 flex items-center gap-2 border border-white/10 rounded-sm">
+                            <span class="font-bold text-[10px] sm:text-xs tracking-tight text-white">CSSDesignAwards</span>
+                            <span class="text-white/50 text-xs">x22</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ROW B: Footer Strip -->
+            <div class="mt-4 sm:mt-5 grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4 pt-4 border-t border-white/10">
+                <div class="text-xs text-white/60">
+                    Open to freelance, contract or full-time.
+                    <a href="#contact" class="text-red-500 hover:text-red-400 transition-colors ml-1 font-medium">Schedule a call</a>
+                </div>
+                <div class="text-xs text-white/60 sm:text-right">
+                    5 full cases &bull; 82 archive fragments &bull; 22 catalog items
+                </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <span>SCROLL</span>
-            <i class="fas fa-chevron-down"></i>
-        </div>
+
     </section>
 
-    <section id="about" class="about hidden">
-        <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
-        <div class="about-container">
-            <div class="about-text">
-                <p>
-                    I am a <strong>Software Engineer</strong> and Computer Science student at <strong>Raj Kumar Goel
-                        Institute of Technology (RKGIT), Ghaziabad</strong>, specializing in
-                    <strong>High-Performance Backend Systems & Java</strong>. Currently pursuing B.Tech in Advanced Data
-                    Structures & Core Software Engineering.
-                </p>
-                <p>
-                    Ranked <span class="highlight">Candidate Master</span> on Codeforces (Peak Rating: 1925) and
-                    <span class="highlight">Knight on LeetCode</span> (Top 6% Globally). I'm passionate about building
-                    scalable backend systems and solving algorithmic problems.
-                </p>
+    <!-- ══ SUBSEQUENT SECTIONS WRAPPER (Preserving all data & features) ══ -->
+    <div class="relative z-10 bg-black/95 border-t border-white/10 backdrop-blur-md">
 
-                <!-- What I Do Cards -->
-                <div class="what-i-do">
-                    <h3 class="subsection-title">What I <span class="gradient-text">Do</span></h3>
-                    <div class="services-grid">
-                        <div class="service-card">
-                            <i class="fas fa-laptop-code"></i>
-                            <h4>Full-Stack Development</h4>
-                            <p>Building responsive, interactive, and scalable web apps using React, Node.js, MongoDB,
-                                and modern frameworks.</p>
+        <!-- ── ABOUT SECTION ── -->
+        <section id="about" class="px-5 sm:px-6 md:px-10 lg:px-14 py-20 border-b border-white/10 hidden-reveal">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="font-pixel text-red-500 uppercase tracking-widest text-sm mb-2 block">01 / BIOGRAPHY</span>
+                    <h2 class="text-3xl md:text-5xl font-bold uppercase tracking-tight">About <span class="font-pixel text-white/70">Me</span></h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                    <div class="lg:col-span-7 space-y-6 text-white/80 leading-relaxed text-base">
+                        <p>
+                            I am a <strong class="text-white">Software Engineer</strong> and Computer Science student at
+                            <strong class="text-white">Raj Kumar Goel Institute of Technology (RKGIT), Ghaziabad</strong>,
+                            specializing in <strong class="text-white">High-Performance Backend Systems & Java</strong>. Currently pursuing B.Tech in Advanced Data Structures & Core Software Engineering.
+                        </p>
+                        <p>
+                            Ranked <span class="text-red-400 font-semibold">Candidate Master</span> on Codeforces (Peak Rating: 1925) and
+                            <span class="text-yellow-400 font-semibold">Knight on LeetCode</span> (Top 6% Globally). I'm passionate about building scalable backend systems and solving complex algorithmic problems.
+                        </p>
+
+                        <!-- Quick Badges -->
+                        <div class="pt-4 flex flex-wrap gap-3">
+                            <a href="https://github.com/iam-sarthakdev" target="_blank" class="flex items-center gap-2 bg-[#0B0B0B] border border-white/15 px-4 py-2 rounded-full text-xs hover:border-white/40 transition-colors">
+                                <i class="fab fa-github"></i> GitHub: iam-sarthakdev
+                            </a>
+                            <a href="https://codeforces.com/profile/Sarthak1712" target="_blank" class="flex items-center gap-2 bg-[#0B0B0B] border border-white/15 px-4 py-2 rounded-full text-xs hover:border-white/40 transition-colors">
+                                <i class="fas fa-trophy text-purple-400"></i> Codeforces: Sarthak1712
+                            </a>
+                            <a href="https://leetcode.com/u/Sarthak_79/" target="_blank" class="flex items-center gap-2 bg-[#0B0B0B] border border-white/15 px-4 py-2 rounded-full text-xs hover:border-white/40 transition-colors">
+                                <i class="fas fa-code text-yellow-400"></i> LeetCode: Sarthak_79
+                            </a>
                         </div>
-                        <div class="service-card">
-                            <i class="fas fa-brain"></i>
-                            <h4>DSA & Problem Solving</h4>
-                            <p>Solving competitive programming problems with optimized data structures and algorithms.
+                    </div>
+
+                    <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+                        <div class="bg-[#0B0B0B] border border-white/10 p-5 rounded-xl hover:border-white/30 transition-all">
+                            <i class="fas fa-code text-2xl text-red-500 mb-3"></i>
+                            <div class="text-2xl font-bold text-white font-pixel">500+</div>
+                            <div class="text-xs text-white/50 uppercase tracking-wider mt-1">DSA Problems</div>
+                        </div>
+                        <div class="bg-[#0B0B0B] border border-white/10 p-5 rounded-xl hover:border-white/30 transition-all">
+                            <i class="fas fa-trophy text-2xl text-yellow-500 mb-3"></i>
+                            <div class="text-2xl font-bold text-white font-pixel">SIH 2025</div>
+                            <div class="text-xs text-white/50 uppercase tracking-wider mt-1">Smart India Hackathon</div>
+                        </div>
+                        <div class="bg-[#0B0B0B] border border-white/10 p-5 rounded-xl hover:border-white/30 transition-all">
+                            <i class="fas fa-building text-2xl text-blue-500 mb-3"></i>
+                            <div class="text-2xl font-bold text-white font-pixel">Walmart</div>
+                            <div class="text-xs text-white/50 uppercase tracking-wider mt-1">Global Simulation</div>
+                        </div>
+                        <div class="bg-[#0B0B0B] border border-white/10 p-5 rounded-xl hover:border-white/30 transition-all">
+                            <i class="fas fa-rocket text-2xl text-purple-500 mb-3"></i>
+                            <div class="text-2xl font-bold text-white font-pixel">3+ Apps</div>
+                            <div class="text-xs text-white/50 uppercase tracking-wider mt-1">Deployed Production</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Skills Matrix -->
+                <div class="mt-20">
+                    <h3 class="text-xl font-bold uppercase tracking-wider mb-8 text-center font-pixel text-white/80">Technical Skills Matrix</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-[#0B0B0B] border border-white/10 p-6 rounded-xl">
+                            <h4 class="text-sm font-semibold text-red-400 uppercase tracking-wider mb-4">Languages</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-white/5 border border-white/10 text-xs px-3 py-1.5 rounded-md">Java</span>
+                                <span class="bg-white/5 border border-white/10 text-xs px-3 py-1.5 rounded-md">JavaScript</span>
+                                <span class="bg-white/5 border border-white/10 text-xs px-3 py-1.5 rounded-md">TypeScript</span>
+                                <span class="bg-white/5 border border-white/10 text-xs px-3 py-1.5 rounded-md">Python</span>
+                                <span class="bg-white/5 border border-white/10 text-xs px-3 py-1.5 rounded-md">C++</span>
+                            </div>
+                        </div>
+                        <div class="bg-[#0B0B0B] border border-white/10 p-6 rounded-xl">
+                            <h4 class="text-sm font-semibold text-red-400 uppercase tracking-wider mb-4">Frontend</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-white/5 border border-white/10 text-xs px-3 py-1.5 rounded-md">React.js</span>
+                                <span class="bg-white/5 border border-white/10 text-xs px-3 py-1.5 rounded-md">Next.js</span>
+                                <span class="bg-white/5 border border-white/10 text-xs px-3 py-1.5 rounded-md">Tailwind CSS</span>
+                                <span class="bg-white/5 border border-white/10 text-xs px-3 py-1.5 rounded-md">HTML5 / CSS3</span>
+                            </div>
+                        </div>
+                        <div class="bg-[#0B0B0B] border border-white/10 p-6 rounded-xl">
+                            <h4 class="text-sm font-semibold text-red-400 uppercase tracking-wider mb-4">Backend</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-white/5 border border-white/10 text-xs px-3 py-1.5 rounded-md">Node.js</span>
+                                <span class="bg-white/5 border border-white/10 text-xs px-3 py-1.5 rounded-md">Express.js</span>
+                                <span class="bg-white/5 border border-white/10 text-xs px-3 py-1.5 rounded-md">REST APIs</span>
+                                <span class="bg-white/5 border border-white/10 text-xs px-3 py-1.5 rounded-md">WebSockets</span>
+                            </div>
+                        </div>
+                        <div class="bg-[#0B0B0B] border border-white/10 p-6 rounded-xl">
+                            <h4 class="text-sm font-semibold text-red-400 uppercase tracking-wider mb-4">Databases</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-white/5 border border-white/10 text-xs px-3 py-1.5 rounded-md">MongoDB</span>
+                                <span class="bg-white/5 border border-white/10 text-xs px-3 py-1.5 rounded-md">MySQL</span>
+                                <span class="bg-white/5 border border-white/10 text-xs px-3 py-1.5 rounded-md">Firebase</span>
+                            </div>
+                        </div>
+                        <div class="bg-[#0B0B0B] border border-white/10 p-6 rounded-xl">
+                            <h4 class="text-sm font-semibold text-red-400 uppercase tracking-wider mb-4">DevOps & Cloud</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-white/5 border border-white/10 text-xs px-3 py-1.5 rounded-md">Git</span>
+                                <span class="bg-white/5 border border-white/10 text-xs px-3 py-1.5 rounded-md">Docker</span>
+                                <span class="bg-white/5 border border-white/10 text-xs px-3 py-1.5 rounded-md">AWS</span>
+                                <span class="bg-white/5 border border-white/10 text-xs px-3 py-1.5 rounded-md">Vercel</span>
+                                <span class="bg-white/5 border border-white/10 text-xs px-3 py-1.5 rounded-md">Postman</span>
+                            </div>
+                        </div>
+                        <div class="bg-[#0B0B0B] border border-white/10 p-6 rounded-xl">
+                            <h4 class="text-sm font-semibold text-red-400 uppercase tracking-wider mb-4">Core CS</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-white/5 border border-white/10 text-xs px-3 py-1.5 rounded-md">DSA</span>
+                                <span class="bg-white/5 border border-white/10 text-xs px-3 py-1.5 rounded-md">OOP</span>
+                                <span class="bg-white/5 border border-white/10 text-xs px-3 py-1.5 rounded-md">DBMS</span>
+                                <span class="bg-white/5 border border-white/10 text-xs px-3 py-1.5 rounded-md">OS</span>
+                                <span class="bg-white/5 border border-white/10 text-xs px-3 py-1.5 rounded-md">LLD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── EDUCATION SECTION ── -->
+        <section id="education" class="px-5 sm:px-6 md:px-10 lg:px-14 py-20 border-b border-white/10 hidden-reveal">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="font-pixel text-red-500 uppercase tracking-widest text-sm mb-2 block">02 / ACADEMIC JOURNEY</span>
+                    <h2 class="text-3xl md:text-5xl font-bold uppercase tracking-tight">Education <span class="font-pixel text-white/70">Timeline</span></h2>
+                </div>
+
+                <div class="space-y-8">
+                    <!-- Item 1 -->
+                    <div class="bg-[#0B0B0B] border border-white/10 p-6 md:p-8 rounded-xl flex flex-col md:flex-row gap-6 justify-between items-start hover:border-white/30 transition-all">
+                        <div class="space-y-2">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-graduation-cap text-red-500 text-xl"></i>
+                                <h3 class="text-xl font-bold text-white">B.Tech in Computer Science & Engineering</h3>
+                            </div>
+                            <p class="text-white/70 text-sm">Raj Kumar Goel Institute of Technology (RKGIT), Ghaziabad</p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="bg-white/5 text-white/60 text-xs px-2.5 py-1 rounded">Data Structures & Algorithms</span>
+                                <span class="bg-white/5 text-white/60 text-xs px-2.5 py-1 rounded">System Design</span>
+                            </div>
+                        </div>
+                        <div class="text-left md:text-right space-y-2">
+                            <span class="inline-block bg-white/10 text-white text-xs px-3 py-1 rounded-full font-mono">2023 – 2027</span>
+                            <div>
+                                <span class="inline-block bg-red-500/20 text-red-400 border border-red-500/30 text-xs font-bold px-3 py-1 rounded-full">CGPA: 8.50</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="bg-[#0B0B0B] border border-white/10 p-6 md:p-8 rounded-xl flex flex-col md:flex-row gap-6 justify-between items-start hover:border-white/30 transition-all">
+                        <div class="space-y-2">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-school text-blue-400 text-xl"></i>
+                                <h3 class="text-xl font-bold text-white">Senior Secondary (Class XII)</h3>
+                            </div>
+                            <p class="text-white/70 text-sm">RPM Academy</p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="bg-white/5 text-white/60 text-xs px-2.5 py-1 rounded">Physics, Chemistry & Mathematics</span>
+                                <span class="bg-white/5 text-white/60 text-xs px-2.5 py-1 rounded">Computer Science</span>
+                            </div>
+                        </div>
+                        <div class="text-left md:text-right space-y-2">
+                            <span class="inline-block bg-white/10 text-white text-xs px-3 py-1 rounded-full font-mono">2021 – 2022</span>
+                            <div>
+                                <span class="inline-block bg-blue-500/20 text-blue-400 border border-blue-500/30 text-xs font-bold px-3 py-1 rounded-full">87%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="bg-[#0B0B0B] border border-white/10 p-6 md:p-8 rounded-xl flex flex-col md:flex-row gap-6 justify-between items-start hover:border-white/30 transition-all">
+                        <div class="space-y-2">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-book text-green-400 text-xl"></i>
+                                <h3 class="text-xl font-bold text-white">Secondary Education (Class X)</h3>
+                            </div>
+                            <p class="text-white/70 text-sm">RPM Academy</p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="bg-white/5 text-white/60 text-xs px-2.5 py-1 rounded">Science & Mathematics</span>
+                                <span class="bg-white/5 text-white/60 text-xs px-2.5 py-1 rounded">Computer Applications</span>
+                            </div>
+                        </div>
+                        <div class="text-left md:text-right space-y-2">
+                            <span class="inline-block bg-white/10 text-white text-xs px-3 py-1 rounded-full font-mono">2019 – 2020</span>
+                            <div>
+                                <span class="inline-block bg-green-500/20 text-green-400 border border-green-500/30 text-xs font-bold px-3 py-1 rounded-full">89%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── PROJECTS SECTION ── -->
+        <section id="projects" class="px-5 sm:px-6 md:px-10 lg:px-14 py-20 border-b border-white/10 hidden-reveal">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="font-pixel text-red-500 uppercase tracking-widest text-sm mb-2 block">03 / CREATIVE WORK</span>
+                    <h2 class="text-3xl md:text-5xl font-bold uppercase tracking-tight">Featured <span class="font-pixel text-white/70">Projects</span></h2>
+                    <p class="text-white/60 text-sm mt-3 max-w-xl mx-auto">Full-stack applications built with modern technologies, focused on solving real problems and clean architecture.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- FAANG-Forge -->
+                    <div class="bg-[#0B0B0B] border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-white/30 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="bg-red-500/20 text-red-400 border border-red-500/30 text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full font-mono">FEATURED PROJECT</span>
+                                <div class="flex gap-2">
+                                    <a href="https://faang-forge-eight.vercel.app/" target="_blank" class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white transition-colors" title="Live Demo"><i class="fas fa-external-link-alt text-xs"></i></a>
+                                    <a href="https://github.com/iam-sarthakdev/FAANG-Forge" target="_blank" class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white transition-colors" title="Source Code"><i class="fab fa-github text-xs"></i></a>
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-1">FAANG-Forge</h3>
+                            <p class="text-red-400 text-xs font-semibold uppercase tracking-wider mb-4">Master Your Coding Interviews</p>
+                            <p class="text-white/70 text-xs leading-relaxed mb-6">
+                                An algorithmic interview prep platform focused on a pattern-driven, terminal-based approach to DSA practice. Features a spaced repetition algorithm and GraphQL API parsing 2,700+ company-tagged problems.
                             </p>
                         </div>
-                        <div class="service-card">
-                            <i class="fas fa-sitemap"></i>
-                            <h4>System Design</h4>
-                            <p>Designing distributed system architectures with real-time communication and scalability.
+                        <div class="flex flex-wrap gap-1.5 pt-4 border-t border-white/10">
+                            <span class="bg-white/5 text-white/70 text-[11px] px-2.5 py-1 rounded font-mono">React</span>
+                            <span class="bg-white/5 text-white/70 text-[11px] px-2.5 py-1 rounded font-mono">Node.js</span>
+                            <span class="bg-white/5 text-white/70 text-[11px] px-2.5 py-1 rounded font-mono">GraphQL</span>
+                            <span class="bg-white/5 text-white/70 text-[11px] px-2.5 py-1 rounded font-mono">MongoDB</span>
+                        </div>
+                    </div>
+
+                    <!-- MockMate AI -->
+                    <div class="bg-[#0B0B0B] border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-white/30 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="bg-purple-500/20 text-purple-400 border border-purple-500/30 text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full font-mono">FEATURED PROJECT</span>
+                                <div class="flex gap-2">
+                                    <a href="https://mockmate-ai.vercel.app/" target="_blank" class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white transition-colors" title="Live Demo"><i class="fas fa-external-link-alt text-xs"></i></a>
+                                    <a href="https://github.com/iam-sarthakdev/MockMate-AI" target="_blank" class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white transition-colors" title="Source Code"><i class="fab fa-github text-xs"></i></a>
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-1">MockMate AI</h3>
+                            <p class="text-purple-400 text-xs font-semibold uppercase tracking-wider mb-4">AI Voice Interview Coach</p>
+                            <p class="text-white/70 text-xs leading-relaxed mb-6">
+                                An AI-powered voice interview coach with ultra-low latency bi-directional audio streaming using raw WebCodecs. Features secure OAuth/session persistence and mobility tracking via MediaPipe.
                             </p>
                         </div>
-                        <div class="service-card">
-                            <i class="fas fa-paint-brush"></i>
-                            <h4>Modern UI/UX</h4>
-                            <p>Crafting premium, animated interfaces with glassmorphism, dark themes, and dynamic
-                                interactions.</p>
+                        <div class="flex flex-wrap gap-1.5 pt-4 border-t border-white/10">
+                            <span class="bg-white/5 text-white/70 text-[11px] px-2.5 py-1 rounded font-mono">Next.js</span>
+                            <span class="bg-white/5 text-white/70 text-[11px] px-2.5 py-1 rounded font-mono">WebSockets</span>
+                            <span class="bg-white/5 text-white/70 text-[11px] px-2.5 py-1 rounded font-mono">Kubernetes</span>
+                            <span class="bg-white/5 text-white/70 text-[11px] px-2.5 py-1 rounded font-mono">LLM API</span>
                         </div>
                     </div>
-                </div>
 
-                <!-- Achievements -->
-                <div class="achievements-section">
-                    <h3 class="subsection-title">Achievements & <span class="gradient-text">Recognition</span></h3>
-                    <div class="achievements-grid">
-                        <div class="achievement-card">
-                            <i class="fas fa-code"></i>
-                            <h4>500+ Problems</h4>
-                            <p>LeetCode & Codeforces</p>
+                    <!-- DevSync -->
+                    <div class="bg-[#0B0B0B] border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-white/30 transition-all">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="bg-blue-500/20 text-blue-400 border border-blue-500/30 text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full font-mono">FEATURED PROJECT</span>
+                                <div class="flex gap-2">
+                                    <a href="https://devsync-ide.vercel.app/" target="_blank" class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white transition-colors" title="Live Demo"><i class="fas fa-external-link-alt text-xs"></i></a>
+                                    <a href="https://github.com/iam-sarthakdev/DevSync" target="_blank" class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:text-white hover:border-white transition-colors" title="Source Code"><i class="fab fa-github text-xs"></i></a>
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-1">DevSync</h3>
+                            <p class="text-blue-400 text-xs font-semibold uppercase tracking-wider mb-4">Real-Time Collaborative IDE</p>
+                            <p class="text-white/70 text-xs leading-relaxed mb-6">
+                                A multi-room collaborative IDE built with event-driven Socket-based state sync for real-time code sharing. Integrated isolated Judge0 API instances to sandbox and compile code across 40+ languages.
+                            </p>
                         </div>
-                        <div class="achievement-card">
-                            <i class="fas fa-trophy"></i>
-                            <h4>SIH 2025</h4>
-                            <p>Smart India Hackathon</p>
-                        </div>
-                        <div class="achievement-card">
-                            <i class="fas fa-building"></i>
-                            <h4>Walmart Global</h4>
-                            <p>Engineering Simulation</p>
-                        </div>
-                        <div class="achievement-card">
-                            <i class="fas fa-rocket"></i>
-                            <h4>3+ Full-Stack Apps</h4>
-                            <p>Production Deployed</p>
+                        <div class="flex flex-wrap gap-1.5 pt-4 border-t border-white/10">
+                            <span class="bg-white/5 text-white/70 text-[11px] px-2.5 py-1 rounded font-mono">React</span>
+                            <span class="bg-white/5 text-white/70 text-[11px] px-2.5 py-1 rounded font-mono">Socket.io</span>
+                            <span class="bg-white/5 text-white/70 text-[11px] px-2.5 py-1 rounded font-mono">Monaco</span>
+                            <span class="bg-white/5 text-white/70 text-[11px] px-2.5 py-1 rounded font-mono">Judge0</span>
                         </div>
                     </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ── LEETCODE & COMPETITIVE PROGRAMMING SECTION ── -->
+        <section id="leetcode" class="px-5 sm:px-6 md:px-10 lg:px-14 py-20 border-b border-white/10 hidden-reveal">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="font-pixel text-red-500 uppercase tracking-widest text-sm mb-2 block">04 / ALGORITHMIC PROFILE</span>
+                    <h2 class="text-3xl md:text-5xl font-bold uppercase tracking-tight">LeetCode & <span class="font-pixel text-white/70">Codeforces</span></h2>
                 </div>
 
-                <!-- Technical Skills -->
-                <div class="skills-section">
-                    <h3 class="subsection-title">Technical <span class="gradient-text">Skills</span></h3>
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h4>Languages</h4>
-                            <div class="skill-tags">
-                                <span>Java</span><span>JavaScript</span><span>TypeScript</span><span>Python</span><span>C++</span>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+                    <!-- LeetCode Card -->
+                    <div class="bg-[#0B0B0B] border border-white/10 rounded-2xl p-6 md:p-8 hover:border-white/30 transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-6 pb-4 border-b border-white/10">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-code text-yellow-500 text-2xl"></i>
+                                    <h3 class="text-xl font-bold text-white">LeetCode Stats</h3>
+                                </div>
+                                <span class="bg-yellow-500/20 text-yellow-400 border border-yellow-500/40 text-xs uppercase font-bold px-3 py-1 rounded-full font-pixel">Knight</span>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-4 text-center mb-6">
+                                <div class="bg-white/5 p-4 rounded-xl">
+                                    <span class="text-2xl font-bold text-white block font-mono" data-count="1874">1874</span>
+                                    <span class="text-[11px] text-white/50 uppercase tracking-wider">Rating</span>
+                                </div>
+                                <div class="bg-white/5 p-4 rounded-xl">
+                                    <span class="text-2xl font-bold text-white block font-mono" data-count="500">500</span>
+                                    <span class="text-[11px] text-white/50 uppercase tracking-wider">Problems</span>
+                                </div>
+                                <div class="bg-white/5 p-4 rounded-xl">
+                                    <span class="text-2xl font-bold text-white block font-mono">Top 6%</span>
+                                    <span class="text-[11px] text-white/50 uppercase tracking-wider">Global Rank</span>
+                                </div>
+                            </div>
+
+                            <!-- Progress bars -->
+                            <div class="space-y-3 mb-6">
+                                <div class="flex items-center justify-between text-xs">
+                                    <span class="text-emerald-400 font-semibold">Easy</span>
+                                    <div class="w-full mx-4 bg-white/10 h-2 rounded-full overflow-hidden">
+                                        <div class="bg-emerald-500 h-full rounded-full" style="width: 85%;"></div>
+                                    </div>
+                                    <span class="text-white/70 font-mono">276</span>
+                                </div>
+                                <div class="flex items-center justify-between text-xs">
+                                    <span class="text-amber-400 font-semibold">Medium</span>
+                                    <div class="w-full mx-4 bg-white/10 h-2 rounded-full overflow-hidden">
+                                        <div class="bg-amber-500 h-full rounded-full" style="width: 60%;"></div>
+                                    </div>
+                                    <span class="text-white/70 font-mono">404</span>
+                                </div>
+                                <div class="flex items-center justify-between text-xs">
+                                    <span class="text-red-400 font-semibold">Hard</span>
+                                    <div class="w-full mx-4 bg-white/10 h-2 rounded-full overflow-hidden">
+                                        <div class="bg-red-500 h-full rounded-full" style="width: 15%;"></div>
+                                    </div>
+                                    <span class="text-white/70 font-mono">27</span>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-white/5 text-white/70 text-xs px-3 py-1 rounded-full">Daily Rated</span>
+                                <span class="bg-white/5 text-white/70 text-xs px-3 py-1 rounded-full">Top Rated 14%</span>
+                                <span class="bg-white/5 text-white/70 text-xs px-3 py-1 rounded-full">1600+ Community</span>
+                                <span class="bg-white/5 text-white/70 text-xs px-3 py-1 rounded-full">540+ Reputation</span>
                             </div>
                         </div>
-                        <div class="skill-category">
-                            <h4>Frontend</h4>
-                            <div class="skill-tags">
-                                <span>React.js</span><span>Next.js</span><span>Tailwind CSS</span><span>HTML5</span><span>CSS3</span>
+
+                        <a href="https://leetcode.com/u/Sarthak_79/" target="_blank" class="w-full text-center bg-white/5 hover:bg-white/15 border border-white/20 py-3 rounded-xl text-xs font-semibold tracking-wider uppercase transition-colors inline-block text-white">
+                            <i class="fas fa-external-link-alt mr-2"></i> View LeetCode Profile
+                        </a>
+                    </div>
+
+                    <!-- Codeforces Card -->
+                    <div class="bg-[#0B0B0B] border border-white/10 rounded-2xl p-6 md:p-8 hover:border-white/30 transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-6 pb-4 border-b border-white/10">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-trophy text-purple-400 text-2xl"></i>
+                                    <h3 class="text-xl font-bold text-white">Codeforces Stats</h3>
+                                </div>
+                                <span class="bg-purple-500/20 text-purple-300 border border-purple-500/40 text-xs uppercase font-bold px-3 py-1 rounded-full font-pixel">Candidate Master</span>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-4 text-center mb-6">
+                                <div class="bg-white/5 p-4 rounded-xl">
+                                    <span class="text-2xl font-bold text-white block font-mono" data-count="1925">1925</span>
+                                    <span class="text-[11px] text-white/50 uppercase tracking-wider">Peak Rating</span>
+                                </div>
+                                <div class="bg-white/5 p-4 rounded-xl">
+                                    <span class="text-2xl font-bold text-white block font-mono">CM</span>
+                                    <span class="text-[11px] text-white/50 uppercase tracking-wider">Max Rank</span>
+                                </div>
+                                <div class="bg-white/5 p-4 rounded-xl">
+                                    <span class="text-2xl font-bold text-white block font-mono" data-count="4513">4513</span>
+                                    <span class="text-[11px] text-white/50 uppercase tracking-wider">Contributions</span>
+                                </div>
+                            </div>
+
+                            <div class="space-y-3 mb-6">
+                                <div class="bg-white/5 p-3 rounded-xl flex items-center gap-3 text-xs text-white/80">
+                                    <i class="fas fa-fire text-red-500"></i>
+                                    <span>132 Day Longest Streak</span>
+                                </div>
+                                <div class="bg-white/5 p-3 rounded-xl flex items-center gap-3 text-xs text-white/80">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <span>10 GitHub Stars</span>
+                                </div>
+                                <div class="bg-white/5 p-3 rounded-xl flex items-center gap-3 text-xs text-white/80">
+                                    <i class="fas fa-code-branch text-purple-400"></i>
+                                    <span>4,100+ Commits (2026)</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="skill-category">
-                            <h4>Backend</h4>
-                            <div class="skill-tags">
-                                <span>Node.js</span><span>Express.js</span><span>REST APIs</span><span>WebSockets</span>
+
+                        <a href="https://codeforces.com/profile/Sarthak1712" target="_blank" class="w-full text-center bg-white/5 hover:bg-white/15 border border-white/20 py-3 rounded-xl text-xs font-semibold tracking-wider uppercase transition-colors inline-block text-white">
+                            <i class="fas fa-external-link-alt mr-2"></i> View Codeforces Profile
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ── CERTIFICATIONS SECTION ── -->
+        <section id="certifications" class="px-5 sm:px-6 md:px-10 lg:px-14 py-20 border-b border-white/10 hidden-reveal">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="font-pixel text-red-500 uppercase tracking-widest text-sm mb-2 block">05 / CREDENTIALS</span>
+                    <h2 class="text-3xl md:text-5xl font-bold uppercase tracking-tight">Certifications & <span class="font-pixel text-white/70">Simulations</span></h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                    <!-- Cert 1 -->
+                    <div class="bg-[#0B0B0B] border border-white/10 p-6 rounded-2xl hover:border-white/30 transition-all flex flex-col justify-between">
+                        <div>
+                            <span class="text-red-400 text-xs font-mono font-bold uppercase tracking-wider">Walmart Global Tech</span>
+                            <h3 class="text-lg font-bold text-white mt-1 mb-2">Advanced Software Engineering Job Simulation</h3>
+                            <p class="text-white/70 text-xs leading-relaxed mb-4">Worked on advanced data structures, software architecture, and relational database design tasks.</p>
+                        </div>
+                        <a href="#" class="inline-flex items-center gap-2 text-xs text-white/80 hover:text-white border border-white/20 px-4 py-2 rounded-full w-fit hover:bg-white/10 transition-colors">
+                            <i class="fas fa-external-link-alt text-[10px]"></i> View Credential
+                        </a>
+                    </div>
+
+                    <!-- Cert 2 -->
+                    <div class="bg-[#0B0B0B] border border-white/10 p-6 rounded-2xl hover:border-white/30 transition-all flex flex-col justify-between">
+                        <div>
+                            <span class="text-blue-400 text-xs font-mono font-bold uppercase tracking-wider">Wells Fargo</span>
+                            <h3 class="text-lg font-bold text-white mt-1 mb-2">Software Engineering Job Simulation</h3>
+                            <p class="text-white/70 text-xs leading-relaxed mb-4">Built and implemented data models and software solutions aligned with real-world engineering workflows.</p>
+                        </div>
+                        <a href="#" class="inline-flex items-center gap-2 text-xs text-white/80 hover:text-white border border-white/20 px-4 py-2 rounded-full w-fit hover:bg-white/10 transition-colors">
+                            <i class="fas fa-external-link-alt text-[10px]"></i> View Credential
+                        </a>
+                    </div>
+
+                    <!-- Cert 3 -->
+                    <div class="bg-[#0B0B0B] border border-white/10 p-6 rounded-2xl hover:border-white/30 transition-all flex flex-col justify-between">
+                        <div>
+                            <span class="text-amber-400 text-xs font-mono font-bold uppercase tracking-wider">AWS Cloud Training</span>
+                            <h3 class="text-lg font-bold text-white mt-1 mb-2">DevOps on AWS & AWS CLI Basics</h3>
+                            <p class="text-white/70 text-xs leading-relaxed mb-4">Gained hands-on experience with cloud workflows, deployment strategies, and DevOps fundamentals.</p>
+                        </div>
+                        <a href="#" class="inline-flex items-center gap-2 text-xs text-white/80 hover:text-white border border-white/20 px-4 py-2 rounded-full w-fit hover:bg-white/10 transition-colors">
+                            <i class="fas fa-external-link-alt text-[10px]"></i> View Credential
+                        </a>
+                    </div>
+
+                    <!-- Cert 4 -->
+                    <div class="bg-[#0B0B0B] border border-white/10 p-6 rounded-2xl hover:border-white/30 transition-all flex flex-col justify-between">
+                        <div>
+                            <span class="text-emerald-400 text-xs font-mono font-bold uppercase tracking-wider">Deloitte</span>
+                            <h3 class="text-lg font-bold text-white mt-1 mb-2">Data Analytics Job Simulation</h3>
+                            <p class="text-white/70 text-xs leading-relaxed mb-4">Performed data analytics & forensic investigation tasks using industry-standard techniques.</p>
+                        </div>
+                        <a href="#" class="inline-flex items-center gap-2 text-xs text-white/80 hover:text-white border border-white/20 px-4 py-2 rounded-full w-fit hover:bg-white/10 transition-colors">
+                            <i class="fas fa-external-link-alt text-[10px]"></i> View Credential
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ── CONTACT SECTION ── -->
+        <section id="contact" class="px-5 sm:px-6 md:px-10 lg:px-14 py-20 hidden-reveal">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="font-pixel text-red-500 uppercase tracking-widest text-sm mb-2 block">06 / GET IN TOUCH</span>
+                    <h2 class="text-3xl md:text-5xl font-bold uppercase tracking-tight">Let's <span class="font-pixel text-white/70">Connect</span></h2>
+                    <p class="text-white/60 text-sm mt-3 max-w-xl mx-auto">Have a project in mind or just want to discuss software engineering? I'm always happy to connect!</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                    <!-- Left Info -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <h3 class="text-2xl font-bold text-white">Get In Touch</h3>
+                        <p class="text-white/70 text-sm leading-relaxed">
+                            I'm currently looking for new opportunities in full-stack engineering and backend systems. Feel free to send a message!
+                        </p>
+
+                        <div class="space-y-4 text-sm">
+                            <a href="mailto:work.sarthak17@gmail.com" class="flex items-center gap-3 text-white/80 hover:text-white transition-colors">
+                                <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-red-500"><i class="fas fa-envelope"></i></div>
+                                <span>work.sarthak17@gmail.com</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/sarthak-kanoi/" target="_blank" class="flex items-center gap-3 text-white/80 hover:text-white transition-colors">
+                                <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-blue-400"><i class="fab fa-linkedin"></i></div>
+                                <span>linkedin.com/in/sarthak-kanoi/</span>
+                            </a>
+                            <a href="https://github.com/iam-sarthakdev" target="_blank" class="flex items-center gap-3 text-white/80 hover:text-white transition-colors">
+                                <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-purple-400"><i class="fab fa-github"></i></div>
+                                <span>github.com/iam-sarthakdev</span>
+                            </a>
+                            <a href="https://codeforces.com/profile/Sarthak1712" target="_blank" class="flex items-center gap-3 text-white/80 hover:text-white transition-colors">
+                                <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-yellow-400"><i class="fas fa-chart-bar"></i></div>
+                                <span>Codeforces: Sarthak1712</span>
+                            </a>
+                            <div class="flex items-center gap-3 text-white/60">
+                                <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-emerald-400"><i class="fas fa-map-marker-alt"></i></div>
+                                <span>Delhi NCR, India</span>
                             </div>
                         </div>
-                        <div class="skill-category">
-                            <h4>Databases</h4>
-                            <div class="skill-tags">
-                                <span>MongoDB</span><span>MySQL</span><span>Firebase</span>
-                            </div>
+                    </div>
+
+                    <!-- Right Form -->
+                    <form class="contact-form lg:col-span-7 bg-[#0B0B0B] border border-white/10 p-8 rounded-2xl space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input type="text" placeholder="Your Name" required class="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-sm text-white placeholder-white/40 focus:border-white/40 outline-none transition-colors">
+                            <input type="email" placeholder="your@example.com" required class="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-sm text-white placeholder-white/40 focus:border-white/40 outline-none transition-colors">
                         </div>
-                        <div class="skill-category">
-                            <h4>DevOps</h4>
-                            <div class="skill-tags">
-                                <span>Git</span><span>Docker</span><span>AWS</span><span>Vercel</span><span>Postman</span>
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Core CS</h4>
-                            <div class="skill-tags">
-                                <span>DSA</span><span>OOP</span><span>DBMS</span><span>OS</span><span>LLD</span>
-                            </div>
-                        </div>
-                    </div>
+                        <input type="text" placeholder="What's this about?" required class="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-sm text-white placeholder-white/40 focus:border-white/40 outline-none transition-colors">
+                        <textarea placeholder="Write down your project or query..." rows="5" required class="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-sm text-white placeholder-white/40 focus:border-white/40 outline-none transition-colors"></textarea>
+                        <button type="submit" class="w-full bg-white text-black font-semibold py-4 rounded-xl text-sm uppercase tracking-wider hover:bg-white/90 transition-colors flex items-center justify-center gap-2">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="education" class="education hidden">
-        <h2 class="section-title">My <span class="gradient-text">Education</span></h2>
-        <p class="section-subtitle">A academic journey that shaped my technical foundation.</p>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <h3>B.Tech in Computer Science & Engineering</h3>
-                    <span class="institution">Raj Kumar Goel Institute of Technology (RKGIT)</span>
-                    <div class="edu-meta">
-                        <span class="date">2023 – 2027</span>
-                        <span class="gpa-badge">CGPA: 8.50</span>
-                    </div>
-                    <div class="edu-tags">
-                        <span>Data Structures & Algorithms</span><span>System Design</span>
-                    </div>
-                </div>
+        <!-- ── FOOTER ── -->
+        <footer class="px-5 sm:px-6 md:px-10 lg:px-14 py-12 border-t border-white/10 text-xs text-white/50 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256" fill="none">
+                    <path d="M 160 88 L 194 34 L 216 0 L 256 0 L 256 40 L 221.5 93.5 L 200 128 L 256 128 L 256 256 L 96 256 L 96 168 L 64.246 220 L 40 256 L 0 256 L 0 216 L 34 162 L 56 128 L 0 128 L 0 0 L 160 0 Z" fill="white" />
+                </svg>
+                <span>Made with <span class="text-red-500">&hearts;</span> by Sarthak Kanoi &copy; 2026</span>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="edu-icon"><i class="fas fa-school"></i></div>
-                    <h3>Senior Secondary (Class XII)</h3>
-                    <span class="institution">RPM Academy</span>
-                    <div class="edu-meta">
-                        <span class="date">2021 – 2022</span>
-                        <span class="gpa-badge">87%</span>
-                    </div>
-                    <div class="edu-tags">
-                        <span>Physics, Chemistry & Mathematics</span><span>Computer Science</span>
-                    </div>
-                </div>
+            <div class="flex items-center gap-6">
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+                <a href="#leetcode" class="hover:text-white transition-colors">Stats</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+                <a href="#home" class="text-white hover:underline flex items-center gap-1"><i class="fas fa-arrow-up text-[10px]"></i> Top</a>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="edu-icon"><i class="fas fa-book"></i></div>
-                    <h3>Secondary Education (Class X)</h3>
-                    <span class="institution">RPM Academy</span>
-                    <div class="edu-meta">
-                        <span class="date">2019 – 2020</span>
-                        <span class="gpa-badge">89%</span>
-                    </div>
-                    <div class="edu-tags">
-                        <span>Science & Mathematics</span><span>Computer Applications</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </footer>
 
-    <section id="certifications" class="certifications hidden">
-        <h2 class="section-title"><span class="gradient-text">Cert</span>ifications</h2>
-        <div class="cert-grid">
-            <div class="cert-card">
-                <h3>Walmart Global Tech</h3>
-                <h4>Advanced Software Engineering Job Simulation</h4>
-                <p>Worked on advanced data structures, software architecture, and relational DB design tasks.</p>
-                <a href="#" class="cert-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Credential</a>
-            </div>
-            <div class="cert-card">
-                <h3>Wells Fargo</h3>
-                <h4>Software Engineering Job Simulation</h4>
-                <p>Built and implemented data models and software solutions aligned with real-world engineering
-                    workflows.</p>
-                <a href="#" class="cert-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Credential</a>
-            </div>
-            <div class="cert-card">
-                <h3>AWS Cloud Training</h3>
-                <h4>DevOps on AWS & AWS CLI Basics</h4>
-                <p>Gained hands-on experience with cloud workflows and DevOps fundamentals.</p>
-                <a href="#" class="cert-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Credential</a>
-            </div>
-            <div class="cert-card">
-                <h3>Deloitte</h3>
-                <h4>Data Analytics Job Simulation</h4>
-                <p>Performed data analytics & forensic investigation tasks using industry-standard techniques.</p>
-                <a href="#" class="cert-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Credential</a>
-            </div>
-        </div>
-    </section>
+    </div>
 
-    <section id="projects" class="projects hidden">
-        <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
-        <p class="section-subtitle">Full-stack applications built with modern technologies, focused on solving real
-            problems and clean architecture.</p>
-        <div class="projects-grid">
-            <!-- FAANG-Forge -->
-            <div class="project-card featured">
-                <div class="project-header">
-                    <span class="project-badge">FEATURED PROJECT</span>
-                    <div class="project-links">
-                        <a href="https://faang-forge-eight.vercel.app/" target="_blank" class="project-link-icon"
-                            data-tooltip="Live Demo"><i class="fas fa-external-link-alt"></i></a>
-                        <a href="https://github.com/iam-sarthakdev/FAANG-Forge" target="_blank"
-                            class="project-link-icon" data-tooltip="Source Code"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>FAANG-Forge</h3>
-                    <p class="project-subtitle">Master Your Coding Interviews</p>
-                    <p class="project-desc">An algorithmic interview prep platform focused on a pattern-driven, terminal-based
-                        approach to DSA practice. Features a spaced repetition algorithm for dynamic problem-word
-                        workflows and an ETL pipeline utilizing GraphQL API to parse 2,700+ company-tagged problems.</p>
-                    <div class="project-tools">
-                        <span>React</span><span>Node.js</span><span>GraphQL</span><span>MongoDB</span><span>JWT Auth</span>
-                    </div>
-                </div>
-            </div>
-            <!-- MockMate AI -->
-            <div class="project-card featured">
-                <div class="project-header">
-                    <span class="project-badge">FEATURED PROJECT</span>
-                    <div class="project-links">
-                        <a href="https://mockmate-ai.vercel.app/" target="_blank" class="project-link-icon"
-                            data-tooltip="Live Demo"><i class="fas fa-external-link-alt"></i></a>
-                        <a href="https://github.com/iam-sarthakdev/MockMate-AI" target="_blank"
-                            class="project-link-icon" data-tooltip="Source Code"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>MockMate AI</h3>
-                    <p class="project-subtitle">AI Voice Interview Coach</p>
-                    <p class="project-desc">An AI-powered voice interview coach with ultra-low latency bi-directional
-                        audio streaming using raw WebCodecs. Features secure OAuth/session persistence and user
-                        mobility tracking via MediaPipe for real-time interview practice.</p>
-                    <div class="project-tools">
-                        <span>Next.js</span><span>WebSockets</span><span>Kubernetes</span><span>LLM API</span>
-                    </div>
-                </div>
-            </div>
-            <!-- DevSync -->
-            <div class="project-card featured">
-                <div class="project-header">
-                    <span class="project-badge">FEATURED PROJECT</span>
-                    <div class="project-links">
-                        <a href="https://devsync-ide.vercel.app/" target="_blank" class="project-link-icon"
-                            data-tooltip="Live Demo"><i class="fas fa-external-link-alt"></i></a>
-                        <a href="https://github.com/iam-sarthakdev/DevSync" target="_blank"
-                            class="project-link-icon" data-tooltip="Source Code"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>DevSync</h3>
-                    <p class="project-subtitle">Real-Time Collaborative IDE</p>
-                    <p class="project-desc">A multi-room collaborative IDE built with event-driven Socket-based state
-                        sync for real-time code sharing. Integrated isolated Judge0 API instances to sandbox and
-                        securely compile runtime environments across 40+ languages.</p>
-                    <div class="project-tools">
-                        <span>React</span><span>Socket.io</span><span>Monaco</span><span>Express</span><span>Judge0</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="leetcode" class="leetcode-section hidden">
-        <h2 class="section-title">LeetCode & <span class="gradient-text">Competitive Programming</span></h2>
-        <div class="cp-stats-container">
-            <!-- LeetCode Stats -->
-            <div class="cp-card leetcode-card">
-                <div class="cp-card-header">
-                    <h3><i class="fas fa-code"></i> LeetCode Stats</h3>
-                    <span class="cp-badge knight">Knight</span>
-                </div>
-                <div class="cp-stats-grid">
-                    <div class="cp-stat">
-                        <span class="cp-stat-number" data-count="874">0</span>
-                        <span class="cp-stat-label">Rating</span>
-                    </div>
-                    <div class="cp-stat">
-                        <span class="cp-stat-number" data-count="500">0</span>
-                        <span class="cp-stat-label">Problems Solved</span>
-                    </div>
-                    <div class="cp-stat">
-                        <span class="cp-stat-number">Top 6%</span>
-                        <span class="cp-stat-label">Global Rank</span>
-                    </div>
-                </div>
-                <div class="difficulty-bars">
-                    <div class="diff-bar">
-                        <span class="diff-label easy">Easy</span>
-                        <div class="diff-progress"><div class="diff-fill" style="width: 85%; background: #00b8a3;"></div></div>
-                        <span class="diff-count">276</span>
-                    </div>
-                    <div class="diff-bar">
-                        <span class="diff-label medium">Medium</span>
-                        <div class="diff-progress"><div class="diff-fill" style="width: 60%; background: #ffc01e;"></div></div>
-                        <span class="diff-count">404</span>
-                    </div>
-                    <div class="diff-bar">
-                        <span class="diff-label hard">Hard</span>
-                        <div class="diff-progress"><div class="diff-fill" style="width: 15%; background: #ef4743;"></div></div>
-                        <span class="diff-count">27</span>
-                    </div>
-                </div>
-                <div class="lc-badges">
-                    <span class="lc-badge-item">Daily Rated</span>
-                    <span class="lc-badge-item">Top Rated 14%</span>
-                    <span class="lc-badge-item">1600+ Community</span>
-                    <span class="lc-badge-item">540+ Reputation</span>
-                </div>
-                <a href="https://leetcode.com/u/Sarthak_79/" target="_blank" class="btn primary cp-btn">
-                    <i class="fas fa-external-link-alt"></i> View LeetCode Profile
-                </a>
-            </div>
-            <!-- Codeforces Stats -->
-            <div class="cp-card codeforces-card">
-                <div class="cp-card-header">
-                    <h3><i class="fas fa-trophy"></i> Codeforces Stats</h3>
-                    <span class="cp-badge candidate-master">Candidate Master</span>
-                </div>
-                <div class="cp-stats-grid">
-                    <div class="cp-stat">
-                        <span class="cp-stat-number" data-count="1925">0</span>
-                        <span class="cp-stat-label">Peak Rating</span>
-                    </div>
-                    <div class="cp-stat">
-                        <span class="cp-stat-number">CM</span>
-                        <span class="cp-stat-label">Max Rank</span>
-                    </div>
-                    <div class="cp-stat">
-                        <span class="cp-stat-number" data-count="4513">0</span>
-                        <span class="cp-stat-label">Contributions</span>
-                    </div>
-                </div>
-                <div class="cf-milestones">
-                    <div class="cf-milestone">
-                        <i class="fas fa-fire"></i>
-                        <span>132 Day Longest Streak</span>
-                    </div>
-                    <div class="cf-milestone">
-                        <i class="fas fa-star"></i>
-                        <span>10 GitHub Stars</span>
-                    </div>
-                    <div class="cf-milestone">
-                        <i class="fas fa-code-branch"></i>
-                        <span>4,100+ Commits (2026)</span>
-                    </div>
-                </div>
-                <a href="https://codeforces.com/profile/Sarthak1712" target="_blank" class="btn primary cp-btn">
-                    <i class="fas fa-external-link-alt"></i> View Codeforces Profile
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact hidden">
-        <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
-        <p class="section-subtitle">Have a project in mind or just want to say hi? I'm always happy to hear from you!</p>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Get In Touch</h3>
-                <p>I'm currently looking for new opportunities. Whether you have a question or just want to say hi,
-                    I'll try my best to get back to you!</p>
-                <div class="contact-links">
-                    <a href="mailto:work.sarthak17@gmail.com"><i class="fas fa-envelope"></i>
-                        work.sarthak17@gmail.com</a>
-                    <a href="https://www.linkedin.com/in/sarthak-kanoi/" target="_blank"><i
-                            class="fab fa-linkedin"></i> Connect with me</a>
-                    <a href="https://github.com/iam-sarthakdev" target="_blank"><i class="fab fa-github"></i>
-                        iam-sarthakdev</a>
-                    <a href="https://codeforces.com/profile/Sarthak1712" target="_blank">
-                        <i class="fas fa-chart-bar"></i> Codeforces Profile
-                    </a>
-                    <a href="#" class="location-link"><i class="fas fa-map-marker-alt"></i> Delhi NCR, India</a>
-                </div>
-            </div>
-            <form class="contact-form">
-                <div class="form-row">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="your@example.com" required>
-                </div>
-                <input type="text" placeholder="What's this about?" required>
-                <textarea placeholder="Write down your project..." rows="5" required></textarea>
-                <button type="submit" class="btn primary"><i class="fas fa-paper-plane"></i> Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <a href="#" class="logo footer-logo">SK<span>.</span></a>
-                <p>Building digital experiences with modern technologies and creative solutions.</p>
-            </div>
-            <div class="footer-links-section">
-                <h4>Quick Links</h4>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div class="footer-social">
-                <h4>Connect</h4>
-                <div class="footer-social-icons">
-                    <a href="https://www.linkedin.com/in/sarthak-kanoi/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/iam-sarthakdev" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://leetcode.com/u/Sarthak_79/" target="_blank"><i class="fas fa-code"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>Made with <span class="heart">&hearts;</span> by Sarthak &copy; July 2025</p>
-            <a href="#home" class="scroll-top"><i class="fas fa-arrow-up"></i> Scroll Up</a>
-        </div>
-    </footer>
-
+    <!-- Scripts -->
     <script src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
-    <script>
-        VanillaTilt.init(document.querySelectorAll(".skill-category, .cert-card, .project-card, .service-card, .achievement-card, .cp-card"), {
-            max: 15,
-            speed: 400,
-            glare: true,
-            "max-glare": 0.3,
-        });
-    </script>
-
 </body>
 
 </html>
