@@ -14,6 +14,37 @@
 ## 🌟 Portfolio Live Preview
 
 <p align="center">
+  <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8a0e66a8-04fc-4687-b07f-e4086e41ed70" />
+
+</p>
+
+<p align="center">
+  <img width="1915" height="1055" alt="image" src="https://github.com/user-attachments/assets/55d3732e-b777-4881-adb1-14754b5962fa" />
+
+</p>
+
+<p align="center">
+  <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c19ef380-822f-42ba-b58d-d1d9dd65ae89" />
+
+</p>
+
+<p align="center">
+  <img width="1920" height="1076" alt="image" src="https://github.com/user-attachments/assets/2f827e18-2bfe-4667-816d-5fe6aa37c47d" />
+
+</p>
+
+<p align="center">
+  <img width="1914" height="1064" alt="image" src="https://github.com/user-attachments/assets/c5344b4b-0557-4b88-a83c-95f6b107686d" />
+
+</p>
+
+<p align="center">
+  <img width="1919" height="1074" alt="image" src="https://github.com/user-attachments/assets/239bbb0c-595f-4e45-8904-135397ecd68e" />
+
+</p>
+
+
+<p align="center">
   <img src="docs/screenshots/projects-faang.png" alt="Projects - FAANG-Forge" width="100%">
 </p>
 
@@ -30,7 +61,13 @@
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/education.png" alt="Education Timeline" width="100%">
+  <img width="1917" height="1013" alt="image" src="https://github.com/user-attachments/assets/82640410-b636-430f-83d5-e2b91395e195" />
+
+</p>
+
+<p align="center">
+  <img width="1920" height="1075" alt="image" src="https://github.com/user-attachments/assets/fa3b72b3-b391-4bfb-bff5-22e8d098d777" />
+
 </p>
 
 ---
