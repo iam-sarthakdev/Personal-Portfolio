@@ -1,91 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://db.onlinewebfonts.com/c/d08bafd725a4cfc309efb5a88e0b63a5?family=basis33');
-
-:root {
-  --font-inter: 'Inter', sans-serif;
-  --font-pixel: 'basis33', monospace;
-  --bg-color: #000000;
-  --second-bg-color: #080808;
-  --card-bg: rgba(11, 11, 11, 0.85);
-
-  --text-color: #ffffff;
-  --text-muted: rgba(255, 255, 255, 0.6);
-
-  --glass-border: rgba(255, 255, 255, 0.1);
-}
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&display=swap');
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  border: none;
-  outline: none;
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
-  background-color: #000000;
+html, body, #root {
+  background-color: #0C0C0C;
+  color: #D7E2EA;
+  font-family: 'Kanit', sans-serif;
+  overflow-x: clip;
+  width: 100%;
+  min-height: 100vh;
 }
 
-body {
-  background-color: #000000;
-  color: #ffffff;
-  font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.hero-heading {
+  background: linear-gradient(180deg, #646973 0%, #BBCCD7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Monospace / Pixel Typography */
-.font-pixel {
-  font-family: 'basis33', monospace !important;
-}
-
-/* Custom Scrollbar */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
-  height: 8px;
 }
-
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: #0C0C0C;
 }
-
 ::-webkit-scrollbar-thumb {
   background: #222222;
   border-radius: 4px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: #444444;
-}
-
-/* Root Container */
-#root {
-  width: 100%;
-  min-height: 100vh;
-  position: relative;
-  background-color: #000000;
-}
-
-/* Utility Classes */
-.section-padding {
-  padding: 6rem 8% 4rem;
-  position: relative;
-}
-
-.glass-card {
-  background: rgba(11, 11, 11, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-}
-
-/* Selection */
-::selection {
-  background: #ffffff;
-  color: #000000;
 }

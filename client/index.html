@@ -1,30 +1,39 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth bg-[#0C0C0C]">
 
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sarthak Kanoi - Design & Engineering</title>
-  <meta name="description" content="Sarthak Kanoi - Software Engineer | Candidate Master @Codeforces (Peak: 1925) | Knight @LeetCode (Top 6%) | High-Performance Backend Systems & Java" />
+  <title>Jack -- 3D Creator</title>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Google Fonts: Inter -->
+  <!-- Google Fonts: Kanit -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- basis33 (pixel/bitmap monospace) font -->
-  <link href="https://db.onlinewebfonts.com/c/d08bafd725a4cfc309efb5a88e0b63a5?family=basis33" rel="stylesheet">
-
-  <!-- FontAwesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Kanit', 'sans-serif'],
+          },
+          colors: {
+            darkBg: '#0C0C0C',
+            lightText: '#D7E2EA',
+          }
+        }
+      }
+    }
+  </script>
 </head>
 
-<body class="bg-black text-white font-sans antialiased overflow-x-hidden">
-  <div id="root"></div>
+<body class="bg-[#0C0C0C] text-[#D7E2EA] font-sans antialiased overflow-x-clip">
+  <div id="root" class="bg-[#0C0C0C] overflow-x-clip"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
