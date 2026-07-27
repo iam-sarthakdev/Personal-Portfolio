@@ -10,10 +10,10 @@ const projectsData = [
     description: "Algorithmic problem tracker featuring a built-in Java code editor, solution vaults, Codeforces API sync, and practice mode.",
     tags: ["React", "Node.js", "MongoDB", "Tailwind CSS", "Monaco Editor"],
     githubUrl: "https://github.com/iam-sarthakdev/FAANG-Forge",
-    liveUrl: "https://faang-forge.vercel.app",
-    col1Img1: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055344_5eff02e0-87a5-41ce-b64f-eb08da8f33db.png&w=1280&q=85",
-    col1Img2: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055431_11d841fd-8b41-46a5-82e4-b04f2407a7d8.png&w=1280&q=85",
-    col2Img: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055451_e317bf2d-28d4-48cc-86b0-6f72f25b6327.png&w=1280&q=85"
+    liveUrl: "https://algo-flow-khaki.vercel.app/",
+    mainImg: "/projects/faang-forge.png",
+    col1Img1: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+    col1Img2: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80"
   },
   {
     number: "02",
@@ -22,10 +22,10 @@ const projectsData = [
     description: "AI-driven technical interview simulator with real-time speech evaluation, architecture breakdown, and detailed scoring.",
     tags: ["Next.js", "TypeScript", "OpenAI API", "Web Audio API", "Tailwind"],
     githubUrl: "https://github.com/iam-sarthakdev/MockMate-AI",
-    liveUrl: "https://mockmate-ai.vercel.app",
-    col1Img1: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055654_911201c5-36d9-4bc6-bac7-331adfce159f.png&w=1280&q=85",
-    col1Img2: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055723_5ceda0b8-d9c2-4665-b2e3-83ba19ba76d1.png&w=1280&q=85",
-    col2Img: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055753_adc5dcbd-a8e6-49c0-b43a-9b030d835cea.png&w=1280&q=85"
+    liveUrl: "https://mockmateai-eight.vercel.app/landingPage",
+    mainImg: "/projects/mockmate.png",
+    col1Img1: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
+    col1Img2: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80"
   },
   {
     number: "03",
@@ -34,10 +34,10 @@ const projectsData = [
     description: "Multi-user code editor with real-time WebSockets synchronization, WebRTC video calling, and live AST syntax analysis.",
     tags: ["React", "Express", "WebSockets", "WebRTC", "Docker"],
     githubUrl: "https://github.com/iam-sarthakdev/DevSync",
-    liveUrl: "https://devsync-collaborate.vercel.app",
-    col1Img1: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055759_963cfb0b-4bd1-4b0f-9d0a-09bd6cf95b2f.png&w=1280&q=85",
-    col1Img2: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_060108_438f781a-9846-4dcc-89ab-c4e6cb830f5b.png&w=1280&q=85",
-    col2Img: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055818_9d062121-ad7e-46b9-999a-1a6a692ef1ee.png&w=1280&q=85"
+    liveUrl: "https://devsync-production-00b7.up.railway.app/",
+    mainImg: "/projects/devsync.png",
+    col1Img1: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
+    col1Img2: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80"
   }
 ];
 
@@ -110,23 +110,23 @@ const ProjectCard = ({ project, index, totalCards, progress }) => {
             <div className="grid grid-cols-2 gap-3">
               <img
                 src={project.col1Img1}
-                alt={`${project.name} 1`}
-                className="w-full object-cover rounded-[24px] h-[130px]"
+                alt={`${project.name} Tech 1`}
+                className="w-full object-cover rounded-[24px] h-[130px] border border-white/10"
               />
               <img
                 src={project.col1Img2}
-                alt={`${project.name} 2`}
-                className="w-full object-cover rounded-[24px] h-[130px]"
+                alt={`${project.name} Tech 2`}
+                className="w-full object-cover rounded-[24px] h-[130px] border border-white/10"
               />
             </div>
           </div>
 
-          {/* Right Column (60% width) - 1 Tall Image */}
-          <div className="w-full md:w-[60%] flex-1">
+          {/* Right Column (60% width) - Main Tech Mockup Image */}
+          <div className="w-full md:w-[60%] flex-1 overflow-hidden rounded-[30px] sm:rounded-[40px] md:rounded-[50px] border border-white/10 shadow-2xl">
             <img
-              src={project.col2Img}
+              src={project.mainImg}
               alt={`${project.name} Main`}
-              className="w-full h-full min-h-[220px] object-cover rounded-[30px] sm:rounded-[40px] md:rounded-[50px]"
+              className="w-full h-full min-h-[220px] object-cover hover:scale-105 transition-transform duration-500"
             />
           </div>
         </div>
