@@ -2,6 +2,10 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import FadeIn from './FadeIn';
 
+import faangForgeImg from '../assets/faang-forge.png';
+import mockmateImg from '../assets/mockmate.png';
+import devsyncImg from '../assets/devsync.png';
+
 const projectsData = [
   {
     number: "01",
@@ -11,7 +15,7 @@ const projectsData = [
     tags: ["React", "Node.js", "MongoDB", "Tailwind CSS", "Monaco Editor"],
     githubUrl: "https://github.com/iam-sarthakdev/FAANG-Forge",
     liveUrl: "https://algo-flow-khaki.vercel.app/",
-    mainImg: "/projects/faang-forge.png",
+    mainImg: faangForgeImg,
     col1Img1: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
     col1Img2: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80"
   },
@@ -23,7 +27,7 @@ const projectsData = [
     tags: ["Next.js", "TypeScript", "OpenAI API", "Web Audio API", "Tailwind"],
     githubUrl: "https://github.com/iam-sarthakdev/MockMate-AI",
     liveUrl: "https://mockmateai-eight.vercel.app/landingPage",
-    mainImg: "/projects/mockmate.png",
+    mainImg: mockmateImg,
     col1Img1: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
     col1Img2: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80"
   },
@@ -35,7 +39,7 @@ const projectsData = [
     tags: ["React", "Express", "WebSockets", "WebRTC", "Docker"],
     githubUrl: "https://github.com/iam-sarthakdev/DevSync",
     liveUrl: "https://devsync-production-00b7.up.railway.app/",
-    mainImg: "/projects/devsync.png",
+    mainImg: devsyncImg,
     col1Img1: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
     col1Img2: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80"
   }
@@ -121,8 +125,8 @@ const ProjectCard = ({ project, index, totalCards, progress }) => {
             </div>
           </div>
 
-          {/* Right Column (60% width) - Main Tech Mockup Image */}
-          <div className="w-full md:w-[60%] flex-1 overflow-hidden rounded-[30px] sm:rounded-[40px] md:rounded-[50px] border border-white/10 shadow-2xl">
+          {/* Right Column (60% width) - Main Tech Mockup Image (Imported) */}
+          <div className="w-full md:w-[60%] flex-1 overflow-hidden rounded-[30px] sm:rounded-[40px] md:rounded-[50px] border border-white/10 shadow-2xl bg-black">
             <img
               src={project.mainImg}
               alt={`${project.name} Main`}
